@@ -1,0 +1,148 @@
+[
+  {
+    "slug": "lark-platform-migration",
+    "title": "Multi-platform Consolidation → Lark Migration",
+    "tagline": "การรวมแพลตฟอร์มหลายระบบสู่ Lark เพื่อลดต้นทุนและเพิ่มประสิทธิภาพ",
+    "year": "2024",
+    "role": "IT Manager (Report to CTO)",
+    "stack": ["Lark", "Google Workspace", "Microsoft 365", "Jira", "LINE", "Discord", "Project Management"],
+    "coverImage": "/images/projects/lark-migration-cover.jpg",
+    "highlights": [
+      "ลดต้นทุนรายปีได้ 40% และคาดว่าจะลดได้ 60% หลัง custom feature",
+      "ย้ายผู้ใช้งาน ~450 คน จากหลายแพลตฟอร์ม",
+      "Migration end-to-end: workflow mapping, data migration, training"
+    ],
+    "problem": "องค์กรใช้หลายแพลตฟอร์มพร้อมกัน (LINE, Jira, Google Workspace, Microsoft 365, Discord) ทำให้เกิดความซับซ้อนในการจัดการ ข้อมูลกระจัดกระจาย การสื่อสารไม่เป็นระบบ และค่าใช้จ่ายสูงจากการต้องซื้อ license หลายแพลตฟอร์ม",
+    "approach": "วางแผนและดำเนินการย้ายระบบทั้งหมดไปใช้ Lark เป็นศูนย์กลาง โดยทำการ mapping workflow ที่มีอยู่ สร้าง SOP สำหรับการใช้งาน ฝึกอบรมทีมงาน และให้การสนับสนุนอย่างใกล้ชิดเพื่อให้เกิดการใช้งานอย่างเต็มศักยภาพ พร้อมวางแผน custom features เพิ่มเติมเพื่อให้ครอบคลุมทุกความต้องการขององค์กร",
+    "results": "โครงการประสบความสำเร็จในการย้ายผู้ใช้งาน 450 คนเข้าสู่ระบบ Lark ใหม่ โดยลดค่าใช้จ่ายรายปีได้ 40% และคาดว่าจะสามารถลดได้ถึง 60% หลังจากที่ custom features เสร็จสมบูรณ์ การใช้งานเป็นระบบมากขึ้น ช่วยให้การสื่อสารและการทำงานร่วมกันมีประสิทธิภาพดีขึ้นอย่างเห็นได้ชัด",
+    "galleryImages": [
+      "/images/projects/lark-migration-1.jpg",
+      "/images/projects/lark-migration-2.jpg"
+    ],
+    "links": {
+      "caseStudy": "#"
+    }
+  },
+  {
+    "slug": "itil-ai-chat-uat",
+    "title": "ITIL v4 AI Chat UAT",
+    "tagline": "ระบบแชทบอทอัจฉริยะสำหรับถาม-ตอบข้อมูล ITIL v4 และสร้างรายงานอัตโนมัติ",
+    "year": "2024",
+    "role": "Event Manager (Outsource) - POC",
+    "stack": ["n8n", "Local LLMs Model", "OneDrive/SharePoint", "CSV", "Python", "Webhook", "Data Visualization", "Report Generation"],
+    "coverImage": "/images/projects/itil-ai-chat-cover.jpg",
+    "highlights": [
+      "ลดเวลาค้นหาข้อมูลจากหลายไฟล์ Excel เหลือเพียงแค่ถาม-ตอบทันที",
+      "เชื่อมต่อข้อมูลย้อนหลัง 3 ปีจาก CSV บน OneDrive ผ่าน n8n workflow",
+      "ใช้ Local LLMs Model อ่านข้อมูลจาก Incident, Problem, Change, Event, Service Request, SLA, Availability",
+      "สร้างรายงานและกราฟอัตโนมัติสำหรับ VP และ SVP ประจำสัปดาห์/เดือน/ปี",
+      "ออกแบบตามหลัก Security: DLP, Sensitivity Labels, Audit Log"
+    ],
+    "problem": "ทีมงานต้องใช้เวลามากในการค้นหาข้อมูล ITIL v4 (Incident, Problem, Change, Event, Service Request, SLA, Availability) จากหลายไฟล์ Excel ที่เก็บข้อมูลย้อนหลัง 3 ปี ทำให้การตอบคำถามและการตัดสินใจล่าช้า และไม่สามารถเข้าถึงข้อมูลได้อย่างรวดเร็ว",
+    "approach": "พัฒนาเว็บแชทบอทที่เชื่อมต่อกับ n8n workflow เพื่ออ่านข้อมูลจากไฟล์ CSV ที่เก็บบน OneDrive/SharePoint โดยเชื่อมต่อ CSV ใน OneDrive กับ n8n และใช้ Local LLMs Model อ่านข้อมูลจากไฟล์ Incident, Problem, Change, Event, Service Request, SLA, Availability เพื่อสร้าง Report หรือ Graph และเรียงข้อความเพื่อตอบคำถาม VP และ SVP ประจำสัปดาห์ ประจำเดือน และประจำปี โดยออกแบบระบบให้มีความปลอดภัยด้วยการเสนอใช้ DLP (Data Loss Prevention) และ Sensitivity Labels เพื่อป้องกันข้อมูลสำคัญรั่วไหล และมี Audit log ทุกครั้งที่ workflow ทำงาน",
+    "results": "ระบบสามารถตอบคำถามเกี่ยวกับ ITIL v4 ได้อย่างรวดเร็วและแม่นยำ ลดเวลาการค้นหาข้อมูลจากหลายไฟล์ Excel ลงเหลือเพียงแค่พิมพ์ถามและได้รับคำตอบทันที ระบบสามารถเชื่อมต่อ CSV ใน OneDrive กับ n8n และใช้ Local LLMs Model อ่านข้อมูลจากไฟล์ Incident, Problem, Change, Event, Service Request, SLA, Availability เพื่อสร้าง Report หรือ Graph และเรียงข้อความเพื่อตอบคำถาม VP และ SVP ประจำสัปดาห์ ประจำเดือน และประจำปี ปัจจุบันได้วางแผนเพื่อเชื่อมต่อกับไฟล์ของทีมอื่นๆ เช่น Network, Unix, Windows, Security path, Noc, Service Desk เพื่อให้การตอบคำถามเชิงเทคนิคเร็วขึ้น",
+    "galleryImages": [
+      "/images/projects/itil-ai-chat-1.jpg",
+      "/images/projects/itil-ai-chat-2.jpg"
+    ],
+    "links": {
+      "caseStudy": "#"
+    }
+  },
+  {
+    "slug": "event-consolidation-pagerduty",
+    "title": "IT Event Consolidation (Omnibus → PagerDuty Migration)",
+    "tagline": "รวมระบบ Event Management จาก Omnibus ไป PagerDuty เพื่อประสิทธิภาพที่ดีขึ้น",
+    "year": "2023",
+    "role": "Event Manager (Outsource)",
+    "stack": ["PagerDuty", "Omnibus", "ITIL v4", "Event Management", "Integration"],
+    "coverImage": "/images/projects/pagerduty-migration-cover.jpg",
+    "highlights": [
+      "ลด P4 Noise และสร้าง Threshold ที่มีประสิทธิภาพ",
+      "ตรวจสอบและลด False alarm",
+      "ปรับปรุงประสิทธิภาพ Event Management ตาม ITIL v4"
+    ],
+    "problem": "ระบบ Event Management เดิมที่ใช้ Omnibus มีปัญหาเรื่อง false alarm จำนวนมาก P4 noise ที่สูง และ threshold ที่ไม่เหมาะสม ทำให้ทีมงานเสียเวลาในการจัดการกับ alarm ที่ไม่จำเป็น และอาจทำให้พลาดเหตุการณ์สำคัญที่แท้จริง",
+    "approach": "วางแผนและดำเนินการย้ายระบบ Event Management จาก Omnibus ไปใช้ PagerDuty โดยทำการวิเคราะห์ข้อมูลจาก Monitoring Tools เพื่อสร้าง threshold ที่เหมาะสม ลด P4 noise และปรับแต่งการตั้งค่าต่างๆ เพื่อลด false alarm พร้อมสร้าง workflow และ process ตาม ITIL v4 เพื่อให้การจัดการ event มีประสิทธิภาพมากขึ้น",
+    "results": "ระบบใหม่สามารถลด false alarm ได้อย่างมีนัยสำคัญ และ threshold ที่ปรับปรุงแล้วทำให้การตรวจจับเหตุการณ์สำคัญทำได้แม่นยำขึ้น การจัดการ event มีประสิทธิภาพมากขึ้นตามหลัก ITIL v4 และช่วยให้ทีมงานมีเวลาไปจัดการกับงานสำคัญอื่นๆ มากขึ้น",
+    "galleryImages": [
+      "/images/projects/pagerduty-migration-1.jpg"
+    ],
+    "links": {
+      "caseStudy": "#"
+    }
+  },
+  {
+    "slug": "bank-itsm-monitor-migration",
+    "title": "Bank ITSM Tools Monitor Migration Data Center",
+    "tagline": "ย้าย Monitoring Tools ระหว่าง Data Center ตามหลัก ITIL v4",
+    "year": "2023",
+    "role": "Event Manager (Outsource)",
+    "stack": ["Sitescope", "SolarWinds", "ITIL v4", "Event Management", "Change Management", "Data Center"],
+    "coverImage": "/images/projects/dc-migration-cover.jpg",
+    "highlights": [
+      "ควบคุม Event/Incident/Change ระหว่างการย้ายระบบ",
+      "จัดทำ Workflow Process, RACI + Runbook",
+      "ลด fallout จาก change และสร้าง SOP"
+    ],
+    "problem": "องค์กรต้องการย้าย Monitoring Tools จาก Sitescope ไปใช้ SolarWinds บน server Data Center โดยต้องไม่กระทบต่อการให้บริการ และต้องมีการควบคุมการเปลี่ยนแปลงอย่างเป็นระบบเพื่อลดความเสี่ยงจากการเปลี่ยนแปลงระบบ",
+    "approach": "รับผิดชอบในการควบคุม Event, Incident และ Change Management ระหว่างการย้ายระบบ โดยร่าง Workflow Process ที่ชัดเจน จัดทำ RACI matrix เพื่อกำหนดความรับผิดชอบ สร้าง Runbook สำหรับการแก้ไขปัญหา และจัดทำ SOP สำหรับปัญหาที่เกิดขึ้นซ้ำๆ พร้อม align กับหลักการ ITIL v4 เพื่อให้การย้ายระบบเป็นไปอย่างมีระบบและลดความเสี่ยง",
+    "results": "การย้ายระบบสำเร็จลุล่วงโดยมี fallout น้อยที่สุด และสามารถควบคุมเหตุการณ์ที่เกิดขึ้นได้อย่างเป็นระบบ การมี Workflow, RACI และ Runbook ช่วยให้ทีมงานทำงานได้อย่างมีประสิทธิภาพ และ SOP ที่จัดทำไว้ช่วยลดเวลาในการแก้ไขปัญหาซ้ำๆ ลงอย่างมาก",
+    "galleryImages": [
+      "/images/projects/dc-migration-1.jpg",
+      "/images/projects/dc-migration-2.jpg"
+    ],
+    "links": {
+      "caseStudy": "#"
+    }
+  },
+  {
+    "slug": "network-monitoring-dashboard",
+    "title": "Network Monitoring & Real-time Dashboard + LINE Alerts",
+    "tagline": "ระบบตรวจสอบเครือข่ายและ Dashboard แบบเรียลไทม์พร้อมแจ้งเตือนผ่าน LINE",
+    "year": "2020",
+    "role": "Project Developer (University)",
+    "stack": ["Cacti", "RRDTool", "SNMPv3", "Telegraf", "InfluxDB", "Prometheus", "Grafana", "LINE Notify"],
+    "coverImage": "/images/projects/network-monitoring-cover.jpg",
+    "highlights": [
+      "Dashboard เรียลไทม์ (~5s refresh)",
+      "ลด MTTR เฉลี่ย 50-60%",
+      "ลด false alert เหลือ 0%"
+    ],
+    "problem": "เจ้าหน้าที่คอมพิวเตอร์ของมหาวิทยาลัยใช้เวลามากในการตรวจสอบสถานะเครือข่าย และมักพบปัญหาหลังจากที่เกิดเหตุการณ์ไปแล้ว ทำให้การแก้ไขล่าช้า และมี false alert จำนวนมากที่ทำให้เสียเวลา",
+    "approach": "ติดตั้ง Cacti (RRDTool + SNMPv3) สำหรับเก็บข้อมูล traffic และ uptime และสร้าง pipeline ระหว่าง Telegraf → InfluxDB/Prometheus → Grafana เพื่อสร้าง dashboard แบบเรียลไทม์ (refresh ทุก 5 วินาที) พร้อมระบบแจ้งเตือนผ่าน LINE Notify เมื่อ link down หรือมีการใช้งานเกิน threshold",
+    "results": "ระบบช่วยให้เจ้าหน้าที่สามารถตรวจสอบสถานะเครือข่ายได้อย่างรวดเร็วและแม่นยำ สามารถแก้ไขปัญหาได้เร็วขึ้นโดยลด MTTR (Mean Time To Repair) เฉลี่ย 50-60% และสามารถปรับแต่ง threshold ให้เหมาะสมจนลด false alert ลงเหลือ 0% ระบบใช้งานจริงทั่วทั้งมหาวิทยาลัย",
+    "galleryImages": [
+      "/images/projects/network-monitoring-1.jpg",
+      "/images/projects/network-monitoring-2.jpg",
+      "/images/projects/network-monitoring-3.jpg"
+    ],
+    "links": {
+      "caseStudy": "#"
+    }
+  },
+  {
+    "slug": "airlink-wifi-hotspot",
+    "title": "Airlink Wi-Fi Hotspot (Open Source)",
+    "tagline": "ระบบ Captive Portal/Wi-Fi Hotspot สำหรับควบคุมการใช้งานอินเทอร์เน็ต",
+    "year": "2016",
+    "role": "Project Developer (Vocational College)",
+    "stack": ["OpenWrt", "hostapd", "FreeRADIUS", "Ubuntu Server", "CLI", "QoS", "VLAN", "Firewall Policy"],
+    "coverImage": "/images/projects/wifi-hotspot-cover.jpg",
+    "highlights": [
+      "ใช้งานจริงที่หอพักในวิทยาลัย",
+      "รองรับผู้ใช้ concurrent จำนวนมาก",
+      "ช่วยลดค่าใช้จ่ายเมื่อเทียบโซลูชันเชิงพาณิชย์"
+    ],
+    "problem": "วิทยาลัยต้องการระบบควบคุมการใช้งาน Wi-Fi สำหรับนักศึกษาในหอพัก แต่โซลูชันเชิงพาณิชย์มีราคาสูง และไม่สามารถปรับแต่งได้ตามความต้องการขององค์กร",
+    "approach": "ออกแบบและติดตั้งระบบ Captive Portal/Wi-Fi Hotspot บน OpenWrt และ hostapd โดยใช้ FreeRADIUS บน Ubuntu Server (CLI) ใช้ Network Card แยกและปรับแต่งทั้ง Hardware และ Software (IRQ affinity, MTU, sysctl) เพื่อรองรับผู้ใช้ concurrent จำนวนมาก พร้อมตั้งค่า QoS, VLAN และ Firewall Policy เพื่อควบคุมการใช้งานอินเทอร์เน็ต",
+    "results": "ระบบสามารถใช้งานจริงที่หอพักในวิทยาลัยราชภัฏศรีสะเกษ เพื่อควบคุมการใช้งานอินเทอร์เน็ตของนักศึกษาได้อย่างมีประสิทธิภาพ และช่วยลดค่าใช้จ่ายเมื่อเทียบกับโซลูชันเชิงพาณิชย์ได้อย่างมาก ในขณะที่ยังคงความสามารถในการปรับแต่งตามความต้องการ",
+    "galleryImages": [
+      "/images/projects/wifi-hotspot-1.jpg",
+      "/images/projects/wifi-hotspot-2.jpg"
+    ],
+    "links": {
+      "caseStudy": "#"
+    }
+  }
+]

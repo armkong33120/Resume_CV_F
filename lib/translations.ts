@@ -1,0 +1,105 @@
+export type Language = 'th' | 'en';
+
+export const translations = {
+  th: {
+    nav: {
+      home: 'หน้าแรก',
+      work: 'ผลงาน',
+      about: 'เกี่ยวกับ',
+      contact: 'ติดต่อ',
+    },
+    home: {
+      viewWork: 'ดูผลงาน',
+      getInTouch: 'ติดต่อ',
+      featuredWork: 'ผลงานเด่น',
+      viewAllProjects: 'ดูผลงานทั้งหมด',
+    },
+    work: {
+      title: 'ผลงาน',
+      description: 'คอลเลกชันของโปรเจกต์ที่ครอบคลุมการออกแบบ วิศวกรรม และการพัฒนาผลิตภัณฑ์',
+      searchPlaceholder: 'ค้นหาโปรเจกต์...',
+      allTechnologies: 'เทคโนโลยีทั้งหมด',
+      loading: 'กำลังโหลดโปรเจกต์...',
+      noProjects: 'ไม่พบโปรเจกต์',
+    },
+    about: {
+      title: 'เกี่ยวกับ',
+      overview: 'ภาพรวม',
+      skills: 'ทักษะ',
+      connect: 'ติดต่อ',
+    },
+    contact: {
+      title: 'ติดต่อ',
+      description: 'มีโปรเจกต์ที่น่าสนใจหรือต้องการปรึกษา? ยินดีติดต่อรับฟัง',
+      line: 'LINE',
+      phone: 'เบอร์โทรศัพท์',
+      email: 'อีเมล',
+      birthday: 'วันเกิด',
+      address: 'ที่อยู่',
+      otherChannels: 'หรือติดต่อผ่านช่องทางอื่น',
+    },
+    footer: {
+      rights: 'สงวนลิขสิทธิ์',
+      builtWith: 'สร้างด้วย',
+    },
+    notFound: {
+      title: '404',
+      heading: 'ไม่พบหน้า',
+      description: 'หน้าที่คุณกำลังมองหาไม่มีอยู่หรือถูกย้ายแล้ว',
+      goHome: 'กลับหน้าแรก',
+    },
+  },
+  en: {
+    nav: {
+      home: 'Home',
+      work: 'Work',
+      about: 'About',
+      contact: 'Contact',
+    },
+    home: {
+      viewWork: 'View Work',
+      getInTouch: 'Get in Touch',
+      featuredWork: 'Featured Work',
+      viewAllProjects: 'View All Projects',
+    },
+    work: {
+      title: 'Work',
+      description: 'A collection of projects spanning design, engineering, and product development',
+      searchPlaceholder: 'Search projects...',
+      allTechnologies: 'All Technologies',
+      loading: 'Loading projects...',
+      noProjects: 'No projects found',
+    },
+    about: {
+      title: 'About',
+      overview: 'Overview',
+      skills: 'Skills',
+      connect: 'Connect',
+    },
+    contact: {
+      title: 'Contact',
+      description: 'Have a project in mind or just want to chat? I\'d love to hear from you',
+      line: 'LINE',
+      phone: 'Phone',
+      email: 'Email',
+      birthday: 'Birthday',
+      address: 'Address',
+      otherChannels: 'Or contact through other channels',
+    },
+    footer: {
+      rights: 'All rights reserved',
+      builtWith: 'Built with',
+    },
+    notFound: {
+      title: '404',
+      heading: 'Page Not Found',
+      description: 'The page you\'re looking for doesn\'t exist or has been moved',
+      goHome: 'Go Home',
+    },
+  },
+} as const;
+
+export function getTranslation(lang: Language) {
+  return translations[lang];
+}
+

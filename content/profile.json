@@ -1,0 +1,52 @@
+{
+  "name": "Theerachot Hengsimmakourup",
+  "title": "IT Management Process Engineer & Cybersecurity Specialist",
+  "location": "Bangkok, Thailand",
+  "address": "83 Soi Saksin, Khlong San Subdistrict, Khlong San District, Bangkok 10600",
+  "birthday": "18 July 1995",
+  "age": "30",
+  "summary": "ผู้เชี่ยวชาญด้าน IT Management Process และ Cybersecurity ด้วยประสบการณ์กว่า 6 ปีในการบริหารจัดการระบบ IT Infrastructure, Network Engineering, และ Security Operations สำหรับองค์กรธนาคาร. มีความชำนาญในการจัดการ Event Management ตาม ITIL v4, การวิเคราะห์ข้อมูลด้วย AI, และการพัฒนาระบบอัตโนมัติเพื่อเพิ่มประสิทธิภาพการทำงาน.",
+  "skills": {
+    "IT Management": [
+      "ITIL v4 Event/Incident/Change Management",
+      "IT Operations & Asset Management",
+      "Vendor & Cost Management",
+      "Project Management",
+      "Process Optimization"
+    ],
+    "Cybersecurity": [
+      "CrowdStrike EDR Administration (Tier 1.5)",
+      "Palo Alto Networks Firewall",
+      "Network Security Monitoring",
+      "Forensics Investigation",
+      "Threat Detection & Response"
+    ],
+    "Network & Infrastructure": [
+      "Network Engineering",
+      "Fortigate Firewall Administration",
+      "Network Monitoring (SolarWinds, Sitescope)",
+      "OpenWrt/hostapd Configuration",
+      "FreeRADIUS Administration"
+    ],
+    "Automation & Analytics": [
+      "Excel VBA & Power Automate",
+      "Power BI Data Analysis",
+      "AI Prompt Engineering",
+      "n8n Workflow Automation",
+      "Python Scripting"
+    ],
+    "Tools & Platforms": [
+      "SolarWinds, Sitescope, PagerDuty, Splunk",
+      "CrowdStrike Falcon, Palo Alto PAN-OS",
+      "Microsoft 365, Google Workspace, Lark",
+      "Grafana, InfluxDB, Prometheus, Cacti"
+    ]
+  },
+  "social": {
+    "email": "Theerachot.si.61@ubu.ac.th",
+    "phone": "061-0784261",
+    "line": "ddc_777",
+    "linkedin": "https://www.linkedin.com/in/theeraochot-hangsimmakourop-5463552aa",
+    "github": "https://github.com/armkong33120"
+  }
+}
