@@ -151,3 +151,5 @@ portfolio/
 
 **พร้อมแล้ว!** เพียงแค่อัพโหลดไฟล์ `profile.jpg` ไปที่ `public/images/` แล้ว refresh หน้าเว็บ 🎉
 
+
+
