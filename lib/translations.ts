@@ -12,6 +12,7 @@ export const translations = {
       viewWork: 'ดูผลงาน',
       getInTouch: 'ติดต่อ',
       featuredWork: 'ผลงานเด่น',
+      featuredDescription: 'คอลเลกชันของโปรเจกต์ที่ครอบคลุมการออกแบบ วิศวกรรม และการพัฒนาผลิตภัณฑ์',
       viewAllProjects: 'ดูผลงานทั้งหมด',
     },
     work: {
@@ -21,6 +22,13 @@ export const translations = {
       allTechnologies: 'เทคโนโลยีทั้งหมด',
       loading: 'กำลังโหลดโปรเจกต์...',
       noProjects: 'ไม่พบโปรเจกต์',
+      year: 'ปี',
+      role: 'บทบาท',
+      problem: 'ปัญหา',
+      approach: 'วิธีการแก้ไข',
+      results: 'ผลลัพธ์',
+      gallery: 'รูปภาพ',
+      backToWork: 'กลับไปหน้าผลงาน',
     },
     about: {
       title: 'เกี่ยวกับ',
@@ -36,6 +44,7 @@ export const translations = {
       email: 'อีเมล',
       birthday: 'วันเกิด',
       address: 'ที่อยู่',
+      location: 'ที่ตั้ง',
       otherChannels: 'หรือติดต่อผ่านช่องทางอื่น',
     },
     footer: {
@@ -60,6 +69,7 @@ export const translations = {
       viewWork: 'View Work',
       getInTouch: 'Get in Touch',
       featuredWork: 'Featured Work',
+      featuredDescription: 'A selection of projects that showcase design thinking and technical execution',
       viewAllProjects: 'View All Projects',
     },
     work: {
@@ -69,6 +79,13 @@ export const translations = {
       allTechnologies: 'All Technologies',
       loading: 'Loading projects...',
       noProjects: 'No projects found',
+      year: 'Year',
+      role: 'Role',
+      problem: 'Problem',
+      approach: 'Approach',
+      results: 'Results',
+      gallery: 'Gallery',
+      backToWork: 'Back to Work',
     },
     about: {
       title: 'About',
@@ -84,6 +101,7 @@ export const translations = {
       email: 'Email',
       birthday: 'Birthday',
       address: 'Address',
+      location: 'Location',
       otherChannels: 'Or contact through other channels',
     },
     footer: {

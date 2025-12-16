@@ -9,8 +9,8 @@ import LanguageSwitcher from './LanguageSwitcher';
 
 const navItems = [
   { href: '/', key: 'home' },
-  { href: '/work', key: 'work' },
-  { href: '/about', key: 'about' },
+  { href: '/#work', key: 'work' },
+  { href: '/#about', key: 'about' },
   { href: '/contact', key: 'contact' },
 ];
 
@@ -31,11 +31,10 @@ export default function Nav() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 safe-top ${
-        isScrolled
-          ? 'bg-glass/80 backdrop-blur-xl border-b border-border'
-          : 'bg-transparent'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 safe-top ${isScrolled
+        ? 'bg-glass/80 backdrop-blur-xl border-b border-border'
+        : 'bg-transparent'
+        }`}
       style={{
         paddingTop: 'var(--safe-area-inset-top)',
       }}
@@ -57,11 +56,10 @@ export default function Nav() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`relative px-4 py-2 rounded-full text-sm font-medium tracking-tight transition-all duration-300 ${
-                    isActive
-                      ? 'bg-foreground text-background'
-                      : 'text-foreground/70 hover:bg-foreground hover:text-background'
-                  }`}
+                  className={`relative px-4 py-2 rounded-full text-sm font-medium tracking-tight transition-all duration-300 ${isActive
+                    ? 'bg-foreground text-background'
+                    : 'text-foreground/70 hover:bg-foreground hover:text-background'
+                    }`}
                   aria-current={isActive ? 'page' : undefined}
                 >
                   {t.nav[item.key as keyof typeof t.nav]}
@@ -96,19 +94,16 @@ function MobileMenu() {
       >
         <div className="w-6 h-6 flex flex-col justify-center space-y-1.5">
           <span
-            className={`block h-0.5 w-6 bg-foreground transition-all duration-300 ${
-              isOpen ? 'rotate-45 translate-y-2' : ''
-            }`}
+            className={`block h-0.5 w-6 bg-foreground transition-all duration-300 ${isOpen ? 'rotate-45 translate-y-2' : ''
+              }`}
           />
           <span
-            className={`block h-0.5 w-6 bg-foreground transition-all duration-300 ${
-              isOpen ? 'opacity-0' : ''
-            }`}
+            className={`block h-0.5 w-6 bg-foreground transition-all duration-300 ${isOpen ? 'opacity-0' : ''
+              }`}
           />
           <span
-            className={`block h-0.5 w-6 bg-foreground transition-all duration-300 ${
-              isOpen ? '-rotate-45 -translate-y-2' : ''
-            }`}
+            className={`block h-0.5 w-6 bg-foreground transition-all duration-300 ${isOpen ? '-rotate-45 -translate-y-2' : ''
+              }`}
           />
         </div>
       </button>
@@ -123,11 +118,10 @@ function MobileMenu() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className={`block px-4 py-2 rounded-full text-base font-medium tracking-tight transition-all duration-300 ${
-                    isActive
-                      ? 'bg-foreground text-background'
-                      : 'text-foreground/70 hover:bg-foreground hover:text-background'
-                  }`}
+                  className={`block px-4 py-2 rounded-full text-base font-medium tracking-tight transition-all duration-300 ${isActive
+                    ? 'bg-foreground text-background'
+                    : 'text-foreground/70 hover:bg-foreground hover:text-background'
+                    }`}
                   aria-current={isActive ? 'page' : undefined}
                 >
                   {t.nav[item.key as keyof typeof t.nav]}

@@ -6,6 +6,7 @@ import { Language } from '@/lib/translations';
 type LanguageContextType = {
   language: Language;
   setLanguage: (lang: Language) => void;
+  t: (content: any) => string;
 };
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -26,8 +27,19 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     localStorage.setItem('portfolio-language', lang);
   };
 
+
+  const t = (content: any): string => {
+    if (!content) return '';
+    if (typeof content === 'string') return content;
+    // Check if content matches LocalizedText shape
+    if (typeof content === 'object' && 'en' in content && 'th' in content) {
+      return content[language] || content['en'] || '';
+    }
+    return '';
+  };
+
   return (
-    <LanguageContext.Provider value={{ language, setLanguage }}>
+    <LanguageContext.Provider value={{ language, setLanguage, t }}>
       {children}
     </LanguageContext.Provider>
   );

@@ -1,13 +1,18 @@
+export interface LocalizedText {
+  en: string;
+  th: string;
+}
+
 export interface Profile {
-  name: string;
-  title: string;
-  location: string;
-  address?: string;
+  name: LocalizedText;
+  title: LocalizedText;
+  location: LocalizedText;
+  address?: LocalizedText;
   birthday?: string;
   age?: string;
-  summary: string;
+  summary: LocalizedText;
   skills: {
-    [category: string]: string[];
+    [category: string]: LocalizedText[];
   };
   social: {
     github?: string;
@@ -23,16 +28,16 @@ export interface Profile {
 
 export interface Project {
   slug: string;
-  title: string;
-  tagline: string;
+  title: LocalizedText;
+  tagline: LocalizedText;
   year: string;
-  role: string;
+  role: LocalizedText;
   stack: string[];
   coverImage: string;
-  highlights: string[];
-  problem: string;
-  approach: string;
-  results: string;
+  highlights: LocalizedText[];
+  problem: LocalizedText;
+  approach: LocalizedText;
+  results: LocalizedText;
   galleryImages: string[];
   links: {
     [key: string]: string;
@@ -41,10 +46,10 @@ export interface Project {
 
 export interface ProjectListItem {
   slug: string;
-  title: string;
-  tagline: string;
+  title: LocalizedText;
+  tagline: LocalizedText;
   year: string;
-  role: string;
+  role: LocalizedText;
   stack: string[];
   coverImage: string;
 }
