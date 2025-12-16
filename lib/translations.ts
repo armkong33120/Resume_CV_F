@@ -11,6 +11,7 @@ export const translations = {
     home: {
       viewWork: 'ดูผลงาน',
       getInTouch: 'ติดต่อ',
+      documents: 'เอกสารเพิ่มเติม',
       featuredWork: 'ผลงานเด่น',
       featuredDescription: 'คอลเลกชันของโปรเจกต์ที่ครอบคลุมการออกแบบ วิศวกรรม และการพัฒนาผลิตภัณฑ์',
       viewAllProjects: 'ดูผลงานทั้งหมด',
@@ -38,7 +39,7 @@ export const translations = {
     },
     contact: {
       title: 'ติดต่อ',
-      description: 'มีโปรเจกต์ที่น่าสนใจหรือต้องการปรึกษา? ยินดีติดต่อรับฟัง',
+      description: 'ยินดีเข้ารับการคัดเลือกและสามารถเริ่มงานได้ทันทีหลังทราบผลสัมภาษณ์',
       line: 'LINE',
       phone: 'เบอร์โทรศัพท์',
       email: 'อีเมล',
@@ -72,6 +73,7 @@ export const translations = {
     home: {
       viewWork: 'View Work',
       getInTouch: 'Get in Touch',
+      documents: 'Documents',
       featuredWork: 'Featured Work',
       featuredDescription: 'A selection of projects that showcase design thinking and technical execution',
       viewAllProjects: 'View All Projects',
@@ -99,7 +101,7 @@ export const translations = {
     },
     contact: {
       title: 'Contact',
-      description: 'Have a project in mind or just want to chat? I\'d love to hear from you',
+      description: 'Open to opportunities and available to start immediately upon successful interview',
       line: 'LINE',
       phone: 'Phone',
       email: 'Email',
