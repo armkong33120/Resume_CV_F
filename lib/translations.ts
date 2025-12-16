@@ -50,6 +50,10 @@ export const translations = {
     footer: {
       rights: 'สงวนลิขสิทธิ์',
       builtWith: 'สร้างด้วย',
+      techStack: 'Next.js, Tailwind CSS, TypeScript',
+      ide: 'IDE: Google Antigravity and VSCode [Verion Free]',
+      by: 'โดย ธีรโชติ ฮ.',
+      lastUpdated: 'อัปเดตล่าสุด: ธันวาคม 2025',
     },
     notFound: {
       title: '404',
@@ -107,6 +111,10 @@ export const translations = {
     footer: {
       rights: 'All rights reserved',
       builtWith: 'Built with',
+      techStack: 'Next.js, Tailwind CSS, TypeScript',
+      ide: 'IDE: Google Antigravity and VSCode [Verion Free]',
+      by: 'by Theerachot H.',
+      lastUpdated: 'Last updated: December 2025',
     },
     notFound: {
       title: '404',
