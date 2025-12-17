@@ -3,6 +3,7 @@ import Hero from '@/components/Hero';
 import Section from '@/components/Section';
 import FeaturedProjects from '@/components/FeaturedProjects';
 import AboutContent from '@/components/AboutContent';
+import ContactContent from '@/components/ContactContent';
 
 export default async function Home() {
   const [profile, projects] = await Promise.all([
@@ -19,6 +20,9 @@ export default async function Home() {
       <Section id="work" className="bg-background">
         <FeaturedProjects projects={projects} />
       </Section>
+      <div id="contact">
+        <ContactContent profile={profile} />
+      </div>
     </>
   );
 }
