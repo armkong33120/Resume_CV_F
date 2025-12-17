@@ -11,7 +11,7 @@ export const translations = {
     home: {
       viewWork: 'ดูผลงาน',
       getInTouch: 'ติดต่อ',
-      documents: 'เอกสารเพิ่มเติม',
+      documents: 'เอกสารสำหรับ HR',
       featuredWork: 'ผลงานเด่น',
       featuredDescription: 'คอลเลกชันของโปรเจกต์ที่ครอบคลุมการออกแบบ วิศวกรรม และการพัฒนาผลิตภัณฑ์',
       viewAllProjects: 'ดูผลงานทั้งหมด',
@@ -73,7 +73,7 @@ export const translations = {
     home: {
       viewWork: 'View Work',
       getInTouch: 'Get in Touch',
-      documents: 'Documents',
+      documents: 'Documents for HR',
       featuredWork: 'Featured Work',
       featuredDescription: 'A selection of projects that showcase design thinking and technical execution',
       viewAllProjects: 'View All Projects',
