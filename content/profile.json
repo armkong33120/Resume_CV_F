@@ -202,20 +202,44 @@
     ],
     "Tools & Platforms": [
       {
-        "en": "SolarWinds, Sitescope, PagerDuty, Splunk",
-        "th": "SolarWinds, Sitescope, PagerDuty, Splunk"
+        "en": "Ticketing: Jira Service Management, ServiceNow, Summit",
+        "th": "Ticketing: Jira Service Management, ServiceNow, Summit"
       },
       {
-        "en": "CrowdStrike Falcon, Palo Alto PAN-OS",
-        "th": "CrowdStrike Falcon, Palo Alto PAN-OS"
+        "en": "Monitoring ITSM: Omnibus, PagerDuty, SolarWinds",
+        "th": "Monitoring ITSM: Omnibus, PagerDuty, SolarWinds"
       },
       {
-        "en": "Microsoft 365, Google Workspace, Lark",
-        "th": "Microsoft 365, Google Workspace, Lark"
+        "en": "Automation VA: Cymulate",
+        "th": "Automation VA: Cymulate"
       },
       {
-        "en": "Grafana, InfluxDB, Prometheus",
-        "th": "Grafana, InfluxDB, Prometheus"
+        "en": "SIEM: Splunk, Securonix",
+        "th": "SIEM: Splunk, Securonix"
+      },
+      {
+        "en": "Firewalls: Palo Alto, FortiGate, PfSense",
+        "th": "Firewalls: Palo Alto, FortiGate, PfSense"
+      },
+      {
+        "en": "EDR: CrowdStrike Falcon, SentinelOne Console",
+        "th": "EDR: CrowdStrike Falcon, SentinelOne Console"
+      },
+      {
+        "en": "Data Analyst Log: Excel, VBA, Power Query",
+        "th": "Data Analyst Log: Excel, VBA, Power Query"
+      },
+      {
+        "en": "IDE: Swagger, VSCode, Burp Suite",
+        "th": "IDE: Swagger, VSCode, Burp Suite"
+      },
+      {
+        "en": "Vibe Coding: Chat GPT, Gemini, Cursor, Antigravity",
+        "th": "Vibe Coding: Chat GPT, Gemini, Cursor, Antigravity"
+      },
+      {
+        "en": "VM Test: VMware, VirtualBox, UTM, Parallels",
+        "th": "VM Test: VMware, VirtualBox, UTM, Parallels"
       }
     ]
   },
