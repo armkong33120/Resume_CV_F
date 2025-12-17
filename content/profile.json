@@ -50,20 +50,56 @@
         "th": "การจัดการ Event/Incident/Change ตาม ITIL v4"
       },
       {
-        "en": "IT Operations & Asset Management",
-        "th": "การดำเนินงานด้านไอทีและการจัดการสินทรัพย์"
+        "en": "IT Asset Management",
+        "th": "จัดการสินทรัพย์ทาง IT"
       },
       {
-        "en": "Vendor & Cost Management",
-        "th": "การจัดการผู้ขายและต้นทุน"
+        "en": "Project Documentation Management",
+        "th": "จัดการเอกสารโครงการ"
       },
       {
-        "en": "Project Management",
-        "th": "การบริหารจัดการโครงการ"
+        "en": "Project Budget Management",
+        "th": "บริหารงบของโครงการ"
       },
       {
-        "en": "Process Optimization",
-        "th": "การเพิ่มประสิทธิภาพกระบวนการ"
+        "en": "Procurement Process Optimization",
+        "th": "ปรับปรุงกระบวนการอนุมัติจัดชื้อ"
+      },
+      {
+        "en": "IT IPO Readiness Preparation",
+        "th": "ปรับปรุงระบบ IT ให้พร้อมเข้าตลาดหลักทรัพย์"
+      },
+      {
+        "en": "Frontend & Backend Website Design",
+        "th": "ออกแบบหน้าบ้านและหลังบ้านเว็บไซต์"
+      },
+      {
+        "en": "IT Support Team Management",
+        "th": "บริหารจัดการทีม IT Support ที่มี"
+      },
+      {
+        "en": "Positive Feedback Skills",
+        "th": "มีทักษะในการ feedback เชิงบวก"
+      },
+      {
+        "en": "IT KPI Development & Improvement",
+        "th": "สร้างและปรับปรุง KPI ของแผนก IT"
+      },
+      {
+        "en": "Cybersecurity System Improvement",
+        "th": "ปรับปรุงระบบรักษาความปลอดภัยไซเบอร์บริษัท"
+      },
+      {
+        "en": "IT Executive Reporting",
+        "th": "สร้าง Report ภาพรวมของ แผนก IT แก่ ผู้บริหาร"
+      },
+      {
+        "en": "Basic Programming & AI-Assisted Coding",
+        "th": "เขียนโปรแกรมเบื้องต้นได้และใช้ AI อ่าน Code และ แก้ไข Code ได้เบื้องต้น"
+      },
+      {
+        "en": "Emerging Technology Research",
+        "th": "มองหาเทคโนโลยีใหม่ๆที่ส่งเสริมธุรกิจของบริษัทอยู่เสมอ"
       }
     ],
     "Cybersecurity": [
