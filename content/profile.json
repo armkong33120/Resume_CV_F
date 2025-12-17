@@ -241,6 +241,48 @@
         "en": "VM Test: VMware, VirtualBox, UTM, Parallels",
         "th": "VM Test: VMware, VirtualBox, UTM, Parallels"
       }
+    ],
+    "Training & Certifications": [
+      {
+        "en": "CCNA for students",
+        "th": "CCNA for students"
+      },
+      {
+        "en": "CompTIA Security+ (SY0-501) Training",
+        "th": "CompTIA Security+ (SY0-501) Training"
+      },
+      {
+        "en": "Palo Alto PCNSE Training",
+        "th": "Palo Alto PCNSE Training"
+      },
+      {
+        "en": "CrowdStrike Falcon Administrator",
+        "th": "CrowdStrike Falcon Administrator"
+      },
+      {
+        "en": "Cymulate Partner Technical Program",
+        "th": "Cymulate Partner Technical Program"
+      },
+      {
+        "en": "SentinelOne Ranger Training",
+        "th": "SentinelOne Ranger Training"
+      },
+      {
+        "en": "Fortinet NSE1 Training",
+        "th": "Fortinet NSE1 Training"
+      },
+      {
+        "en": "Splunk, Securonix ITSM Tools Monitor",
+        "th": "Splunk, Securonix ITSM Tools Monitor"
+      },
+      {
+        "en": "ITIL Foundation Training",
+        "th": "ITIL Foundation Training"
+      },
+      {
+        "en": "Leading with 'Empathy Masterclass' – Stanford GSB by [CEO SCBX]",
+        "th": "Leading with 'Empathy Masterclass' – Stanford GSB by [CEO SCBX]"
+      }
     ]
   },
   "social": {
