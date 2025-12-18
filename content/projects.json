@@ -1,5 +1,56 @@
 [
   {
+    "slug": "automation-cyber-security",
+    "title": {
+      "en": "Automation Cyber Security",
+      "th": "ระบบอัตโนมัติความปลอดภัยทางไซเบอร์"
+    },
+    "tagline": {
+      "en": "SOAR/EDR migration & VA Automation Workflows",
+      "th": "การย้ายระบบ SOAR/EDR และระบบอัตโนมัติ VA"
+    },
+    "year": "2024",
+    "role": {
+      "en": "Cybersecurity Specialist",
+      "th": "ผู้เชี่ยวชาญด้านความปลอดภัยทางไซเบอร์"
+    },
+    "stack": [
+      "SOAR",
+      "EDR",
+      "SIEM",
+      "VA Automation",
+      "Python",
+      "API Integration"
+    ],
+    "coverImage": "/images/projects/automation-cyber-security-cover.jpg",
+    "highlights": [
+      {
+        "en": "Soar and EDR migration Tenant A → Tenant B Automation Workflow",
+        "th": "Automation Workflow สำหรับการย้ายระบบ Soar และ EDR จาก Tenant A ไปยัง Tenant B"
+      },
+      {
+        "en": "VA Automation → SIEM Data → Rules EDR → Test Alert",
+        "th": "VA Automation → ข้อมูล SIEM → กฎ EDR → ทดสอบการแจ้งเตือน"
+      }
+    ],
+    "problem": {
+      "en": "Manual migration of security tenants and manual vulnerability assessment processes were time-consuming and prone to human error.",
+      "th": "การย้าย Tenant ระบบความปลอดภัยและการประเมินช่องโหว่แบบ Manual ใช้เวลานานและเสี่ยงต่อความผิดพลาด"
+    },
+    "approach": {
+      "en": "Implemented automated workflows for migrating SOAR and EDR configurations between tenants. Developed VA Automation integrated with SIEM data to streamline EDR rule creation and alert testing.",
+      "th": "พัฒนาระบบ Workflow อัตโนมัติสำหรับการย้ายการตั้งค่า SOAR และ EDR ระหว่าง Tenant และพัฒนา VA Automation ที่เชื่อมต่อกับข้อมูล SIEM เพื่อช่วยสร้างกฎ EDR และทดสอบ Alert"
+    },
+    "results": {
+      "en": "Streamlined migration process reducing downtime and errors. Automated vulnerability assessments improved response times and rule accuracy.",
+      "th": "กระบวนการย้ายระบบรวดเร็วขึ้น ลดเวลาหยุดทำงานและความผิดพลาด ระบบประเมินช่องโหว่อัตโนมัติช่วยให้การตอบสนองเร็วขึ้นและความแม่นยำของกฎดีขึ้น"
+    },
+    "galleryImages": [],
+    "links": {
+      "caseStudy": "#"
+    }
+  },
+  {
     "slug": "lark-platform-migration",
     "title": {
       "en": "Multi-platform Consolidation → Lark Migration",
