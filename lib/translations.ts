@@ -5,8 +5,11 @@ export const translations = {
     nav: {
       home: 'หน้าแรก',
       work: 'ผลงาน',
+
       about: 'เกี่ยวกับ',
+      experience: 'ประวัติการทำงาน',
       contact: 'ติดต่อ',
+
     },
     home: {
       viewWork: 'ดูผลงาน',
@@ -67,8 +70,11 @@ export const translations = {
     nav: {
       home: 'Home',
       work: 'Work',
+
       about: 'About',
+      experience: 'Experience',
       contact: 'Contact',
+
     },
     home: {
       viewWork: 'View Work',

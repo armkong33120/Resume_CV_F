@@ -9,8 +9,11 @@ import LanguageSwitcher from './LanguageSwitcher';
 
 const navItems = [
   { href: '/', key: 'home' },
+
   { href: '/#work', key: 'work' },
+  { href: '/experience', key: 'experience' },
   { href: '/#about', key: 'about' },
+
   { href: '/contact', key: 'contact' },
 ];
 
@@ -32,8 +35,8 @@ export default function Nav() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 safe-top ${isScrolled || pathname !== '/'
-          ? 'bg-background/80 backdrop-blur-md border-b border-border shadow-sm'
-          : 'bg-transparent'
+        ? 'bg-background/80 backdrop-blur-md border-b border-border shadow-sm'
+        : 'bg-transparent'
         }`}
       style={{
         paddingTop: 'var(--safe-area-inset-top)',

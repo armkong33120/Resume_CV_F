@@ -1,0 +1,338 @@
+[
+    {
+        "id": 1,
+        "company": {
+            "th": "กองสลากพลัส",
+            "en": "Kong Salak Plus"
+        },
+        "role": {
+            "th": "IT Manager",
+            "en": "IT Manager"
+        },
+        "period": {
+            "th": "สิงหาคม 2568 - ตุลาคม 2568",
+            "en": "August 2025 - October 2025"
+        },
+        "salary": {
+            "th": "50,000 บาท",
+            "en": "50,000 THB"
+        },
+        "location": {
+            "th": "150 ซอยสุขุมวิท 55 (ทองหล่อ) แขวงคลองตันเหนือ เขตวัฒนา กรุงเทพฯ",
+            "en": "150 Soi Sukhumvit 55 (Thong Lo), Khlong Tan Nuea, Watthana, Bangkok"
+        },
+        "details": {
+            "th": [
+                "Incident Handling - ตรวจสอบ ticket ที่เข้ามา, assign ให้ทีม, follow SLA",
+                "Service Request Fulfillment - เซ็นอนุมัติการสร้าง account ใหม่, สิทธิ์เข้าถึง, อุปกรณ์ใหม่",
+                "Monitoring & Alerts - ติดตาม network, VPN, endpoint, cloud status, แก้ปัญหาเบื้องต้น",
+                "Endpoint & MDM Management - Patch, Antivirus/EDR, Encryption compliance",
+                "Identity & Access Control - ตรวจสอบ/อนุมัติสิทธิ์ใช้งาน SSO, MFA, Git/Jira/Slack",
+                "Asset & License Management - เช็คอุปกรณ์, license software ที่ใกล้หมดอายุ",
+                "Backup & Restore - ตรวจสอบว่า backup สำเร็จ, ทดสอบ restore รายเดือน",
+                "Change Management - approve/track การเปลี่ยนแปลงระบบภายใน",
+                "Security & Compliance Check - Patch compliance %, Access review, PDPA/ISO readiness",
+                "Vendor Management - ติดต่อ support, ติดตามสัญญา, ต่ออายุ license/SaaS",
+                "Automation & Scripting - เขียนสคริปต์ลดงาน เช่น on/off-boarding, report อัตโนมัติ",
+                "Documentation & Knowledge Base - update SOP, runbook, KB ให้ทีมใช้ได้",
+                "Team Coaching & 1:1 - ให้ feedback ทีม IT Support, แบ่งงาน/โค้ช L1-L2",
+                "Monthly Report & KPI Review - SLA, MTTR, patch compliance, ticket trend",
+                "Business Continuity & DR Drill - วางแผนและทดสอบ BCP/DR เล็ก ๆ รายไตรมาส"
+            ],
+            "en": [
+                "Incident Handling - Monitor incoming tickets, assign to team, follow SLA",
+                "Service Request Fulfillment - Approve new accounts, access rights, new equipment",
+                "Monitoring & Alerts - Monitor network, VPN, endpoint, cloud status, basic troubleshooting",
+                "Endpoint & MDM Management - Patch, Antivirus/EDR, Encryption compliance",
+                "Identity & Access Control - Verify/Approve SSO, MFA, Git/Jira/Slack access",
+                "Asset & License Management - Check equipment and expiring software licenses",
+                "Backup & Restore - Verify backup success, perform monthly restore tests",
+                "Change Management - Approve and track internal system changes",
+                "Security & Compliance Check - Patch compliance %, Access review, PDPA/ISO readiness",
+                "Vendor Management - Contact support, track contracts, renew licenses/SaaS",
+                "Automation & Scripting - Scripts for tasks like on/off-boarding, automated reporting",
+                "Documentation & Knowledge Base - Update SOP, runbook, KB for team usage",
+                "Team Coaching & 1:1 - Provide feedback to IT Support team, task allocation, L1-L2 coaching",
+                "Monthly Report & KPI Review - SLA, MTTR, patch compliance, ticket trends",
+                "Business Continuity & DR Drill - Plan and test quarterly BCP/DR drills"
+            ]
+        },
+        "reasonForLeaving": {
+            "th": "บริษัทมีคดีความเกี่ยวกับการเงินทำให้รู้สึกขาดความเชื่อมั่นและเกิดความไม่สบายใจ",
+            "en": "The company faced financial legal cases causing a lack of confidence and discomfort."
+        }
+    },
+    {
+        "id": 2,
+        "company": {
+            "th": "ธนาคารกรุงศรีอยุธยา จำกัด (มหาชน) สำนักงานใหญ่",
+            "en": "Bank of Ayudhya PCL (Head Office)"
+        },
+        "role": {
+            "th": "IT Service Management",
+            "en": "IT Service Management"
+        },
+        "period": {
+            "th": "กรกฎาคม 2566 - กรกฎาคม 2568",
+            "en": "July 2023 - July 2025"
+        },
+        "salary": {
+            "th": "35,000 บาท",
+            "en": "35,000 THB"
+        },
+        "location": {
+            "th": "1222 ถนนพระรามที่ 3 แขวงบางโพงพาง เขตยานนาวา กรุงเทพฯ",
+            "en": "1222 Rama III Road, Bang Phong Phang, Yan Nawa, Bangkok"
+        },
+        "details": {
+            "th": [
+                "รับผิดชอบในการจัดการกระบวนการ Event Management ตามมาตรฐาน ITIL v3",
+                "ประเมินและเลือกเทคโนโลยีใหม่ๆ ที่เกี่ยวข้องกับการจัดการเหตุการณ์ที่เกี่ยวกับบริการของธนาคาร",
+                "จัดการและกำกับดูแลการประชุม Emergency, Weekly, และ Monthly",
+                "การประเมินประสิทธิภาพของกระบวนการ Event Management โดยการตั้งมาตรการและเป้าหมายในการปรับปรุงกระบวนการให้มีประสิทธิภาพและประสิทธิผลยิ่งขึ้น",
+                "ตรวจสอบและจัดการสถานการณ์ที่เกิดข้อยกเว้นหรือเบี่ยงเบนจากมาตรฐาน โดยการกำหนดและติดตามกระบวนการที่เกี่ยวข้องกับบริการของธนาคาร",
+                "ติดต่อสื่อสารและแก้ไขปัญหาที่เกี่ยวข้องกับการไม่ปฏิบัติตามมาตรฐานและขั้นตอนที่กำหนดภายในกระบวนการกับบริการของธนาคาร",
+                "จัดการการสนับสนุนจากทรัพยากรภายในและการจัดสรรทรัพยากรให้เหมาะสมตามความต้องการ",
+                "ประสานงานกับผู้จัดการกระบวนการอื่นๆ เพื่อให้กระบวนการทำงานร่วมกันอย่างราบรื่น",
+                "ดูแลกระบวนการทางด้านการสื่อสาร เช่น การแจ้งข้อมูลการเปลี่ยนแปลงนโยบายใหม่ๆ และการสื่อสารกับทีมงานที่เกี่ยวข้องกับบริการของธนาคาร",
+                "สร้างและแจกจ่ายรายงานกระบวนการ (Process Work Flow) เพื่อให้ผู้บริหารและทีมงานได้รับข้อมูลที่เกี่ยวข้องกับบริการของธนาคาร",
+                "ดำเนินการตามเส้นทางการ Escalation ที่กำหนด เมื่อเกิดเหตุการณ์ที่ไม่สามารถแก้ไขได้ในระดับพื้นฐาน",
+                "ประเมินผลการดำเนินการของกระบวนการ และช่วยในการตรวจสอบการปฏิบัติตามขั้นตอนที่มีการกำหนดไว้กับบริการของธนาคาร",
+                "ให้การสนับสนุนทีมตรวจสอบ (Audit) ทั้งภายนอกและภายใน"
+            ],
+            "en": [
+                "Responsible for managing Event Management processes according to ITIL v3 standards",
+                "Evaluate and select new technologies related to event management for bank services",
+                "Manage and oversee Emergency, Weekly, and Monthly meetings",
+                "Evaluate Event Management process performance by setting measures and goals for efficiency and effectiveness improvement",
+                "Monitor and manage exceptions or deviations by defining and tracking processes related to bank services",
+                "Communicate and resolve issues related to non-compliance with standards and defined processes",
+                "Manage internal resource support and resource allocation as needed",
+                "Coordinate with other process managers for seamless process integration",
+                "Oversee communication processes, such as notifying new policy changes and communicating with relevant teams",
+                "Create and distribute Process Work Flow reports to management and teams",
+                "Execute defined Escalation paths for incidents that cannot be resolved at a basic level",
+                "Evaluate process performance and assist in verifying compliance with defined procedures",
+                "Support both external and internal Audit teams"
+            ]
+        },
+        "reasonForLeaving": {
+            "th": "โดน offer จาก กองสลากพลัส ตำแหน่ง: IT Manager",
+            "en": "Received offer from Kong Salak Plus for IT Manager position"
+        }
+    },
+    {
+        "id": 3,
+        "company": {
+            "th": "I-SECURE CO., LTD",
+            "en": "I-SECURE CO., LTD"
+        },
+        "role": {
+            "th": "Technical Support Engineer (Endpoint + Network security)",
+            "en": "Technical Support Engineer (Endpoint + Network security)"
+        },
+        "period": {
+            "th": "กันยายน 2565 - กรกฎาคม 2566",
+            "en": "September 2022 - July 2023"
+        },
+        "salary": {
+            "th": "24,000 บาท",
+            "en": "24,000 THB"
+        },
+        "location": {
+            "th": "55B Tower ชั้น 6 ซอยประดิพัทธ์ 17 พญาไท กรุงเทพฯ",
+            "en": "55B Tower, 6th Floor, Soi Pradiphat 17, Phaya Thai, Bangkok"
+        },
+        "details": {
+            "th": [
+                "Support engineer Endpoint (Crowdstrike): Install and uninstall of Endpoint as VM, AD, MAC OS, Linux, Windows etc.",
+                "Take a sample of Attacks, Threats and Vulnerabilities.",
+                "Operations and Incident Response (shift).",
+                "Continue the license to customers and provide initial consultation.",
+                "Create workflow manuals and record work history through Jira software.",
+                "Support engineer (Palo Alto and Fortigate): Customize basic policy (Ans Zone, Security Policy, Nat, interface, routing, VPN).",
+                "Config as GlobalProtect and FortiClient.",
+                "Remote and record monthly usage statistics.",
+                "(PM): Generate a monthly firewall VPN usage report via Zabbix.",
+                "License to customers and provide initial consultation.",
+                "Create workflow manuals and record work history through Jira software."
+            ],
+            "en": [
+                "Support engineer Endpoint (Crowdstrike): Install and uninstall of Endpoint as VM, AD, MAC OS, Linux, Windows etc.",
+                "Take a sample of Attacks, Threats and Vulnerabilities.",
+                "Operations and Incident Response (shift).",
+                "Continue the license to customers and provide initial consultation.",
+                "Create workflow manuals and record work history through Jira software.",
+                "Support engineer (Palo Alto and Fortigate): Customize basic policy (Ans Zone, Security Policy, Nat, interface, routing, VPN).",
+                "Config as GlobalProtect and FortiClient.",
+                "Remote and record monthly usage statistics.",
+                "(PM): Generate a monthly firewall VPN usage report via Zabbix.",
+                "License to customers and provide initial consultation.",
+                "Create workflow manuals and record work history through Jira software."
+            ]
+        },
+        "reasonForLeaving": {
+            "th": "โดน offer จาก ธนาคารกรุงศรีอยุธยา จำกัด (มหาชน) สำนักงานใหญ่ ตำแหน่ง: IT Service Management",
+            "en": "Received offer from Bank of Ayudhya PCL (Head Office) for IT Service Management position"
+        }
+    },
+    {
+        "id": 4,
+        "company": {
+            "th": "โรงพยาบาลกันทรลักษ์ (จังหวัดศรีสะเกษ)",
+            "en": "Kantharalak Hospital (Si Sa Ket)"
+        },
+        "role": {
+            "th": "นักวิชาการคอมพิวเตอร์",
+            "en": "Computer Technical Officer"
+        },
+        "period": {
+            "th": "สิงหาคม 2564 - สิงหาคม 2565",
+            "en": "August 2021 - August 2022"
+        },
+        "salary": {
+            "th": "12,000 บาท",
+            "en": "12,000 THB"
+        },
+        "location": {
+            "th": "446 หมู่ที่ 5 ถนนดำรงค์สถิต ตำบลน้ำอ้อม อำเภอกันทรลักษ์",
+            "en": "446 Moo 5, Damrong Sathit Rd, Nam Om, Kantharalak"
+        },
+        "details": {
+            "th": [
+                "พัฒนาระบบเก็บข้อมูลงานทะเบียนไอที ระบบแจ้งซ่อมคอมพิวเตอร์และงานอาคาร",
+                "ดูแลอุปกรณ์คอมพิวเตอร์และอุปกรณ์ต่อพ่วงทั้งหมดของโรงพยาบาล รวมถึงเครื่องมืออิเล็กทรอนิกส์ทางการแพทย์",
+                "ดูแลระบบ IP PBX และเครื่องสแกนนิ้ว ให้สามารถใช้งานได้ปกติ",
+                "ปรับปรุงเว็บไซต์และระบบฐานข้อมูล เพื่อให้สอดคล้องกับ PDPA และ ISO/IEC 27001",
+                "VMware ESXi 6.1 ปรับแต่งเพิ่มความจุ RAID 5 เพื่อรองรับกับระบบฐานข้อมูลที่เพิ่มมากขึ้น (Proxy หมอพร้อม)",
+                "ปรับแก้ไข Config การสำรองข้อมูลแบบใหม่ (Hybrid on cloud and on premise)",
+                "Fortigate Firewall 200E - ทำ Authentication เก็บประวัติการใช้งาน internet ของ User โดยใช้ LDAP",
+                "เพิ่ม ลบ แก้ไข ID USER NAME PASSWORD ของ พนง. สำหรับใช้อินเตอร์เน็ต",
+                "ส่งสถิติการใช้งาน LOG ของแต่ละ user ถึง Email ผู้บังคับบัญชา",
+                "สร้าง Inter Vlan และเพิ่ม RULES สำหรับแต่ละ Vlan Group User ฝ่ายต่างๆ ให้สามารถเข้าถึงไฟล์ Map a driver ได้อย่างเหมาะสม",
+                "ทำ VPN แบบ L2TP และสำรองแบบ PPTP สองช่องทาง สำหรับ work from home",
+                "บล็อคเว็บไซต์ที่เป็นอันตราย เว็บไซต์ต้องห้ามใช้ ตามระเบียบขององค์กร",
+                "ตรวจสอบ ตักเตือน ระงับการใช้งาน สำหรับผู้ที่ฝ่าฝืนกฎการใช้งานอินเตอร์เน็ตองค์กร",
+                "ทำ SD Wan แบบ 2 WAN (TOT & 3BB) เพิ่มเส้นทางสำรองป้องกันอินเตอร์เน็ตขัดข้อง",
+                "ปรับปรุงการเชื่อมต่อสายสัญญาณภายในของอุปกรณ์ network ใหม่ เพื่อลดความเสี่ยงที่ระบบจะใช้งานอินเตอร์เน็ตไม่ได้",
+                "Server PC: Map network driver ไฟล์ของฝ่ายต่างๆ",
+                "ไฟล์ระบบแจ้งซ่อมคอมพิวเตอร์และอินเตอร์เน็ต (XAMPP + phpMyAdmin + ไฟล์ Database)",
+                "ไฟล์ระบบแจ้งซ่อมอุปกรณ์สำนักงานและอาคาร (XAMPP + phpMyAdmin + ไฟล์ Database)",
+                "Auto backup ในช่วงเวลาที่ไม่มีผู้ใช้งาน พร้อมแจ้งผลผ่าน Email ถึง admin เมื่อเสร็จ",
+                "งานเกี่ยวกับเอกสาร: ทำเอกสารบัญชีเบิก หรือเสนอซื้ออุปกรณ์ใหม่ อะไหล่สำหรับซ่อมบำรุงและอัพเกรดต่างๆ",
+                "ทำเอกสารบัญชีจำหน่ายอุปกรณ์ที่หมดอายุการใช้งาน หรือคัดเลือกอุปกรณ์บางส่วนไว้ทำเป็นอะไหล่",
+                "ปฏิบัติงานอื่นๆ ที่ผู้บังคับบัญชามอบหมาย"
+            ],
+            "en": [
+                "Developed IT registration, computer repair, and building maintenance data systems",
+                "Maintained all hospital computers, peripherals, and medical electronic instruments",
+                "Maintained IP PBX and fingerprint scanners",
+                "Updated website and database systems to comply with PDPA and ISO/IEC 27001",
+                "VMware ESXi 6.1: Configured RAID 5 capacity expansion to support growing databases (Mor Prom Proxy)",
+                "Reconfigured new backup system (Hybrid on cloud and on premise)",
+                "Fortigate Firewall 200E: Implemented LDAP Authentication to log user internet usage",
+                "Managed user IDs, usernames, and passwords for internet access",
+                "Sent individual user LOG usage statistics to supervisors via Email",
+                "Created Inter VLAN and added RULES for Vlan Groups for appropriate file/driver access",
+                "Implemented L2TP VPN with PPTP backup for Work From Home",
+                "Blocked dangerous and prohibited websites according to organizational regulations",
+                "Monitored, warned, and suspended internet access for violators",
+                "Implemented SD-WAN with 2 WANs (TOT & 3BB) for internet redundancy",
+                "Improved internal network cabling to reduce connection risks",
+                "Server PC: Mapped network drives for various departments",
+                "Maintained Computer/Internet Repair System (XAMPP + phpMyAdmin + Database)",
+                "Maintained Office/Building Equipment Repair System (XAMPP + phpMyAdmin + Database)",
+                "Configured Auto backup during off-hours with Email notification to admin",
+                "Documentation: Prepared requisition/purchase documents for new equipment and spares",
+                "Documentation: Prepared disposal documents for expired equipment and spare parts selection",
+                "Performed other duties as assigned by supervisors"
+            ]
+        },
+        "reasonForLeaving": {
+            "th": "โดน offer จาก I-SECURE CO., LTD ตำแหน่ง: Technical Support Engineer (Endpoint + Network security)",
+            "en": "Received offer from I-SECURE CO., LTD for Technical Support Engineer (Endpoint + Network security) position"
+        }
+    },
+    {
+        "id": 5,
+        "company": {
+            "th": "สำนักงานปลัดกระทรวงพลังงาน",
+            "en": "Office of the Permanent Secretary, Ministry of Energy"
+        },
+        "role": {
+            "th": "เจ้าหน้าที่เทคนิคคอมพิวเตอร์",
+            "en": "Computer Technical Officer"
+        },
+        "period": {
+            "th": "กันยายน 2563 - กรกฎาคม 2564",
+            "en": "September 2020 - July 2021"
+        },
+        "salary": {
+            "th": "19,000 บาท",
+            "en": "19,000 THB"
+        },
+        "location": {
+            "th": "ศูนย์เทคโนโลยีสารสนเทศ ชั้น 23 ศูนย์เอนเนอร์ยี่คอมเพล็กซ์ ถ.วิภาวดีรังสิต จตุจักร กรุงเทพฯ",
+            "en": "ICT Center, 23rd Floor, Energy Complex, Vibhavadi Rangsit Rd, Chatuchak, Bangkok"
+        },
+        "details": {
+            "th": [
+                "ดูแลคอมพิวเตอร์และอุปกรณ์ต่อพ่วงให้อยู่ในสภาพพร้อมใช้งาน 200 ชุด",
+                "ดูแลโปรแกรมสำนักงานพื้นฐานให้อยู่ในสภาพพร้อมใช้งาน",
+                "ทำเอกสารบันทึกการทำงานทุกครั้งที่มีการแจ้งปัญหาเข้ามาจากผู้ใช้",
+                "วางแผนและทำการ PM ในทุกๆ 4 เดือน ทำเอกสาร (เล่ม report พร้อมภาพประกอบ) ส่งเสนอต่อประธานคณะกรรมการจ้าง",
+                "สรุปปัญหารายเดือนการเบิกอุปกรณ์สำรองอะไหล่การซ่อม (เล่ม report) ส่งเสนอต่อประธานคณะกรรมการจ้าง"
+            ],
+            "en": [
+                "Maintained 200 operational computers and peripherals",
+                "Maintained basic office software functionality",
+                "Documented work logs for every user incident report",
+                "Planned and performed Preventive Maintenance (PM) every 4 months, submitting illustrated reports to the hiring committee",
+                "Summarized monthly issues and spare parts requisition reports for the hiring committee"
+            ]
+        },
+        "reasonForLeaving": {
+            "th": "รับตำแหน่งในหน่วยงานราชการ โรงพยาบาลกันทรลักษ์ (จังหวัดศรีสะเกษ) ตำแหน่ง: นักวิชาการคอมพิวเตอร์",
+            "en": "Accepted government position at Kantharalak Hospital (Si Sa Ket) as Computer Technical Officer"
+        }
+    },
+    {
+        "id": 6,
+        "company": {
+            "th": "K&O Systems and Consulting Co., Ltd",
+            "en": "K&O Systems and Consulting Co., Ltd"
+        },
+        "role": {
+            "th": "Technical Support",
+            "en": "Technical Support"
+        },
+        "period": {
+            "th": "กรกฎาคม 2560 - กรกฎาคม 2561",
+            "en": "July 2017 - July 2018"
+        },
+        "salary": {
+            "th": "13,000 บาท",
+            "en": "13,000 THB"
+        },
+        "location": {
+            "th": "Q-Doc Studio 15-17 ซ.กรุงธนบุรี 4 แขวงบางลำภูล่าง เขตคลองสาน กรุงเทพฯ",
+            "en": "Q-Doc Studio 15-17, Soi Krung Thon Buri 4, Bang Lamphu Lang, Khlong San, Bangkok"
+        },
+        "details": {
+            "th": [
+                "คอมพิวเตอร์และอุปกรณ์ต่อพ่วง - อัพเกรด ปรับปรุง แก้ไข",
+                "โปรแกรมสำนักงาน",
+                "ดูแลเครื่องแม่ข่ายและระบบสำรองข้อมูลบางส่วน"
+            ],
+            "en": [
+                "Computer and Peripherals - Upgrade, Improve, Fix",
+                "Office Programs",
+                "Maintained servers and partial backup systems"
+            ]
+        },
+        "reasonForLeaving": {
+            "th": "ลาออกไปศึกษาต่อในมหาวิทยาลัยอุบลราชธานี สาขา เทคโนโลยีสารสนเทศ",
+            "en": "Resigned to further studies in Information Technology at Ubon Ratchathani University"
+        }
+    }
+]
