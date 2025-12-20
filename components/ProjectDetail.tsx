@@ -6,6 +6,7 @@ import { Project } from '@/lib/types';
 import Section from '@/components/Section';
 import { useLanguage } from '@/components/LanguageContext';
 import { getTranslation } from '@/lib/translations';
+import MigrationFlow from '@/components/MigrationFlow';
 
 interface ProjectDetailProps {
     project: Project;
@@ -79,6 +80,8 @@ export default function ProjectDetail({ project }: ProjectDetailProps) {
                             ))}
                         </div>
                     )}
+
+                    {project.slug === 'automation-cyber-security' && <MigrationFlow />}
                 </div>
 
                 {/* Case Study Sections */}
