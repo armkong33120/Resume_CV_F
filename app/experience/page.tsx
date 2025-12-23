@@ -118,7 +118,9 @@ export default function ExperiencePage() {
                                             {language === 'th' ? 'สาเหตุที่ออก' : 'Reason for leaving'}
                                         </h4>
                                         <p className="text-foreground/70 text-sm italic">
-                                            "{getContent(job.reasonForLeaving)}"
+
+                                            &quot;{getContent(job.reasonForLeaving)}&quot;
+
                                         </p>
                                     </div>
                                 )}
