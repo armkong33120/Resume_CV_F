@@ -1,10 +1,11 @@
 # Portfolio Website
 
-A production-ready portfolio website template with an Apple-like aesthetic—clean, spacious, and premium. Built with Next.js, TypeScript, and Tailwind CSS.
+This is a portfolio website built with Next.js, Tailwind CSS, and TypeScript.
 
-## Features
+## Getting Started
 
-- **Apple-like Design**: Clean layouts, generous whitespace, refined typography, subtle animations
+1. Install dependencies:
+ign**: Clean layouts, generous whitespace, refined typography, subtle animations
 - **Full-Stack Architecture**: Next.js App Router with API routes for content management
 - **Content-as-Data**: All content stored in local JSON files (no database required)
 - **Type-Safe**: Full TypeScript support with runtime validation
