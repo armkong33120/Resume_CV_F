@@ -13,7 +13,7 @@ const LarkImpact = () => {
 
     if (!copy) {
         console.error("LarkImpact: Missing translation for t.lark.impact");
-        return <div className="p-4 border border-red-500 text-red-500">Error: Missing Translation Data for Lark Impact</div>;
+        return null;
     }
 
     // --- Data for Time Pie Charts ---
