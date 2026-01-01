@@ -21,21 +21,66 @@ const DecisionDiamond = ({ label, color = "bg-blue-700" }: { label: string, colo
     </div>
 );
 
-const ArrowDown = ({ height = "h-8" }: { height?: string }) => (
-    <div className={`w-0.5 ${height} bg-slate-400 mx-auto relative z-0`}>
-        <div className="absolute -bottom-1 -left-[3.5px] w-0 h-0 border-l-[4px] border-l-transparent border-r-[4px] border-r-transparent border-t-[6px] border-t-slate-400"></div>
+const SvgDefs = () => (
+    <svg width="0" height="0" className="absolute">
+        <defs>
+            <marker
+                id="flow-arrowhead"
+                markerWidth="10"
+                markerHeight="7"
+                refX="9"
+                refY="3.5"
+                orient="auto"
+            >
+                <polygon points="0 0, 10 3.5, 0 7" fill="#94a3b8" />
+            </marker>
+        </defs>
+    </svg>
+);
+
+const ArrowVertical = ({ height = 32 }: { height?: number }) => (
+    <div className="flex justify-center w-full" style={{ height: `${height}px` }}>
+        <svg width="20" height={height} className="overflow-visible">
+            <line
+                x1="10"
+                y1="0"
+                x2="10"
+                y2={height - 5}
+                stroke="#94a3b8"
+                strokeWidth="2"
+                markerEnd="url(#flow-arrowhead)"
+            />
+        </svg>
     </div>
 );
 
-const ArrowLeft = ({ width = "w-12" }: { width?: string }) => (
-    <div className={`h-0.5 ${width} bg-slate-400 relative z-0`}>
-        <div className="absolute -left-1 -top-[3.5px] w-0 h-0 border-r-[6px] border-r-slate-400 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent"></div>
+
+
+const ArrowLeft = ({ width = 48 }: { width?: number }) => (
+    <div className="flex items-center justify-center" style={{ width: `${width}px` }}>
+        <svg width={width} height="20" className="overflow-visible">
+            <line
+                x1={width}
+                y1="10"
+                x2="5"
+                y2="10"
+                stroke="#94a3b8"
+                strokeWidth="2"
+                markerEnd="url(#flow-arrowhead)"
+            />
+        </svg>
     </div>
 );
+
+const ArrowDown = ({ height = "h-8" }: { height?: string }) => {
+    const numHeight = height === "h-4" ? 16 : height === "h-6" ? 24 : 32;
+    return <ArrowVertical height={numHeight} />;
+};
 
 export default function MigrationFlow() {
     return (
         <div className="w-full bg-slate-50 p-8 rounded-xl overflow-x-auto min-w-[1024px] font-sans text-slate-800">
+            <SvgDefs />
             <div className="flex flex-col items-center space-y-0 text-sm w-full max-w-4xl mx-auto">
 
                 {/* Start */}
@@ -75,84 +120,97 @@ export default function MigrationFlow() {
                 <ProcessBox label="Detect OS Platform" />
 
                 {/* -- OS BRANCHING -- */}
-                {/* Increased gap and width to prevent overlap */}
-                <div className="relative w-full mx-auto mt-6 mb-8">
-                    {/* Branching Lines */}
-                    <div className="absolute top-0 left-[12.5%] right-[12.5%] h-0.5 bg-slate-400 z-0"></div>
-                    <div className="absolute -top-6 left-1/2 w-0.5 h-6 bg-slate-400 -translate-x-1/2 z-0"></div>
+                <div className="relative w-full mx-auto mt-8 mb-4">
+                    {/* SVG Connector layer for Split */}
+                    <div className="absolute inset-0 pointer-events-none" style={{ top: '-24px', height: '100px' }}>
+                        <svg width="100%" height="100%" className="overflow-visible">
+                            {/* Stem from top */}
+                            <line x1="50%" y1="0" x2="50%" y2="24" stroke="#94a3b8" strokeWidth="2" />
+                            {/* Horizontal distribution */}
+                            <line x1="12.5%" y1="24" x2="87.5%" y2="24" stroke="#94a3b8" strokeWidth="2" />
+                            {/* Drops to columns */}
+                            <line x1="12.5%" y1="24" x2="12.5%" y2="48" stroke="#94a3b8" strokeWidth="2" markerEnd="url(#flow-arrowhead)" />
+                            <line x1="37.5%" y1="24" x2="37.5%" y2="48" stroke="#94a3b8" strokeWidth="2" markerEnd="url(#flow-arrowhead)" />
+                            <line x1="62.5%" y1="24" x2="62.5%" y2="48" stroke="#94a3b8" strokeWidth="2" markerEnd="url(#flow-arrowhead)" />
+                            <line x1="87.5%" y1="24" x2="87.5%" y2="48" stroke="#94a3b8" strokeWidth="2" markerEnd="url(#flow-arrowhead)" />
+                        </svg>
+                    </div>
 
-                    <div className="grid grid-cols-4 gap-4">
+                    <div className="grid grid-cols-4 gap-4 relative z-10 pt-8">
                         {/* Windows */}
-                        <div className="flex flex-col items-center pt-6 relative px-2">
-                            <div className="absolute top-0 left-1/2 -translate-x-1/2 z-0">
-                                <ArrowDown height="h-6" />
-                            </div>
-                            <div className="bg-yellow-400 text-yellow-900 text-xs p-3 rounded-lg text-center font-bold w-full shadow-md mb-3 relative z-20">
+                        <div className="flex flex-col items-center">
+                            <div className="bg-yellow-400 text-yellow-900 text-xs p-3 rounded-lg text-center font-bold w-full shadow-md mb-3 relative min-h-[3rem] flex items-center justify-center">
                                 OS = Windows?
                                 <div className="absolute -right-3 top-1/2 -translate-y-1/2 bg-white/80 px-1 rounded text-[10px] text-slate-500 font-bold border border-slate-200">Yes</div>
                             </div>
-                            <div className="bg-yellow-200 text-yellow-900 text-[11px] p-3 rounded w-full text-center border border-yellow-300 shadow-sm min-h-[3.5rem] flex items-center justify-center font-medium leading-tight z-20">
+                            <div className="bg-yellow-200 text-yellow-900 text-[11px] p-3 rounded w-full text-center border border-yellow-300 shadow-sm min-h-[3.5rem] flex items-center justify-center font-medium leading-tight">
                                 Select Windows Artifact<br />(.bat / script_id_win)
                             </div>
                         </div>
 
                         {/* Linux */}
-                        <div className="flex flex-col items-center pt-6 relative px-2">
-                            <div className="absolute top-0 left-1/2 -translate-x-1/2 z-0">
-                                <ArrowDown height="h-6" />
-                            </div>
-                            <div className="bg-green-600 text-white text-xs p-3 rounded-lg text-center font-bold w-full shadow-md mb-3 relative z-20">
+                        <div className="flex flex-col items-center">
+                            <div className="bg-green-600 text-white text-xs p-3 rounded-lg text-center font-bold w-full shadow-md mb-3 relative min-h-[3rem] flex items-center justify-center">
                                 OS = Linux?
                                 <div className="absolute -right-3 top-1/2 -translate-y-1/2 bg-white/80 px-1 rounded text-[10px] text-slate-500 font-bold border border-slate-200">Yes</div>
                             </div>
-                            <div className="bg-green-100 text-green-900 text-[11px] p-3 rounded w-full text-center border border-green-300 shadow-sm min-h-[3.5rem] flex items-center justify-center font-medium leading-tight z-20">
+                            <div className="bg-green-100 text-green-900 text-[11px] p-3 rounded w-full text-center border border-green-300 shadow-sm min-h-[3.5rem] flex items-center justify-center font-medium leading-tight">
                                 Select Linux Artifact<br />(.sh / script_id_linux)
                             </div>
                         </div>
 
                         {/* macOS */}
-                        <div className="flex flex-col items-center pt-6 relative px-2">
-                            <div className="absolute top-0 left-1/2 -translate-x-1/2 z-0">
-                                <ArrowDown height="h-6" />
-                            </div>
-                            <div className="bg-indigo-600 text-white text-xs p-3 rounded-lg text-center font-bold w-full shadow-md mb-3 relative z-20">
+                        <div className="flex flex-col items-center">
+                            <div className="bg-indigo-600 text-white text-xs p-3 rounded-lg text-center font-bold w-full shadow-md mb-3 relative min-h-[3rem] flex items-center justify-center">
                                 OS = macOS?
                                 <div className="absolute -right-3 top-1/2 -translate-y-1/2 bg-white/80 px-1 rounded text-[10px] text-slate-500 font-bold border border-slate-200">Yes</div>
                             </div>
-                            <div className="bg-indigo-100 text-indigo-900 text-[11px] p-3 rounded w-full text-center border border-indigo-200 shadow-sm min-h-[3.5rem] flex items-center justify-center font-medium leading-tight z-20">
+                            <div className="bg-indigo-100 text-indigo-900 text-[11px] p-3 rounded w-full text-center border border-indigo-200 shadow-sm min-h-[3.5rem] flex items-center justify-center font-medium leading-tight">
                                 Select macOS Artifact<br />(.sh / script_id_mac)
                             </div>
                         </div>
 
                         {/* Unsupported */}
-                        <div className="flex flex-col items-center pt-6 relative px-2">
-                            <div className="absolute top-0 left-1/2 -translate-x-1/2 z-0">
-                                <ArrowDown height="h-6" />
-                            </div>
-                            <div className="bg-red-600 text-white text-xs p-3 rounded-lg text-center font-bold w-full shadow-md mb-3 z-20">
+                        <div className="flex flex-col items-center">
+                            <div className="bg-red-600 text-white text-xs p-3 rounded-lg text-center font-bold w-full shadow-md mb-3 min-h-[3rem] flex items-center justify-center">
                                 Unsupported OS
                             </div>
-                            <div className="bg-red-100 text-red-900 text-[11px] p-3 rounded w-full text-center border border-red-200 shadow-sm min-h-[3.5rem] flex items-center justify-center font-medium leading-tight z-20">
+                            <div className="bg-red-100 text-red-900 text-[11px] p-3 rounded w-full text-center border border-red-200 shadow-sm min-h-[3.5rem] flex items-center justify-center font-medium leading-tight">
                                 Stop Playbook + Log
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    {/* Branch Re-merge */}
-                    {/* Lines from bottom of first 3 blocks to a horizontal line */}
-                    <div className="relative h-8 mt-4">
-                        <div className="absolute top-0 left-[12.5%] w-0.5 h-4 bg-slate-400 z-0"></div>
-                        <div className="absolute top-0 left-[37.5%] w-0.5 h-4 bg-slate-400 z-0"></div>
-                        <div className="absolute top-0 right-[37.5%] w-0.5 h-4 bg-slate-400 z-0"></div>
+                {/* Branch Re-merge */}
+                <div className="relative h-12 w-full mb-4">
+                    <svg className="absolute inset-0 overflow-visible" width="100%" height="100%">
+                        {/* Lines from bottom of cols 1, 2, 3 - assuming grid spacing */}
+                        {/* We use the same % centers as above: 12.5, 37.5, 62.5 */}
+                        <line x1="12.5%" y1="0" x2="12.5%" y2="16" stroke="#94a3b8" strokeWidth="2" />
+                        <line x1="37.5%" y1="0" x2="37.5%" y2="16" stroke="#94a3b8" strokeWidth="2" />
+                        <line x1="62.5%" y1="0" x2="62.5%" y2="16" stroke="#94a3b8" strokeWidth="2" />
 
-                        {/* Horizontal collector line */}
-                        <div className="absolute top-4 left-[12.5%] right-[37.5%] h-0.5 bg-slate-400 z-0"></div>
+                        {/* Collector Line */}
+                        <line x1="12.5%" y1="16" x2="62.5%" y2="16" stroke="#94a3b8" strokeWidth="2" />
 
-                        {/* Final vertical down */}
-                        <div className="absolute top-4 left-1/2 -translate-x-1/2 z-0">
-                            <ArrowDown height="h-4" />
-                        </div>
-                    </div>
+                        {/* Center Logic: The center of the diagram is 50%. The merge of 1,2,3 is nominally 37.5%? 
+                            The original code merged to 50%.
+                            Let's merge to 50% for visual symmetry if the next step is central.
+                            The next box "Pre-Execution Guardrails" is central.
+                            So we line from bottom of collector to 50%.
+                        */}
+                        <line x1="37.5%" y1="16" x2="50%" y2="16" stroke="#94a3b8" strokeWidth="2" /> {/* Shim to center if needed? No, just draw from center of the group? */}
+
+                        {/* Actually, if we merge 1,2,3, the logical center is 37.5%. 
+                            But we want to go to 50% (main axis). 
+                            So we extend the collector to 50%? 
+                            Line from 12.5% to 62.5% covers the range. 
+                            50% is 'inside' that range? Yes.
+                            So we can just drop down from 50%.
+                         */}
+                        <line x1="50%" y1="16" x2="50%" y2="100%" stroke="#94a3b8" strokeWidth="2" markerEnd="url(#flow-arrowhead)" />
+                    </svg>
                 </div>
 
                 {/* Pre-Execution Guardrails */}
@@ -167,20 +225,21 @@ export default function MigrationFlow() {
                 <ArrowDown />
 
                 {/* Single/Multiple Split */}
-                <div className="relative mb-4">
-                    {/* Splitter */}
-                    <div className="absolute -top-4 left-1/2 h-4 w-0.5 bg-slate-400 -translate-x-1/2 z-0"></div>
-                    <div className="absolute top-0 left-[25%] right-[25%] h-0.5 bg-slate-400 z-0"></div>
+                {/* Single/Multiple Split */}
+                <div className="relative w-full max-w-lg mx-auto mb-4 mt-8">
+                    <div className="absolute inset-0 pointer-events-none" style={{ top: '-24px', height: '100px' }}>
+                        <svg width="100%" height="100%" className="overflow-visible">
+                            {/* Stem */}
+                            <line x1="50%" y1="0" x2="50%" y2="24" stroke="#94a3b8" strokeWidth="2" />
+                            {/* Distribution */}
+                            <line x1="25%" y1="24" x2="75%" y2="24" stroke="#94a3b8" strokeWidth="2" />
+                            {/* Drops */}
+                            <line x1="25%" y1="24" x2="25%" y2="48" stroke="#94a3b8" strokeWidth="2" markerEnd="url(#flow-arrowhead)" />
+                            <line x1="75%" y1="24" x2="75%" y2="48" stroke="#94a3b8" strokeWidth="2" markerEnd="url(#flow-arrowhead)" />
+                        </svg>
+                    </div>
 
-                    <div className="flex justify-center gap-8 w-full max-w-lg mx-auto pt-4 relative">
-                        {/* Down lines */}
-                        <div className="absolute top-0 left-[25%] -translate-x-[0.5px]">
-                            <ArrowDown height="h-4" />
-                        </div>
-                        <div className="absolute top-0 right-[25%] translate-x-[0.5px]">
-                            <ArrowDown height="h-4" />
-                        </div>
-
+                    <div className="flex justify-center gap-8 pt-8 relative z-10">
                         <div className="bg-blue-200 text-blue-900 border border-blue-300 p-3 rounded text-center flex-1 shadow-sm z-20">
                             <div className="font-bold text-sm">Single Host</div>
                             <div className="text-xs">init_session</div>
@@ -193,13 +252,13 @@ export default function MigrationFlow() {
                 </div>
 
                 {/* Re-merge arrows manually */}
-                <div className="relative h-8 w-full max-w-lg mx-auto mb-2">
-                    <div className="absolute top-0 left-[25%] w-0.5 h-4 bg-slate-400 z-0"></div>
-                    <div className="absolute top-0 right-[25%] w-0.5 h-4 bg-slate-400 z-0"></div>
-                    <div className="absolute top-4 left-[25%] right-[25%] h-0.5 bg-slate-400 z-0"></div>
-                    <div className="absolute top-4 left-1/2 -translate-x-1/2 z-0">
-                        <ArrowDown height="h-4" />
-                    </div>
+                <div className="relative h-12 w-full max-w-lg mx-auto mb-2">
+                    <svg className="absolute inset-0 overflow-visible" width="100%" height="100%">
+                        <line x1="25%" y1="0" x2="25%" y2="16" stroke="#94a3b8" strokeWidth="2" />
+                        <line x1="75%" y1="0" x2="75%" y2="16" stroke="#94a3b8" strokeWidth="2" />
+                        <line x1="25%" y1="16" x2="75%" y2="16" stroke="#94a3b8" strokeWidth="2" />
+                        <line x1="50%" y1="16" x2="50%" y2="100%" stroke="#94a3b8" strokeWidth="2" markerEnd="url(#flow-arrowhead)" />
+                    </svg>
                 </div>
 
                 {/* RTR Admin: PUT */}
@@ -219,7 +278,7 @@ export default function MigrationFlow() {
                         {/* No Path (Left) */}
                         <div className="absolute top-1/2 right-[100%] mr-0 flex items-center z-0">
                             <div className="flex items-center flex-row-reverse">
-                                <ArrowLeft width="w-12" />
+                                <ArrowLeft width={48} />
                             </div>
                             <div className="bg-red-700 text-white text-xs px-4 py-2 rounded shadow whitespace-nowrap border border-red-800 ml-2 relative z-20">
                                 <span className="font-bold mr-1">No</span> Log Error + Exit
@@ -256,48 +315,48 @@ export default function MigrationFlow() {
                 <ArrowDown />
 
                 {/* Diamond Split: High / Med Low */}
-                <div className="relative w-full max-w-3xl mx-auto grid grid-cols-2 gap-12 items-start mt-6">
-                    {/* Center Splitter Lines */}
-                    <div className="absolute -top-6 left-1/2 w-0.5 h-6 bg-slate-400 -translate-x-1/2 z-0"></div>
-                    <div className="absolute top-0 left-[25%] right-[25%] h-0.5 bg-slate-400 z-0"></div>
-
-                    {/* Arrows down to boxes */}
-                    <div className="absolute top-0 left-[25%] -translate-x-[0.5px]">
-                        <ArrowDown height="h-6" />
-                    </div>
-                    <div className="absolute top-0 right-[25%] translate-x-[0.5px]">
-                        <ArrowDown height="h-6" />
+                {/* Diamond Split: High / Med Low */}
+                <div className="relative w-full max-w-3xl mx-auto mt-8">
+                    <div className="absolute inset-0 pointer-events-none" style={{ top: '-24px', height: '100px' }}>
+                        <svg width="100%" height="100%" className="overflow-visible">
+                            <line x1="50%" y1="0" x2="50%" y2="24" stroke="#94a3b8" strokeWidth="2" />
+                            <line x1="25%" y1="24" x2="75%" y2="24" stroke="#94a3b8" strokeWidth="2" />
+                            <line x1="25%" y1="24" x2="25%" y2="48" stroke="#94a3b8" strokeWidth="2" markerEnd="url(#flow-arrowhead)" />
+                            <line x1="75%" y1="24" x2="75%" y2="48" stroke="#94a3b8" strokeWidth="2" markerEnd="url(#flow-arrowhead)" />
+                        </svg>
                     </div>
 
-                    {/* Left: High Confidence */}
-                    <div className="bg-green-700 text-white p-4 rounded shadow text-left text-xs z-20 mt-6 min-h-[6rem]">
-                        <div className="border-b border-white/30 pb-2 mb-2 font-bold text-green-100 text-sm">High Confidence / High Risk</div>
-                        <div className="font-bold mb-1">Automated Response</div>
-                        <ul className="list-disc list-inside opacity-90 space-y-0.5">
-                            <li>isolate host</li>
-                            <li>block IOC</li>
-                        </ul>
-                    </div>
+                    <div className="grid grid-cols-2 gap-12 items-start relative z-10 pt-8">
+                        {/* Left: High Confidence */}
+                        <div className="bg-green-700 text-white p-4 rounded shadow text-left text-xs z-20 min-h-[6rem]">
+                            <div className="border-b border-white/30 pb-2 mb-2 font-bold text-green-100 text-sm">High Confidence / High Risk</div>
+                            <div className="font-bold mb-1">Automated Response</div>
+                            <ul className="list-disc list-inside opacity-90 space-y-0.5">
+                                <li>isolate host</li>
+                                <li>block IOC</li>
+                            </ul>
+                        </div>
 
-                    {/* Right: Low Confidence */}
-                    <div className="bg-yellow-400 text-yellow-900 p-4 rounded shadow text-left text-xs z-20 mt-6 min-h-[6rem]">
-                        <div className="border-b border-black/10 pb-2 mb-2 font-bold text-sm">Medium / Low Confidence</div>
-                        <div className="font-bold mb-1">Semi-Auto Response</div>
-                        <ul className="list-disc list-inside opacity-90 space-y-0.5">
-                            <li>ticket</li>
-                            <li>notify SOC</li>
-                        </ul>
+                        {/* Right: Low Confidence */}
+                        <div className="bg-yellow-400 text-yellow-900 p-4 rounded shadow text-left text-xs z-20 min-h-[6rem]">
+                            <div className="border-b border-black/10 pb-2 mb-2 font-bold text-sm">Medium / Low Confidence</div>
+                            <div className="font-bold mb-1">Semi-Auto Response</div>
+                            <ul className="list-disc list-inside opacity-90 space-y-0.5">
+                                <li>ticket</li>
+                                <li>notify SOC</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
                 {/* Re-merge */}
-                <div className="relative h-10 w-full max-w-3xl mx-auto mt-2">
-                    <div className="absolute top-0 left-[25%] w-0.5 h-5 bg-slate-400 z-0"></div>
-                    <div className="absolute top-0 right-[25%] w-0.5 h-5 bg-slate-400 z-0"></div>
-                    <div className="absolute top-5 left-[25%] right-[25%] h-0.5 bg-slate-400 z-0"></div>
-                    <div className="absolute top-5 left-1/2 -translate-x-1/2 z-0">
-                        <ArrowDown height="h-5" />
-                    </div>
+                <div className="relative h-12 w-full max-w-3xl mx-auto mt-2">
+                    <svg className="absolute inset-0 overflow-visible" width="100%" height="100%">
+                        <line x1="25%" y1="0" x2="25%" y2="16" stroke="#94a3b8" strokeWidth="2" />
+                        <line x1="75%" y1="0" x2="75%" y2="16" stroke="#94a3b8" strokeWidth="2" />
+                        <line x1="25%" y1="16" x2="75%" y2="16" stroke="#94a3b8" strokeWidth="2" />
+                        <line x1="50%" y1="16" x2="50%" y2="100%" stroke="#94a3b8" strokeWidth="2" markerEnd="url(#flow-arrowhead)" />
+                    </svg>
                 </div>
 
                 {/* Audit Log */}
