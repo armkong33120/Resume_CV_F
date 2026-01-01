@@ -24,6 +24,8 @@ interface ExperienceItem {
     location: LocalizedString;
     details: LocalizedArray;
     reasonForLeaving?: LocalizedString;
+    googleMapsUrl?: string | null;
+    websiteUrl?: string | null;
 }
 
 export default function ExperiencePage() {
@@ -69,7 +71,18 @@ export default function ExperiencePage() {
                                             {getContent(job.role)}
                                         </h2>
                                         <h3 className="text-xl text-foreground/80 font-medium">
-                                            {getContent(job.company)}
+                                            {job.websiteUrl ? (
+                                                <a
+                                                    href={job.websiteUrl}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="hover:text-foreground hover:underline transition-colors decoration-dotted underline-offset-4"
+                                                >
+                                                    {getContent(job.company)}
+                                                </a>
+                                            ) : (
+                                                getContent(job.company)
+                                            )}
                                         </h3>
                                     </div>
                                     <div className="text-right md:text-right">
@@ -85,7 +98,18 @@ export default function ExperiencePage() {
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                                         </svg>
-                                        {getContent(job.location)}
+                                        {job.googleMapsUrl ? (
+                                            <a
+                                                href={job.googleMapsUrl}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="hover:text-foreground hover:underline transition-colors decoration-dotted underline-offset-4"
+                                            >
+                                                {getContent(job.location)}
+                                            </a>
+                                        ) : (
+                                            getContent(job.location)
+                                        )}
                                     </div>
                                     <div className="flex items-center gap-2">
                                         <svg className="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">

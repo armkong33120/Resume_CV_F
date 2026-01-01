@@ -10,8 +10,8 @@
             "en": "IT Manager"
         },
         "period": {
-            "th": "สิงหาคม 2568 - ตุลาคม 2568",
-            "en": "August 2025 - October 2025"
+            "th": "กันยายน 2568 - ตุลาคม 2568",
+            "en": "September 2025 - October 2025"
         },
         "salary": {
             "th": "50,000 บาท",
@@ -21,6 +21,8 @@
             "th": "150 ซอยสุขุมวิท 55 (ทองหล่อ) แขวงคลองตันเหนือ เขตวัฒนา กรุงเทพฯ",
             "en": "150 Soi Sukhumvit 55 (Thong Lo), Khlong Tan Nuea, Watthana, Bangkok"
         },
+        "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=150+Soi+Sukhumvit+55",
+        "websiteUrl": null,
         "details": {
             "th": [
                 "Incident Handling - ตรวจสอบ ticket ที่เข้ามา, assign ให้ทีม, follow SLA",
@@ -63,6 +65,65 @@
         }
     },
     {
+        "id": 99,
+        "company": {
+            "th": "Grand Center Point Ratchadamri",
+            "en": "Grand Center Point Ratchadamri"
+        },
+        "role": {
+            "th": "IT Supervisor",
+            "en": "IT Supervisor"
+        },
+        "period": {
+            "th": "กุมภาพันธ์ 2568 - สิงหาคม 2568",
+            "en": "February 2025 - August 2025"
+        },
+        "salary": {
+            "th": "43,000 บาท",
+            "en": "43,000 THB"
+        },
+        "location": {
+            "th": "153, 2 ถ. ราชดำริ แขวงลุมพินี เขตปทุมวัน กรุงเทพมหานคร 10330",
+            "en": "153, 2 Ratchadamri Rd, Lumphini, Pathum Wan, Bangkok 10330"
+        },
+        "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Grande+Centre+Point+Ratchadamri",
+        "websiteUrl": "https://grandecentrepointratchadamri.com",
+        "details": {
+            "th": [
+                "ดูแลระบบ IT โรงแรมระดับ 5 ดาว: Opera PMS, Micros Simphony POS, VingCard (Door Lock), IPTV",
+                "Network & Guest Audit: บริหารจัดการ HSIA, Gateway, Digital Signage",
+                "ประสานงาน vendor สำหรับการบำรุงรักษาระบบเฉพาะทางของโรงแรม",
+                "ผมสามารถปรับตัวเข้ากับคนได้ทุกเพศทุกวัยได้อย่างรวดเร็วเพราะผมชอบทำความเข้าใจคนอื่นก่อนรวมงานกับทีมทางนั้นๆหรือบุคคลนั้นๆเสมอ",
+                "ผมมีความสามารถในการสื่อสารที่ดี ดีพอที่จะสามารถสื่อสารเรื่องทางเทคนิคยากๆให้คนธรรมดาเข้าใจได้โดยใช้สิ่งที่อยู่ในชีวิตประจำวันของคนนั้น",
+                "เคย implement ระบบเปลี่ยนสัญญา MA และมี contact vendor/sales ช่วยต่อรองเพื่อลดต้นทุน IT",
+                "ถนัดจัดทำ IT Audit Documents และร่าง IE Process เพื่อยกระดับมาตรฐาน/Compliance",
+                "ลดภาระ IT Manager ด้วยการ streamline งานและเพิ่ม cost efficiency",
+                "มีประสบการณ์ปรับแต่ง TOR หลายโปรเจกต์ฝั่งโรงพยาบาล (ในฐานะผู้ใช้งาน/ผู้ถือสเปค) ช่วยสร้างแต้มต่อด้านสัญญา ฟีเจอร์ และราคา",
+                "บริหารโครงการสาย IT โรงพยาบาลมาหลายโครงการทั้งเป็นที่ปรึกษาและทำเอง (วางระบบ/จัดซื้อ/ติดตั้ง/ส่งมอบ/อบรมผู้ใช้)",
+                "เข้าใจกฎหมายและมาตรฐานด้าน IT หลายฉบับ เช่น พ.ร.บ.คอมพิวเตอร์, PDPA, พ.ร.บ.ความมั่นคงไซเบอร์ เพื่อนำไปปรับแต่ง TOR และทำงานในบทบาท Auditor IT ได้",
+                "AIOps: เชี่ยวชาญการลดงานซ้ำซ้อนด้านเอกสาร/รายงาน และการวิเคราะห์ข้อมูลด้วย AI"
+            ],
+            "en": [
+                "Managed 5-star hotel IT systems: Opera PMS, Micros Simphony POS, VingCard (Door Lock), IPTV",
+                "Network & Guest Audit: HSIA Management, Gateway, Digital Signage",
+                "Coordinated with vendors for specialized hotel systems maintenance",
+                "Ability to adapt quickly to people of all ages and genders and prioritize understanding colleagues.",
+                "Excellent communication skills, capable of explaining complex technical topics to non-technical people.",
+                "Implemented MA contract changes and negotiated with vendors/sales to reduce IT costs.",
+                "Skilled in preparing IT Audit Documents and drafting IE Processes to elevate standards/Compliance.",
+                "Reduced IT Manager workload by streamlining tasks and increasing cost efficiency.",
+                "Experience in customizing TOR for multiple hospital projects, gaining advantages in contracts, features, and pricing.",
+                "Managed multiple hospital IT projects including system planning, procurement, installation, delivery, and user training.",
+                "Understanding of IT laws and standards such as Computer Crime Act, PDPA, Cybersecurity Act for TOR customization and IT Auditor roles.",
+                "AIOps: Expert in reducing redundant documentation/reporting and analyzing data using AI."
+            ]
+        },
+        "reasonForLeaving": {
+            "th": "เพื่อหาความท้าทายใหม่ในสายงาน IT Manager",
+            "en": "Seeking new challenges in IT Manager role"
+        }
+    },
+    {
         "id": 2,
         "company": {
             "th": "ธนาคารกรุงศรีอยุธยา จำกัด (มหาชน) สำนักงานใหญ่",
@@ -73,8 +134,8 @@
             "en": "IT Service Management"
         },
         "period": {
-            "th": "กรกฎาคม 2566 - กรกฎาคม 2568",
-            "en": "July 2023 - July 2025"
+            "th": "กุมภาพันธ์ 2566 - มกราคม 2568",
+            "en": "February 2023 - January 2025"
         },
         "salary": {
             "th": "35,000 บาท",
@@ -84,6 +145,8 @@
             "th": "1222 ถนนพระรามที่ 3 แขวงบางโพงพาง เขตยานนาวา กรุงเทพฯ",
             "en": "1222 Rama III Road, Bang Phong Phang, Yan Nawa, Bangkok"
         },
+        "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Bank+of+Ayudhya+Head+Office+Rama+3",
+        "websiteUrl": "https://www.krungsri.com",
         "details": {
             "th": [
                 "รับผิดชอบในการจัดการกระบวนการ Event Management ตามมาตรฐาน ITIL v3",
@@ -117,8 +180,8 @@
             ]
         },
         "reasonForLeaving": {
-            "th": "โดน offer จาก กองสลากพลัส ตำแหน่ง: IT Manager",
-            "en": "Received offer from Kong Salak Plus for IT Manager position"
+            "th": "โดน offer จาก Grand Center Point Ratchadamri",
+            "en": "Received offer from Grand Center Point Ratchadamri"
         }
     },
     {
@@ -132,8 +195,8 @@
             "en": "Technical Support Engineer (Endpoint + Network security)"
         },
         "period": {
-            "th": "กันยายน 2565 - กรกฎาคม 2566",
-            "en": "September 2022 - July 2023"
+            "th": "พฤษภาคม 2565 - มกราคม 2566",
+            "en": "May 2022 - January 2023"
         },
         "salary": {
             "th": "24,000 บาท",
@@ -143,6 +206,8 @@
             "th": "55B Tower ชั้น 6 ซอยประดิพัทธ์ 17 พญาไท กรุงเทพฯ",
             "en": "55B Tower, 6th Floor, Soi Pradiphat 17, Phaya Thai, Bangkok"
         },
+        "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=I-SECURE+CO+LTD+55B+Tower",
+        "websiteUrl": "https://www.i-secure.co.th",
         "details": {
             "th": [
                 "Support engineer Endpoint (Crowdstrike): Install and uninstall of Endpoint as VM, AD, MAC OS, Linux, Windows etc.",
@@ -187,8 +252,8 @@
             "en": "Computer Technical Officer"
         },
         "period": {
-            "th": "สิงหาคม 2564 - สิงหาคม 2565",
-            "en": "August 2021 - August 2022"
+            "th": "มิถุนายน 2564 - เมษายน 2565",
+            "en": "June 2021 - April 2022"
         },
         "salary": {
             "th": "12,000 บาท",
@@ -198,6 +263,8 @@
             "th": "446 หมู่ที่ 5 ถนนดำรงค์สถิต ตำบลน้ำอ้อม อำเภอกันทรลักษ์",
             "en": "446 Moo 5, Damrong Sathit Rd, Nam Om, Kantharalak"
         },
+        "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Kantharalak+Hospital",
+        "websiteUrl": null,
         "details": {
             "th": [
                 "พัฒนาระบบเก็บข้อมูลงานทะเบียนไอที ระบบแจ้งซ่อมคอมพิวเตอร์และงานอาคาร",
@@ -264,8 +331,8 @@
             "en": "Computer Technical Officer"
         },
         "period": {
-            "th": "กันยายน 2563 - กรกฎาคม 2564",
-            "en": "September 2020 - July 2021"
+            "th": "กันยายน 2563 - พฤษภาคม 2564",
+            "en": "September 2020 - May 2021"
         },
         "salary": {
             "th": "19,000 บาท",
@@ -275,6 +342,8 @@
             "th": "ศูนย์เทคโนโลยีสารสนเทศ ชั้น 23 ศูนย์เอนเนอร์ยี่คอมเพล็กซ์ ถ.วิภาวดีรังสิต จตุจักร กรุงเทพฯ",
             "en": "ICT Center, 23rd Floor, Energy Complex, Vibhavadi Rangsit Rd, Chatuchak, Bangkok"
         },
+        "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Ministry+of+Energy+Thailand+Energy+Complex",
+        "websiteUrl": "https://energy.go.th",
         "details": {
             "th": [
                 "ดูแลคอมพิวเตอร์และอุปกรณ์ต่อพ่วงให้อยู่ในสภาพพร้อมใช้งาน 200 ชุด",
@@ -307,8 +376,8 @@
             "en": "Technical Support"
         },
         "period": {
-            "th": "กรกฎาคม 2560 - กรกฎาคม 2561",
-            "en": "July 2017 - July 2018"
+            "th": "กรกฎาคม 2560 - มิถุนายน 2561",
+            "en": "July 2017 - June 2018"
         },
         "salary": {
             "th": "13,000 บาท",
@@ -318,6 +387,8 @@
             "th": "Q-Doc Studio 15-17 ซ.กรุงธนบุรี 4 แขวงบางลำภูล่าง เขตคลองสาน กรุงเทพฯ",
             "en": "Q-Doc Studio 15-17, Soi Krung Thon Buri 4, Bang Lamphu Lang, Khlong San, Bangkok"
         },
+        "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=K%26O+Systems+and+Consulting",
+        "websiteUrl": "https://www.ko.in.th",
         "details": {
             "th": [
                 "คอมพิวเตอร์และอุปกรณ์ต่อพ่วง - อัพเกรด ปรับปรุง แก้ไข",
