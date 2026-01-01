@@ -13,7 +13,6 @@ export const metadata: Metadata = {
     statusBarStyle: 'default',
     title: 'Theerachot H.',
   },
-  themeColor: '#ffffff',
 };
 
 export const viewport: Viewport = {
@@ -22,6 +21,7 @@ export const viewport: Viewport = {
   maximumScale: 5,
   userScalable: true,
   viewportFit: 'cover',
+  themeColor: '#ffffff',
 };
 
 export default async function RootLayout({
