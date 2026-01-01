@@ -27,6 +27,12 @@ const ArrowDown = ({ height = "h-8" }: { height?: string }) => (
     </div>
 );
 
+const ArrowLeft = ({ width = "w-12" }: { width?: string }) => (
+    <div className={`h-0.5 ${width} bg-slate-400 relative z-0`}>
+        <div className="absolute -left-1 -top-[3.5px] w-0 h-0 border-r-[6px] border-r-slate-400 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent"></div>
+    </div>
+);
+
 export default function MigrationFlow() {
     return (
         <div className="w-full bg-slate-50 p-8 rounded-xl overflow-x-auto min-w-[1024px] font-sans text-slate-800">
@@ -78,7 +84,9 @@ export default function MigrationFlow() {
                     <div className="grid grid-cols-4 gap-4">
                         {/* Windows */}
                         <div className="flex flex-col items-center pt-6 relative px-2">
-                            <div className="absolute top-0 left-1/2 w-0.5 h-6 bg-slate-400 -translate-x-1/2 z-0"></div>
+                            <div className="absolute top-0 left-1/2 -translate-x-1/2 z-0">
+                                <ArrowDown height="h-6" />
+                            </div>
                             <div className="bg-yellow-400 text-yellow-900 text-xs p-3 rounded-lg text-center font-bold w-full shadow-md mb-3 relative z-20">
                                 OS = Windows?
                                 <div className="absolute -right-3 top-1/2 -translate-y-1/2 bg-white/80 px-1 rounded text-[10px] text-slate-500 font-bold border border-slate-200">Yes</div>
@@ -90,7 +98,9 @@ export default function MigrationFlow() {
 
                         {/* Linux */}
                         <div className="flex flex-col items-center pt-6 relative px-2">
-                            <div className="absolute top-0 left-1/2 w-0.5 h-6 bg-slate-400 -translate-x-1/2 z-0"></div>
+                            <div className="absolute top-0 left-1/2 -translate-x-1/2 z-0">
+                                <ArrowDown height="h-6" />
+                            </div>
                             <div className="bg-green-600 text-white text-xs p-3 rounded-lg text-center font-bold w-full shadow-md mb-3 relative z-20">
                                 OS = Linux?
                                 <div className="absolute -right-3 top-1/2 -translate-y-1/2 bg-white/80 px-1 rounded text-[10px] text-slate-500 font-bold border border-slate-200">Yes</div>
@@ -102,7 +112,9 @@ export default function MigrationFlow() {
 
                         {/* macOS */}
                         <div className="flex flex-col items-center pt-6 relative px-2">
-                            <div className="absolute top-0 left-1/2 w-0.5 h-6 bg-slate-400 -translate-x-1/2 z-0"></div>
+                            <div className="absolute top-0 left-1/2 -translate-x-1/2 z-0">
+                                <ArrowDown height="h-6" />
+                            </div>
                             <div className="bg-indigo-600 text-white text-xs p-3 rounded-lg text-center font-bold w-full shadow-md mb-3 relative z-20">
                                 OS = macOS?
                                 <div className="absolute -right-3 top-1/2 -translate-y-1/2 bg-white/80 px-1 rounded text-[10px] text-slate-500 font-bold border border-slate-200">Yes</div>
@@ -114,7 +126,9 @@ export default function MigrationFlow() {
 
                         {/* Unsupported */}
                         <div className="flex flex-col items-center pt-6 relative px-2">
-                            <div className="absolute top-0 left-1/2 w-0.5 h-6 bg-slate-400 -translate-x-1/2 z-0"></div>
+                            <div className="absolute top-0 left-1/2 -translate-x-1/2 z-0">
+                                <ArrowDown height="h-6" />
+                            </div>
                             <div className="bg-red-600 text-white text-xs p-3 rounded-lg text-center font-bold w-full shadow-md mb-3 z-20">
                                 Unsupported OS
                             </div>
@@ -135,7 +149,9 @@ export default function MigrationFlow() {
                         <div className="absolute top-4 left-[12.5%] right-[37.5%] h-0.5 bg-slate-400 z-0"></div>
 
                         {/* Final vertical down */}
-                        <div className="absolute top-4 left-1/2 w-0.5 h-4 bg-slate-400 -translate-x-1/2 z-0"></div>
+                        <div className="absolute top-4 left-1/2 -translate-x-1/2 z-0">
+                            <ArrowDown height="h-4" />
+                        </div>
                     </div>
                 </div>
 
@@ -151,15 +167,28 @@ export default function MigrationFlow() {
                 <ArrowDown />
 
                 {/* Single/Multiple Split */}
-                {/* Increased gap */}
-                <div className="flex justify-center gap-8 w-full max-w-lg mb-4">
-                    <div className="bg-blue-200 text-blue-900 border border-blue-300 p-3 rounded text-center flex-1 shadow-sm z-20">
-                        <div className="font-bold text-sm">Single Host</div>
-                        <div className="text-xs">init_session</div>
-                    </div>
-                    <div className="bg-blue-200 text-blue-900 border border-blue-300 p-3 rounded text-center flex-1 shadow-sm z-20">
-                        <div className="font-bold text-sm">Multiple Hosts</div>
-                        <div className="text-xs">batch_init_sessions<br />(queue_offline=true)</div>
+                <div className="relative mb-4">
+                    {/* Splitter */}
+                    <div className="absolute -top-4 left-1/2 h-4 w-0.5 bg-slate-400 -translate-x-1/2 z-0"></div>
+                    <div className="absolute top-0 left-[25%] right-[25%] h-0.5 bg-slate-400 z-0"></div>
+
+                    <div className="flex justify-center gap-8 w-full max-w-lg mx-auto pt-4 relative">
+                        {/* Down lines */}
+                        <div className="absolute top-0 left-[25%] -translate-x-[0.5px]">
+                            <ArrowDown height="h-4" />
+                        </div>
+                        <div className="absolute top-0 right-[25%] translate-x-[0.5px]">
+                            <ArrowDown height="h-4" />
+                        </div>
+
+                        <div className="bg-blue-200 text-blue-900 border border-blue-300 p-3 rounded text-center flex-1 shadow-sm z-20">
+                            <div className="font-bold text-sm">Single Host</div>
+                            <div className="text-xs">init_session</div>
+                        </div>
+                        <div className="bg-blue-200 text-blue-900 border border-blue-300 p-3 rounded text-center flex-1 shadow-sm z-20">
+                            <div className="font-bold text-sm">Multiple Hosts</div>
+                            <div className="text-xs">batch_init_sessions<br />(queue_offline=true)</div>
+                        </div>
                     </div>
                 </div>
 
@@ -168,7 +197,9 @@ export default function MigrationFlow() {
                     <div className="absolute top-0 left-[25%] w-0.5 h-4 bg-slate-400 z-0"></div>
                     <div className="absolute top-0 right-[25%] w-0.5 h-4 bg-slate-400 z-0"></div>
                     <div className="absolute top-4 left-[25%] right-[25%] h-0.5 bg-slate-400 z-0"></div>
-                    <div className="absolute top-4 left-1/2 w-0.5 h-4 bg-slate-400 -translate-x-1/2 z-0"></div>
+                    <div className="absolute top-4 left-1/2 -translate-x-1/2 z-0">
+                        <ArrowDown height="h-4" />
+                    </div>
                 </div>
 
                 {/* RTR Admin: PUT */}
@@ -186,25 +217,20 @@ export default function MigrationFlow() {
                         <DecisionDiamond label="Success?" color="bg-blue-800" />
 
                         {/* No Path (Left) */}
-                        <div className="absolute top-1/2 left-0 -translate-x-[110%] -translate-y-1/2 flex items-center z-10">
-                            <div className="h-0.5 w-12 bg-slate-400"></div>
-                            <div className="bg-red-700 text-white text-xs px-4 py-2 rounded shadow whitespace-nowrap border border-red-800 ml-2">
+                        <div className="absolute top-1/2 right-[100%] mr-0 flex items-center z-0">
+                            <div className="flex items-center flex-row-reverse">
+                                <ArrowLeft width="w-12" />
+                            </div>
+                            <div className="bg-red-700 text-white text-xs px-4 py-2 rounded shadow whitespace-nowrap border border-red-800 ml-2 relative z-20">
                                 <span className="font-bold mr-1">No</span> Log Error + Exit
                             </div>
                         </div>
-
-                        {/* Connector from diamond to left path */}
-                        <div className="absolute top-1/2 left-0 w-0 h-0.5 bg-slate-400 -translate-x-full"></div>
-                        {/* Wait, the connector needs to reach the diamond edge. 
-                    Diamond width 24 (6rem). Center 12. 
-                    Absolute left-0 of 'relative' parent? 
-                    Let's make parent large enough or use absolute positioning carefully.
-                */}
                     </div>
 
-                    <div className="w-0.5 h-4 bg-slate-400 mx-auto z-0 -mt-2"></div>
-                    <div className="bg-white px-1 text-xs text-slate-500 font-bold relative z-20 -mt-3">Yes</div>
-                    <div className="w-0.5 h-4 bg-slate-400 mx-auto z-0"></div>
+                    <div className="relative z-0 -mt-1">
+                        <ArrowDown height="h-8" />
+                        <div className="absolute top-1 left-3 bg-white px-1 text-xs text-slate-500 font-bold z-20">Yes</div>
+                    </div>
                 </div>
 
                 {/* RTR Admin: Run Script */}
@@ -234,8 +260,14 @@ export default function MigrationFlow() {
                     {/* Center Splitter Lines */}
                     <div className="absolute -top-6 left-1/2 w-0.5 h-6 bg-slate-400 -translate-x-1/2 z-0"></div>
                     <div className="absolute top-0 left-[25%] right-[25%] h-0.5 bg-slate-400 z-0"></div>
-                    <div className="absolute top-0 left-[25%] w-0.5 h-6 bg-slate-400 z-0"></div>
-                    <div className="absolute top-0 right-[25%] w-0.5 h-6 bg-slate-400 z-0"></div>
+
+                    {/* Arrows down to boxes */}
+                    <div className="absolute top-0 left-[25%] -translate-x-[0.5px]">
+                        <ArrowDown height="h-6" />
+                    </div>
+                    <div className="absolute top-0 right-[25%] translate-x-[0.5px]">
+                        <ArrowDown height="h-6" />
+                    </div>
 
                     {/* Left: High Confidence */}
                     <div className="bg-green-700 text-white p-4 rounded shadow text-left text-xs z-20 mt-6 min-h-[6rem]">
@@ -263,7 +295,9 @@ export default function MigrationFlow() {
                     <div className="absolute top-0 left-[25%] w-0.5 h-5 bg-slate-400 z-0"></div>
                     <div className="absolute top-0 right-[25%] w-0.5 h-5 bg-slate-400 z-0"></div>
                     <div className="absolute top-5 left-[25%] right-[25%] h-0.5 bg-slate-400 z-0"></div>
-                    <div className="absolute top-5 left-1/2 w-0.5 h-5 bg-slate-400 -translate-x-1/2 z-0"></div>
+                    <div className="absolute top-5 left-1/2 -translate-x-1/2 z-0">
+                        <ArrowDown height="h-5" />
+                    </div>
                 </div>
 
                 {/* Audit Log */}
