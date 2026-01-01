@@ -114,8 +114,8 @@ const LarkImpact = () => {
                         {/* CHART: BEFORE */}
                         <div className="flex flex-col items-center p-4 bg-slate-50 rounded-xl border border-slate-200">
                             <h4 className="font-bold text-slate-600 mb-4">{copy.time.beforeTitle}</h4>
-                            <div className="w-full h-64 relative">
-                                <ResponsiveContainer width="100%" height="100%">
+                            <div style={{ width: '100%', height: 256 }}>
+                                <ResponsiveContainer width="100%" height="100%" minWidth={200} minHeight={200}>
                                     <PieChart>
                                         <Pie
                                             data={timeDataBefore}
@@ -141,8 +141,8 @@ const LarkImpact = () => {
                         {/* CHART: AFTER */}
                         <div className="flex flex-col items-center p-4 bg-emerald-50/50 rounded-xl border border-emerald-100">
                             <h4 className="font-bold text-emerald-700 mb-4">{copy.time.afterTitle}</h4>
-                            <div className="w-full h-64 relative">
-                                <ResponsiveContainer width="100%" height="100%">
+                            <div style={{ width: '100%', height: 256 }}>
+                                <ResponsiveContainer width="100%" height="100%" minWidth={200} minHeight={200}>
                                     <PieChart>
                                         <Pie
                                             data={timeDataAfter}
