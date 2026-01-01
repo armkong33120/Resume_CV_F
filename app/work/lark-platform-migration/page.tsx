@@ -1,11 +1,20 @@
+import { notFound } from 'next/navigation';
+import { getProjectBySlug } from '@/lib/content';
+import ProjectDetail from '@/components/ProjectDetail';
 import LarkMigrationFlow from '@/components/LarkMigrationFlow';
 
-export default function LarkMigrationPage() {
+export default async function LarkMigrationPage() {
+    const project = await getProjectBySlug('lark-platform-migration');
+
+    if (!project) {
+        notFound();
+    }
+
     return (
-        <div className="min-h-screen bg-slate-100 py-12 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-7xl mx-auto">
+        <ProjectDetail project={project}>
+            <div className="mt-8">
                 <LarkMigrationFlow />
             </div>
-        </div>
+        </ProjectDetail>
     );
 }

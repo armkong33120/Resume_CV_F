@@ -10,9 +10,10 @@ import MigrationFlow from '@/components/MigrationFlow';
 
 interface ProjectDetailProps {
     project: Project;
+    children?: React.ReactNode;
 }
 
-export default function ProjectDetail({ project }: ProjectDetailProps) {
+export default function ProjectDetail({ project, children }: ProjectDetailProps) {
     const { language, t: resolveText } = useLanguage();
     const t = getTranslation(language);
 
@@ -82,6 +83,9 @@ export default function ProjectDetail({ project }: ProjectDetailProps) {
                     )}
 
                     {project.slug === 'automation-cyber-security' && <MigrationFlow />}
+
+                    {/* Render any injected children (e.g., custom flowcharts) */}
+                    {children}
                 </div>
 
                 {/* Case Study Sections */}
