@@ -13,6 +13,7 @@ export default async function LarkMigrationPage() {
 
     return (
         <ProjectDetail project={project}>
+            <div className="bg-blue-500 text-white p-2 text-center font-bold">VERSION CHECK: FIX APPLIED</div>
             <div className="mt-8 space-y-12">
                 <LarkImpact />
                 <LarkMigrationFlow />
