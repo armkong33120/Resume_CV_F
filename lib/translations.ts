@@ -55,10 +55,10 @@ export const translations = {
     footer: {
       rights: 'สงวนลิขสิทธิ์',
       builtWith: 'สร้างด้วย',
-      techStack: 'Next.js, Tailwind CSS, TypeScript',
-      ide: 'IDE: Google Antigravity and VSCode [Verion Free]',
+      techStack: 'Next.js , Tailwind CSS, and TypeScript',
+      ide: 'IDE : Google Antigravity , Vercel is Deploy and CDN [Using 100% free cost tools]',
       by: 'โดย ธีรโชติ ฮ.',
-      lastUpdated: 'อัปเดตล่าสุด: ธันวาคม 2025',
+      lastUpdated: 'อัปเดตล่าสุด: 2 มกราคม 2026',
     },
     notFound: {
       title: '404',
@@ -153,10 +153,10 @@ export const translations = {
     footer: {
       rights: 'All rights reserved',
       builtWith: 'Built with',
-      techStack: 'Next.js, Tailwind CSS, TypeScript',
-      ide: 'IDE: Google Antigravity and VSCode [Verion Free]',
+      techStack: 'Next.js , Tailwind CSS, and TypeScript',
+      ide: 'IDE : Google Antigravity , Vercel is Deploy and CDN [Using 100% free cost tools]',
       by: 'by Theerachot H.',
-      lastUpdated: 'Last updated: December 2025',
+      lastUpdated: 'Last updated: 2 January 2026',
     },
     notFound: {
       title: '404',
