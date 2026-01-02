@@ -44,7 +44,7 @@ export default function ResumePage() {
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <header className="mb-12 text-center flex flex-col items-center">
                     <h1 className="text-4xl font-bold tracking-tight text-foreground mb-4">
-                        {language === 'th' ? 'เรซูเม่' : 'Resume'}
+                        {language === 'th' ? 'ประวัติย่อ' : 'Resume'}
                     </h1>
                     <div className="h-1 w-20 bg-foreground rounded-full mb-6"></div>
                     <PrintButton />

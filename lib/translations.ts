@@ -7,8 +7,8 @@ export const translations = {
       work: 'ผลงาน',
 
       about: 'เกี่ยวกับ',
-      experience: 'Curriculum Vitae',
-      resume: 'Resume',
+      experience: 'ประสบการณ์ทำงาน',
+      resume: 'ประวัติย่อ',
       contact: 'ติดต่อ',
 
     },
