@@ -3,6 +3,7 @@
 import { useLanguage } from '@/components/LanguageContext';
 import { getTranslation } from '@/lib/translations';
 import experienceData from '@/content/experience.json';
+import PrintButton from '@/components/PrintButton';
 
 // Define the shape of the data based on the new JSON structure
 interface LocalizedString {
@@ -47,11 +48,12 @@ export default function ExperiencePage() {
     return (
         <main className="min-h-screen pt-24 pb-16 safe-bottom">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <header className="mb-12 text-center">
+                <header className="mb-12 text-center flex flex-col items-center">
                     <h1 className="text-4xl font-bold tracking-tight text-foreground mb-4">
                         {language === 'th' ? 'ประวัติการทำงาน' : 'Experience'}
                     </h1>
-                    <div className="h-1 w-20 bg-foreground mx-auto rounded-full"></div>
+                    <div className="h-1 w-20 bg-foreground rounded-full mb-6"></div>
+                    <PrintButton />
                 </header>
 
                 <div className="space-y-12 relative">

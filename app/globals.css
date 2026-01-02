@@ -44,6 +44,7 @@
   }
 }
 
+
 @layer utilities {
   .sr-only {
     position: absolute;
@@ -68,4 +69,51 @@
     white-space: normal;
   }
 }
+
+@media print {
+  @page {
+    size: A4;
+    margin: 15mm;
+  }
+
+  body {
+    background: white;
+    color: black;
+    padding: 0 !important;
+  }
+
+  nav,
+  footer,
+  .no-print,
+  .print\:hidden {
+    display: none !important;
+  }
+
+  main {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  a[href^="http"]:after {
+    content: none !important;
+  }
+
+  /* Ensure text is black and readable */
+  * {
+    color: black !important;
+    text-shadow: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  /* Preserve borders but make them thin and black */
+  .border,
+  .border-b,
+  .border-t,
+  .border-l,
+  .border-r {
+    border-color: #ddd !important;
+  }
+}
+
 
