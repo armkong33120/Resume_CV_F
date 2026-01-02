@@ -4,6 +4,7 @@ import { useLanguage } from '@/components/LanguageContext';
 import { getTranslation } from '@/lib/translations';
 import experienceData from '@/content/experience.json';
 import PrintButton from '@/components/PrintButton';
+import SalaryPrivacy from '@/components/SalaryPrivacy';
 
 // Define the shape of the data based on the new JSON structure
 interface LocalizedString {
