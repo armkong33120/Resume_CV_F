@@ -17,7 +17,7 @@ export default function ZoomableImage({ src, alt, className = '', priority = fal
     return (
         <>
             <div
-                className={`relative group cursor-zoom-in ${className}`}
+                className={`relative w-full h-full group cursor-zoom-in ${className}`}
                 onClick={() => setIsOpen(true)}
             >
                 <Image
@@ -38,11 +38,11 @@ export default function ZoomableImage({ src, alt, className = '', priority = fal
 
             {isOpen && (
                 <div
-                    className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-sm p-4 sm:p-8"
+                    className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-sm p-4 sm:p-8"
                     onClick={() => setIsOpen(false)}
                 >
                     <button
-                        className="absolute top-4 right-4 text-white/70 hover:text-white transition-colors p-2 z-[60]"
+                        className="absolute top-4 right-4 text-white/70 hover:text-white transition-colors p-2 z-[110]"
                         onClick={(e) => {
                             e.stopPropagation();
                             setIsOpen(false);
