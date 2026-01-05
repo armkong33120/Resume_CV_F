@@ -12,11 +12,14 @@
     "test": "node test-api.js"
   },
   "dependencies": {
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.23.27",
     "lucide-react": "^0.469.0",
     "next": "latest",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "recharts": "^2.15.0"
+    "recharts": "^2.15.0",
+    "tailwind-merge": "^3.4.0"
   },
   "devDependencies": {
     "@eslint/compat": "^2.0.0",

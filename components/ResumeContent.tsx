@@ -1,10 +1,12 @@
-"use client";
+'use client';
 
 import { useLanguage } from '@/components/LanguageContext';
 import { getTranslation } from '@/lib/translations';
 import experienceData from '@/content/experience.json';
 import PrintButton from '@/components/PrintButton';
 import DownloadPdfButton from '@/components/DownloadPdfButton';
+import { motion } from 'framer-motion';
+import { fadeInUp, staggerContainer } from '@/lib/motion';
 
 interface LocalizedString {
     th: string;
@@ -41,7 +43,13 @@ export default function ResumeContent() {
 
     return (
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <header className="mb-12 text-center flex flex-col items-center">
+            <motion.header
+                variants={fadeInUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                className="mb-12 text-center flex flex-col items-center"
+            >
                 <h1 className="text-4xl font-bold tracking-tight text-foreground mb-4">
                     {language === 'th' ? 'ประวัติย่อ' : 'Resume'}
                 </h1>
@@ -50,11 +58,21 @@ export default function ResumeContent() {
                     <PrintButton />
                     <DownloadPdfButton />
                 </div>
-            </header>
+            </motion.header>
 
-            <div className="space-y-8">
+            <motion.div
+                className="space-y-8"
+                variants={staggerContainer}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-50px" }}
+            >
                 {jobs.map((job) => (
-                    <div key={job.id} className="border-b border-border pb-8 last:border-0 last:pb-0">
+                    <motion.div
+                        key={job.id}
+                        variants={fadeInUp}
+                        className="border-b border-border pb-8 last:border-0 last:pb-0"
+                    >
                         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-2">
                             <h2 className="text-xl font-bold text-foreground">
                                 {getContent(job.role)}
@@ -80,9 +98,9 @@ export default function ResumeContent() {
                                 ))
                             }
                         </ul>
-                    </div>
+                    </motion.div>
                 ))}
-            </div>
+            </motion.div>
         </div>
     );
 }

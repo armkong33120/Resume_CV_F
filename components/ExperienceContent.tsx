@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { useLanguage } from '@/components/LanguageContext';
 import { getTranslation } from '@/lib/translations';
@@ -6,6 +6,8 @@ import experienceData from '@/content/experience.json';
 import PrintButton from '@/components/PrintButton';
 import DownloadPdfButton from '@/components/DownloadPdfButton';
 import SalaryPrivacy from '@/components/SalaryPrivacy';
+import { motion } from 'framer-motion';
+import { fadeInUp, staggerContainer, scaleIn } from '@/lib/motion';
 
 // Define the shape of the data based on the new JSON structure
 interface LocalizedString {
@@ -49,7 +51,13 @@ export default function ExperienceContent() {
 
     return (
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <header className="mb-12 text-center flex flex-col items-center">
+            <motion.header
+                variants={fadeInUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                className="mb-12 text-center flex flex-col items-center"
+            >
                 <h1 className="text-4xl font-bold tracking-tight text-foreground mb-4">
                     {language === 'th' ? 'ประสบการณ์ทำงาน' : 'Curriculum Vitae'}
                 </h1>
@@ -58,16 +66,35 @@ export default function ExperienceContent() {
                     <PrintButton />
                     <DownloadPdfButton />
                 </div>
-            </header>
+            </motion.header>
 
-            <div className="space-y-12 relative">
+            <motion.div
+                className="space-y-12 relative"
+                variants={staggerContainer}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-50px" }}
+            >
                 {/* Vertical Line */}
-                <div className="hidden md:block absolute left-8 top-4 bottom-4 w-0.5 bg-border"></div>
+                <motion.div
+                    initial={{ height: 0 }}
+                    whileInView={{ height: '100%' }}
+                    transition={{ duration: 1.5, ease: "easeInOut" }}
+                    viewport={{ once: true }}
+                    className="hidden md:block absolute left-8 top-4 bottom-4 w-0.5 bg-border origin-top"
+                ></motion.div>
 
                 {jobs.map((job) => (
-                    <div key={job.id} className="relative pl-0 md:pl-24 group">
+                    <motion.div
+                        key={job.id}
+                        variants={fadeInUp}
+                        className="relative pl-0 md:pl-24 group"
+                    >
                         {/* Timeline Dot */}
-                        <div className="hidden md:block absolute left-[30px] top-6 w-4 h-4 rounded-full bg-background border-4 border-foreground z-10 group-hover:scale-125 transition-transform duration-300"></div>
+                        <motion.div
+                            variants={scaleIn}
+                            className="hidden md:block absolute left-[30px] top-6 w-4 h-4 rounded-full bg-background border-4 border-foreground z-10 group-hover:scale-125 transition-transform duration-300"
+                        ></motion.div>
 
                         <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 sm:p-8 hover:border-foreground/30 transition-colors duration-300 shadow-sm">
 
@@ -156,9 +183,9 @@ export default function ExperienceContent() {
                             )}
 
                         </div>
-                    </div>
+                    </motion.div>
                 ))}
-            </div>
+            </motion.div>
         </div>
     );
 }
