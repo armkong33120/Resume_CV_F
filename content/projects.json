@@ -1,5 +1,57 @@
 [
   {
+    "slug": "it-manager-start-to-end",
+    "title": {
+      "en": "IT Manager Start to End",
+      "th": "การจัดการไอทีแบบครบวงจร (Start to End)"
+    },
+    "tagline": {
+      "en": "Comprehensive IT Management from Strategy to Execution",
+      "th": "การบริหารจัดการไอทีแบบครบวงจรตั้งแต่วางแผนจนถึงดำเนินการ"
+    },
+    "year": "2024",
+    "role": {
+      "en": "IT Manager",
+      "th": "IT Manager"
+    },
+    "stack": [
+      "IT Strategy",
+      "Budget Management",
+      "Team Leadership",
+      "Digital Transformation",
+      "Infrastructure Planning"
+    ],
+    "coverImage": "/images/projects/it-manager-cover.png",
+    "highlights": [
+      {
+        "en": "Managed end-to-end IT operations and strategy",
+        "th": "บริหารจัดการการดำเนินงานและกลยุทธ์ไอทีแบบครบวงจร"
+      },
+      {
+        "en": "Led digital transformation and modernization initiatives",
+        "th": "เป็นผู้นำโครงการ Digital Transformation และการปรับปรุงระบบให้ทันสมัย"
+      },
+      {
+        "en": "Optimized IT budget and resource allocation",
+        "th": "เพิ่มประสิทธิภาพการบริหารงบประมาณและทรัพยากรไอที"
+      }
+    ],
+    "problem": {
+      "en": "Organizations often struggle with fragmented IT systems, misalignment between business goals and technology, and inefficient resource utilization, leading to operational bottlenecks.",
+      "th": "องค์กรมักประสบปัญหาความไม่เชื่อมโยงกันของระบบไอที การขาดความสอดคล้องระหว่างเป้าหมายทางธุรกิจและเทคโนโลยี รวมถึงการใช้ทรัพยากรอย่างไม่มีประสิทธิภาพ"
+    },
+    "approach": {
+      "en": "Implemented a holistic IT management approach covering strategic planning, infrastructure modernization, team capability building, and process optimization to ensure seamless end-to-end operations.",
+      "th": "ใช้แนวทางการบริหารจัดการไอทีแบบองค์รวม ครอบคลุมการวางแผนกลยุทธ์ การปรับปรุงโครงสร้างพื้นฐาน การพัฒนาศักยภาพทีม และการปรับปรุงกระบวนการทำงาน"
+    },
+    "results": {
+      "en": "Achieved streamlined IT operations, improved system reliability, and enhanced business agility through effective end-to-end management and strategic alignment.",
+      "th": "การดำเนินงานด้านไอทีมีความคล่องตัวขึ้น ความเสถียรของระบบเพิ่มขึ้น และธุรกิจมีความยืดหยุ่นมากขึ้นจากการบริหารจัดการที่มีประสิทธิภาพ"
+    },
+    "galleryImages": [],
+    "links": {}
+  },
+  {
     "slug": "automation-cyber-security",
     "title": {
       "en": "Automation Cyber Security",
