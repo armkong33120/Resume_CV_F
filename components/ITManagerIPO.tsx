@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import ZoomableImage from '@/components/ZoomableImage';
 
 export default function ITManagerIPO() {
     return (
@@ -8,13 +8,9 @@ export default function ITManagerIPO() {
                     IPO IT-Readiness Overview
                 </h2>
                 <div className="relative w-full aspect-[4/5] sm:aspect-[16/9] bg-white rounded-lg overflow-hidden border border-border shadow-sm">
-                    <Image
+                    <ZoomableImage
                         src="/images/projects/it-manager-ipo-readiness.png"
                         alt="IT Management Overview & IPO Readiness"
-                        fill
-                        className="object-contain p-2"
-                        sizes="(max-width: 768px) 100vw, 90vw"
-                        quality={100}
                         priority
                     />
                 </div>

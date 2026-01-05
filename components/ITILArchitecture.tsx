@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import ZoomableImage from '@/components/ZoomableImage';
 
 export default function ITILArchitecture() {
     return (
@@ -8,13 +8,9 @@ export default function ITILArchitecture() {
                     System Architecture & Workflow
                 </h2>
                 <div className="relative w-full aspect-[16/9] bg-gray-50 rounded-lg overflow-hidden border border-border">
-                    <Image
+                    <ZoomableImage
                         src="/images/projects/itil-ai-chat-architecture.png"
                         alt="ITIL AI Chat Architecture"
-                        fill
-                        className="object-contain"
-                        sizes="(max-width: 768px) 100vw, 90vw"
-                        quality={100}
                         priority
                     />
                 </div>
