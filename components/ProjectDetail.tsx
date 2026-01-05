@@ -8,6 +8,7 @@ import { useLanguage } from '@/components/LanguageContext';
 import { getTranslation } from '@/lib/translations';
 import MigrationFlow from '@/components/MigrationFlow';
 import ITILArchitecture from '@/components/ITILArchitecture';
+import ITManagerIPO from '@/components/ITManagerIPO';
 
 interface ProjectDetailProps {
     project: Project;
@@ -85,6 +86,7 @@ export default function ProjectDetail({ project, children }: ProjectDetailProps)
 
                     {project.slug === 'automation-cyber-security' && <MigrationFlow />}
                     {project.slug === 'itil-ai-chat-uat' && <ITILArchitecture />}
+                    {project.slug === 'it-manager-start-to-end' && <ITManagerIPO />}
 
                     {/* Render any injected children (e.g., custom flowcharts) */}
                     {children}
