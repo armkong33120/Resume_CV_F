@@ -4,6 +4,8 @@ import Section from '@/components/Section';
 import FeaturedProjects from '@/components/FeaturedProjects';
 import AboutContent from '@/components/AboutContent';
 import ContactContent from '@/components/ContactContent';
+import ResumeContent from '@/components/ResumeContent';
+import ExperienceContent from '@/components/ExperienceContent';
 
 export default async function Home() {
   const [profile, projects] = await Promise.all([
@@ -17,6 +19,12 @@ export default async function Home() {
       <div id="about">
         <AboutContent profile={profile} />
       </div>
+      <Section id="resume" className="bg-background">
+        <ResumeContent />
+      </Section>
+      <Section id="experience" className="bg-background">
+        <ExperienceContent />
+      </Section>
       <Section id="work" className="bg-background">
         <FeaturedProjects projects={projects} />
       </Section>
