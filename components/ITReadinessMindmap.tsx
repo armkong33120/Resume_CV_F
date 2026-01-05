@@ -1,175 +1,179 @@
 'use client';
 
 import React from 'react';
+import { useLanguage } from './LanguageContext';
 
 type TreeNode = {
-    name: string;
+    name: {
+        en: string;
+        th: string;
+    };
     tags?: string[];
     children?: TreeNode[];
 };
 
 const data: TreeNode = {
-    name: "IT Management Overview",
+    name: { en: "IT Management Overview", th: "ภาพรวมการบริหารจัดการไอที" },
     children: [
         {
-            name: "Strategy and Governance",
+            name: { en: "Strategy and Governance", th: "กลยุทธ์และธรรมาภิบาล" },
             tags: ["MID", "IPO"],
             children: [
-                { name: "IT Vision and Roadmap", tags: ["MID", "IPO"] },
-                { name: "Policies and Standards", tags: ["MID", "IPO"] },
-                { name: "Risk Register and Treatment", tags: ["MID", "IPO"] },
-                { name: "KPI/OKR and Reporting", tags: ["MID", "IPO"] },
-                { name: "Steering Committee", tags: ["MID", "IPO"] },
+                { name: { en: "IT Vision and Roadmap", th: "วิสัยทัศน์และแผนงานไอที" }, tags: ["MID", "IPO"] },
+                { name: { en: "Policies and Standards", th: "นโยบายและมาตรฐาน" }, tags: ["MID", "IPO"] },
+                { name: { en: "Risk Register and Treatment", th: "ทะเบียนความเสี่ยงและการจัดการ" }, tags: ["MID", "IPO"] },
+                { name: { en: "KPI/OKR and Reporting", th: "KPI/OKR และการรายงานผล" }, tags: ["MID", "IPO"] },
+                { name: { en: "Steering Committee", th: "คณะกรรมการกำกับดูแล" }, tags: ["MID", "IPO"] },
             ]
         },
         {
-            name: "ITSM and Operations",
+            name: { en: "ITSM and Operations", th: "ITSM และการปฏิบัติการ" },
             tags: ["ALL"],
             children: [
-                { name: "Service Catalog (Site)", tags: ["MID", "IPO"] },
-                { name: "Ticketing - Incident/Request", tags: ["ALL"] },
-                { name: "Problem Management (RCA)", tags: ["MID", "IPO"] },
-                { name: "Change Management (Approval/CAB)", tags: ["MID", "IPO"] },
-                { name: "Knowledge Base and Runbooks", tags: ["ALL"] },
-                { name: "CMDB / Config-Asset Mapping", tags: ["MID", "IPO"] },
-                { name: "On-call and Escalation", tags: ["MID/PAGER", "IPO"] },
+                { name: { en: "Service Catalog (Site)", th: "สารบบบริการ (Service Catalog)" }, tags: ["MID", "IPO"] },
+                { name: { en: "Ticketing - Incident/Request", th: "ระบบแจ้งเรื่อง (Incident/Request)" }, tags: ["ALL"] },
+                { name: { en: "Problem Management (RCA)", th: "การจัดการปัญหา (RCA)" }, tags: ["MID", "IPO"] },
+                { name: { en: "Change Management (Approval/CAB)", th: "การจัดการการเปลี่ยนแปลง (CAB)" }, tags: ["MID", "IPO"] },
+                { name: { en: "Knowledge Base and Runbooks", th: "คลังความรู้และคู่มือปฏิบัติงาน" }, tags: ["ALL"] },
+                { name: { en: "CMDB / Config-Asset Mapping", th: "CMDB / ผังความเชื่อมโยงทรัพย์สิน" }, tags: ["MID", "IPO"] },
+                { name: { en: "On-call and Escalation", th: "เวรปฏิบัติงานและการส่งต่อเรื่อง" }, tags: ["MID/PAGER", "IPO"] },
             ]
         },
         {
-            name: "Identity and Access",
+            name: { en: "Identity and Access", th: "การยืนยันตัวตนและการเข้าถึง" },
             tags: ["ALL"],
             children: [
-                { name: "Directory SSO (AD/Entra/Google)", tags: ["MID", "IPO"] },
-                { name: "MFA and Conditional Access", tags: ["MID", "IPO", "All"] },
-                { name: "RBAC and JML (Joiner-Mover-Leaver)", tags: ["MID", "IPO"] },
-                { name: "Privileged Access (PAM/PIM)", tags: ["MID", "IPO"] },
-                { name: "Secrets / Password Mgmt", tags: ["MID", "IPO"] },
-                { name: "Access Reviews (Periodic)", tags: ["REQ", "IPO"] },
+                { name: { en: "Directory SSO (AD/Entra/Google)", th: "ระบบบัญชีกลาง SSO (AD/Entra)" }, tags: ["MID", "IPO"] },
+                { name: { en: "MFA and Conditional Access", th: "MFA และเงื่อนไขการเข้าถึง" }, tags: ["MID", "IPO", "All"] },
+                { name: { en: "RBAC and JML (Joiner-Mover-Leaver)", th: "RBAC และกระบวนการ JML" }, tags: ["MID", "IPO"] },
+                { name: { en: "Privileged Access (PAM/PIM)", th: "การเข้าถึงระดับสูง (PAM/PIM)" }, tags: ["MID", "IPO"] },
+                { name: { en: "Secrets / Password Mgmt", th: "การจัดการรหัสผ่านและความลับ" }, tags: ["MID", "IPO"] },
+                { name: { en: "Access Reviews (Periodic)", th: "การทบทวนสิทธิ์ (ตามรอบ)" }, tags: ["REQ", "IPO"] },
             ]
         },
         {
-            name: "Infrastructure",
+            name: { en: "Infrastructure", th: "โครงสร้างพื้นฐาน" },
             tags: ["ALL"],
             children: [
                 {
-                    name: "Network",
+                    name: { en: "Network", th: "เครือข่าย" },
                     tags: ["ALL"],
                     children: [
-                        { name: "Wifi/LAN Redundancy and SLA", tags: ["MID", "IPO"] },
-                        { name: "IP Plan / VLAN / Segmentation", tags: ["MID", "REQ", "IPO"] },
-                        { name: "VPN (Corp/Special/IT)", tags: ["ALL"] },
-                        { name: "VPN / Remote Access", tags: ["MID", "IPO"] },
-                        { name: "DHCP/DNS/NTP Logging", tags: ["MID", "IPO"] },
-                        { name: "Network Monitoring (SNMP/NetFlow)", tags: ["MID", "INT", "IPO"] },
+                        { name: { en: "Wifi/LAN Redundancy and SLA", th: "ความเสถียร Wifi/LAN และ SLA" }, tags: ["MID", "IPO"] },
+                        { name: { en: "IP Plan / VLAN / Segmentation", th: "ผัง IP / VLAN / การแบ่งส่วน" }, tags: ["MID", "REQ", "IPO"] },
+                        { name: { en: "VPN (Corp/Special/IT)", th: "VPN (องค์กร/พิเศษ/ไอที)" }, tags: ["ALL"] },
+                        { name: { en: "VPN / Remote Access", th: "VPN / การเข้าถึงจากภายนอก" }, tags: ["MID", "IPO"] },
+                        { name: { en: "DHCP/DNS/NTP Logging", th: "บันทึก Log DHCP/DNS/NTP" }, tags: ["MID", "IPO"] },
+                        { name: { en: "Network Monitoring (SNMP/NetFlow)", th: "การเฝ้าระวังเครือข่าย" }, tags: ["MID", "INT", "IPO"] },
                     ]
                 },
                 {
-                    name: "Compute and Platform",
+                    name: { en: "Compute and Platform", th: "เครื่องแม่ข่ายและแพลตฟอร์ม" },
                     tags: ["ALL"],
                     children: [
-                        { name: "Servers (Baremetal/VM)", tags: ["ALL"] },
-                        { name: "OS Hardening/Patching", tags: ["MID", "IPO"] },
-                        { name: "Storage (NAS/SAN/Object)", tags: ["MID"] },
-                        { name: "Containers (Docker/K8s)", tags: ["CNT"] },
-                        { name: "Lifecycle and Environment", tags: ["MID", "IPO"] },
+                        { name: { en: "Servers (Baremetal/VM)", th: "เซิร์ฟเวอร์ (Physical/VM)" }, tags: ["ALL"] },
+                        { name: { en: "OS Hardening/Patching", th: "ความปลอดภัย OS / การอัปเดต" }, tags: ["MID", "IPO"] },
+                        { name: { en: "Storage (NAS/SAN/Object)", th: "พื้นที่จัดเก็บข้อมูล (Storage)" }, tags: ["MID"] },
+                        { name: { en: "Containers (Docker/K8s)", th: "คอนเทนเนอร์ (Docker/K8s)" }, tags: ["CNT"] },
+                        { name: { en: "Lifecycle and Environment", th: "วงจรชีวิตและสภาพแวดล้อมระบบ" }, tags: ["MID", "IPO"] },
                     ]
                 },
                 {
-                    name: "Cloud",
+                    name: { en: "Cloud", th: "คลาวด์" },
                     tags: ["MID"],
                     children: [
-                        { name: "IaC (Terraform)", tags: ["MID", "IPO"] },
-                        { name: "SaaS / PaaS / Cost Governance", tags: ["MID", "IPO"] },
-                        { name: "CDN/Edge (Optional)", tags: ["CNT"] },
+                        { name: { en: "IaC (Terraform)", th: "IaC (Terraform)" }, tags: ["MID", "IPO"] },
+                        { name: { en: "SaaS / PaaS / Cost Governance", th: "SaaS / PaaS / การคุมค่าใช้จ่าย" }, tags: ["MID", "IPO"] },
+                        { name: { en: "CDN/Edge (Optional)", th: "CDN/Edge (ทางเลือก)" }, tags: ["CNT"] },
                     ]
                 }
             ]
         },
         {
-            name: "Endpoints and Devices",
+            name: { en: "Endpoints and Devices", th: "อุปกรณ์ปลายทาง" },
             tags: ["ALL"],
             children: [
-                { name: "MDM (Intune/Jamf/Workspace ONE)", tags: ["MID", "IPO"] },
-                { name: "Patch Management (OS/3rd Party)", tags: ["MID", "SEC", "IPO"] },
-                { name: "EDR/AV and Device Control", tags: ["MID", "REQ", "IPO"] },
-                { name: "Disk Encryption (FileVault/BitLocker)", tags: ["MID", "REQ", "IPO"] },
-                { name: "Standard Build / Baseline Hardening", tags: ["MID", "IPO"] },
-                { name: "Inventory and Compliance Reporting", tags: ["MID", "IPO"] },
+                { name: { en: "MDM (Intune/Jamf/Workspace ONE)", th: "MDM (Intune/Jamf)" }, tags: ["MID", "IPO"] },
+                { name: { en: "Patch Management (OS/3rd Party)", th: "การจัดการ Patch (OS/โปรแกรม)" }, tags: ["MID", "SEC", "IPO"] },
+                { name: { en: "EDR/AV and Device Control", th: "EDR/AV และการคุมอุปกรณ์ต่อพ่วง" }, tags: ["MID", "REQ", "IPO"] },
+                { name: { en: "Disk Encryption (FileVault/BitLocker)", th: "การเข้ารหัสข้อมูลในเครื่อง" }, tags: ["MID", "REQ", "IPO"] },
+                { name: { en: "Standard Build / Baseline Hardening", th: "มาตรฐานการติดตั้ง / ความปลอดภัยพื้นฐาน" }, tags: ["MID", "IPO"] },
+                { name: { en: "Inventory and Compliance Reporting", th: "ทะเบียนอุปกรณ์และการรายงานผล" }, tags: ["MID", "IPO"] },
             ]
         },
         {
-            name: "Applications and Data",
+            name: { en: "Applications and Data", th: "แอปพลิเคชันและข้อมูล" },
             tags: ["MID"],
             children: [
-                { name: "Business Apps Ownership", tags: ["MID", "IPO"] },
-                { name: "Databases and Backups Control", tags: ["MID", "REQ", "IPO"] },
-                { name: "Integrations/API and Automation", tags: ["MID"] },
-                { name: "Data Classification / Sensitivity", tags: ["MID", "REQ", "IPO"] },
-                { name: "Data Retention and Lifecycle", tags: ["MID", "IPO"] },
+                { name: { en: "Business Apps Ownership", th: "ผู้รับผิดชอบระบบธุรกิจ" }, tags: ["MID", "IPO"] },
+                { name: { en: "Databases and Backups Control", th: "การคุมฐานข้อมูลและสำรองข้อมูล" }, tags: ["MID", "REQ", "IPO"] },
+                { name: { en: "Integrations/API and Automation", th: "การเชื่อมต่อ/API และระบบอัตโนมัติ" }, tags: ["MID"] },
+                { name: { en: "Data Classification / Sensitivity", th: "การจัดชั้นความลับข้อมูล" }, tags: ["MID", "REQ", "IPO"] },
+                { name: { en: "Data Retention and Lifecycle", th: "ระยะเวลาเก็บและการทำลายข้อมูล" }, tags: ["MID", "IPO"] },
             ]
         },
         {
-            name: "Security Program",
+            name: { en: "Security Program", th: "โปรแกรมความปลอดภัย" },
             tags: ["MID"],
             children: [
-                { name: "Central Logging (Critical Systems)", tags: ["MID", "IPO"] },
-                { name: "Security Awareness Training", tags: ["MID", "REQ", "IPO"] },
-                { name: "Vulnerability Management", tags: ["MID", "REQ", "IPO"] },
-                { name: "Email Security (SPF/DKIM/DMARC)", tags: ["MID", "IPO"] },
-                { name: "Network Security (FW/WAF/IDS/IPS)", tags: ["MID", "REQ", "IPO"] },
-                { name: "Incident Response Plan", tags: ["MID", "REQ", "IPO"] },
-                { name: "Security Assessment / Pentest", tags: ["MID", "IPO"] },
-                { name: "Application Security (CI/CD)", tags: ["MID", "REQ"] },
+                { name: { en: "Central Logging (Critical Systems)", th: "ระบบเก็บ Log ศูนย์กลาง" }, tags: ["MID", "IPO"] },
+                { name: { en: "Security Awareness Training", th: "การอบรมความตระหนักรู้ฯ" }, tags: ["MID", "REQ", "IPO"] },
+                { name: { en: "Vulnerability Management", th: "การจัดการช่องโหว่" }, tags: ["MID", "REQ", "IPO"] },
+                { name: { en: "Email Security (SPF/DKIM/DMARC)", th: "ความปลอดภัยอีเมล" }, tags: ["MID", "IPO"] },
+                { name: { en: "Network Security (FW/WAF/IDS/IPS)", th: "ความปลอดภัยเครือข่าย" }, tags: ["MID", "REQ", "IPO"] },
+                { name: { en: "Incident Response Plan", th: "แผนรับมือภัยคุกคาม" }, tags: ["MID", "REQ", "IPO"] },
+                { name: { en: "Security Assessment / Pentest", th: "การประเมินความปลอดภัย / Pentest" }, tags: ["MID", "IPO"] },
+                { name: { en: "Application Security (CI/CD)", th: "ความปลอดภัยแอปพลิเคชัน" }, tags: ["MID", "REQ"] },
             ]
         },
         {
-            name: "Backup / DR / BCP",
+            name: { en: "Backup / DR / BCP", th: "สำรองข้อมูล / กู้คืน / ต่อเนื่องทางธุรกิจ" },
             tags: ["ALL"],
             children: [
-                { name: "Backup Strategy (3-2-1)", tags: ["ALL"] },
-                { name: "Immutable / Offsite Copy", tags: ["MID", "IPO"] },
-                { name: "RPO/RTO Definition", tags: ["MID", "IPO"] },
-                { name: "Restore Testing and Evidence", tags: ["MID", "IPO"] },
-                { name: "DR Plan / Test", tags: ["MID", "IPO"] },
-                { name: "BCP (People/Process)", tags: ["MID", "IPO"] },
+                { name: { en: "Backup Strategy (3-2-1)", th: "กลยุทธ์สำรองข้อมูล (3-2-1)" }, tags: ["ALL"] },
+                { name: { en: "Immutable / Offsite Copy", th: "สำรองข้อมูลแบบแก้ไขไม่ได้ / นอกสถานที่" }, tags: ["MID", "IPO"] },
+                { name: { en: "RPO/RTO Definition", th: "กำหนดค่า RPO/RTO" }, tags: ["MID", "IPO"] },
+                { name: { en: "Restore Testing and Evidence", th: "ทดสอบการกู้คืนและหลักฐาน" }, tags: ["MID", "IPO"] },
+                { name: { en: "DR Plan / Test", th: "แผนกู้คืนภัยพิบัติ / ทดสอบ" }, tags: ["MID", "IPO"] },
+                { name: { en: "BCP (People/Process)", th: "แผนความต่อเนื่องทางธุรกิจ (คน/กระบวนการ)" }, tags: ["MID", "IPO"] },
             ]
         },
         {
-            name: "Observability and Monitoring",
+            name: { en: "Observability and Monitoring", th: "การเฝ้าระวังและสังเกตการณ์" },
             tags: ["MID"],
             children: [
-                { name: "Monitoring / Metrics (Basic)", tags: ["MID", "IPO"] },
-                { name: "Dashboards / Traffic / Error", tags: ["MID", "IPO"] },
-                { name: "Capacity and Performance Trend", tags: ["MID", "IPO"] },
-                { name: "Noise Control / Alert Tuning", tags: ["MID", "IPO"] },
+                { name: { en: "Monitoring / Metrics (Basic)", th: "การเฝ้าระวังพื้นฐาน" }, tags: ["MID", "IPO"] },
+                { name: { en: "Dashboards / Traffic / Error", th: "แดชบอร์ด / Traffic / Error" }, tags: ["MID", "IPO"] },
+                { name: { en: "Capacity and Performance Trend", th: "แนวโน้มความจุและประสิทธิภาพ" }, tags: ["MID", "IPO"] },
+                { name: { en: "Noise Control / Alert Tuning", th: "การลด Noise / ปรับแต่งการเตือน" }, tags: ["MID", "IPO"] },
             ]
         },
         {
-            name: "Vendor / Finance / Lifecycle",
+            name: { en: "Vendor / Finance / Lifecycle", th: "คู่ค้า / การเงิน / วงจรชีวิต" },
             tags: ["MID", "IPO"],
             children: [
-                { name: "OPEX/CAPEX Planning", tags: ["MID", "IPO"] },
-                { name: "License Management", tags: ["MID", "IPO"] },
-                { name: "Renewal Calendar (Domain/SSL)", tags: ["MID", "IPO"] },
-                { name: "Contract and Vendor Qual", tags: ["MID", "IPO"] },
-                { name: "Asset Lifecycle (Purchase/Retire)", tags: ["MID", "IPO"] },
-                { name: "Procurement Standardization", tags: ["MID", "IPO"] },
+                { name: { en: "OPEX/CAPEX Planning", th: "วางแผน OPEX/CAPEX" }, tags: ["MID", "IPO"] },
+                { name: { en: "License Management", th: "การจัดการ License" }, tags: ["MID", "IPO"] },
+                { name: { en: "Renewal Calendar (Domain/SSL)", th: "ปฏิทินต่ออายุ (Domain/SSL)" }, tags: ["MID", "IPO"] },
+                { name: { en: "Contract and Vendor Qual", th: "สัญญาและคุณภาพคู่ค้า" }, tags: ["MID", "IPO"] },
+                { name: { en: "Asset Lifecycle (Purchase/Retire)", th: "วงจรชีวิตทรัพย์สิน (ซื้อ/จำหน่าย)" }, tags: ["MID", "IPO"] },
+                { name: { en: "Procurement Standardization", th: "มาตรฐานการจัดซื้อ" }, tags: ["MID", "IPO"] },
             ]
         },
         {
-            name: "Compliance and Audit Readiness",
+            name: { en: "Compliance and Audit Readiness", th: "การปฏิบัติตามกฎและพร้อมรับตรวจสอบ" },
             tags: ["MID", "IPO"],
             children: [
-                { name: "Audit Trails (Admin/Change)", tags: ["REQ", "IPO"] },
-                { name: "Evidence Collection", tags: ["MID", "IPO"] },
-                { name: "Policy Exception Handling", tags: ["REQ", "IPO"] },
-                { name: "Data Privacy (PDPA/GDPR)", tags: ["REQ", "IPO"] },
+                { name: { en: "Audit Trails (Admin/Change)", th: "เส้นทางตรวจสอบ (Admin/Change)" }, tags: ["REQ", "IPO"] },
+                { name: { en: "Evidence Collection", th: "การเก็บรวบรวมหลักฐาน" }, tags: ["MID", "IPO"] },
+                { name: { en: "Policy Exception Handling", th: "การจัดการข้อยกเว้นนโยบาย" }, tags: ["REQ", "IPO"] },
+                { name: { en: "Data Privacy (PDPA/GDPR)", th: "ความเป็นส่วนตัวข้อมูล (PDPA)" }, tags: ["REQ", "IPO"] },
             ]
         },
     ]
 };
 
-const Node = ({ node, isRoot = false }: { node: TreeNode; isRoot?: boolean }) => {
+const Node = ({ node, isRoot = false, language }: { node: TreeNode; isRoot?: boolean; language: 'en' | 'th' }) => {
     return (
         <div className="flex flex-row items-center">
             {/* Node Content */}
@@ -179,7 +183,7 @@ const Node = ({ node, isRoot = false }: { node: TreeNode; isRoot?: boolean }) =>
                     ? 'bg-foreground text-background border-foreground font-bold text-lg'
                     : 'bg-white hover:bg-gray-50 border-gray-200 text-sm font-medium'}
       `}>
-                <span>{node.name}</span>
+                <span>{node.name[language]}</span>
                 {node.tags && node.tags.length > 0 && (
                     <div className="flex gap-1 ml-2">
                         {node.tags.map(tag => (
@@ -205,7 +209,7 @@ const Node = ({ node, isRoot = false }: { node: TreeNode; isRoot?: boolean }) =>
                             <div key={index} className="flex flex-row items-center relative">
                                 {/* Connector from Vertical Bar to Child */}
                                 <div className="w-6 h-px bg-gray-300 shrink-0"></div>
-                                <Node node={child} />
+                                <Node node={child} language={language} />
                             </div>
                         ))}
                     </div>
@@ -216,10 +220,12 @@ const Node = ({ node, isRoot = false }: { node: TreeNode; isRoot?: boolean }) =>
 };
 
 export default function ITReadinessMindmap() {
+    const { language } = useLanguage();
+
     return (
         <div className="w-full overflow-x-auto overflow-y-hidden p-8 bg-gray-50/50 rounded-xl border border-dashed border-gray-200">
             <div className="min-w-max">
-                <Node node={data} isRoot />
+                <Node node={data} isRoot language={language} />
             </div>
         </div>
     );
