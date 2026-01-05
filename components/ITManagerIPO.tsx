@@ -1,4 +1,4 @@
-import ZoomableImage from '@/components/ZoomableImage';
+import ITReadinessMindmap from '@/components/ITReadinessMindmap';
 
 export default function ITManagerIPO() {
     return (
@@ -7,13 +7,9 @@ export default function ITManagerIPO() {
                 <h2 className="text-xl xs:text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
                     IPO IT-Readiness Overview
                 </h2>
-                <div className="relative w-full aspect-[4/5] sm:aspect-[16/9] bg-white rounded-lg overflow-hidden border border-border shadow-sm">
-                    <ZoomableImage
-                        src="/images/projects/it-manager-ipo-readiness.png"
-                        alt="IT Management Overview & IPO Readiness"
-                        priority
-                    />
-                </div>
+
+                {/* Render the code-based mindmap */}
+                <ITReadinessMindmap />
             </div>
 
             <div className="bg-foreground/5 rounded-lg p-6 xs:p-8 space-y-4 border border-border">
