@@ -236,63 +236,6 @@
     }
   },
   {
-    "slug": "event-consolidation-pagerduty",
-    "title": {
-      "en": "IT Event Consolidation (Omnibus → PagerDuty Migration)",
-      "th": "IT Event Consolidation (Omnibus → PagerDuty Migration)"
-    },
-    "tagline": {
-      "en": "Consolidating Event Management from Omnibus to PagerDuty for better efficiency",
-      "th": "รวมระบบ Event Management จาก Omnibus ไป PagerDuty เพื่อประสิทธิภาพที่ดีขึ้น"
-    },
-    "year": "2023",
-    "role": {
-      "en": "Event Manager (Outsource)",
-      "th": "Event Manager (Outsource)"
-    },
-    "stack": [
-      "PagerDuty",
-      "Omnibus",
-      "ITIL v4",
-      "Event Management",
-      "Integration"
-    ],
-    "coverImage": "/images/projects/pagerduty-migration-cover.jpg",
-    "highlights": [
-      {
-        "en": "Reduced P4 Noise and created effective Thresholds",
-        "th": "ลด P4 Noise และสร้าง Threshold ที่มีประสิทธิภาพ"
-      },
-      {
-        "en": "Investigated and reduced False alarms",
-        "th": "ตรวจสอบและลด False alarm"
-      },
-      {
-        "en": "Improved Event Management efficiency according to ITIL v4",
-        "th": "ปรับปรุงประสิทธิภาพ Event Management ตาม ITIL v4"
-      }
-    ],
-    "problem": {
-      "en": "The existing Event Management system (Omnibus) had issues with high false alarms, excessive P4 noise, and improper thresholds, wasting team time and risking missed critical events.",
-      "th": "ระบบ Event Management เดิมที่ใช้ Omnibus มีปัญหาเรื่อง false alarm จำนวนมาก P4 noise ที่สูง และ threshold ที่ไม่เหมาะสม ทำให้ทีมงานเสียเวลาในการจัดการกับ alarm ที่ไม่จำเป็น และอาจทำให้พลาดเหตุการณ์สำคัญที่แท้จริง"
-    },
-    "approach": {
-      "en": "Planned and executed migration to PagerDuty. Analyzed monitoring data to establish proper thresholds, reduce P4 noise, and tune settings to minimize false alarms. Established workflows and processes aligned with ITIL v4.",
-      "th": "วางแผนและดำเนินการย้ายระบบ Event Management จาก Omnibus ไปใช้ PagerDuty โดยทำการวิเคราะห์ข้อมูลจาก Monitoring Tools เพื่อสร้าง threshold ที่เหมาะสม ลด P4 noise และปรับแต่งการตั้งค่าต่างๆ เพื่อลด false alarm พร้อมสร้าง workflow และ process ตาม ITIL v4 เพื่อให้การจัดการ event มีประสิทธิภาพมากขึ้น"
-    },
-    "results": {
-      "en": "Significantly reduced false alarms. Improved thresholds led to more accurate critical event detection. Event management became more efficient per ITIL v4 standards, allowing the team to focus on critical tasks.",
-      "th": "ระบบใหม่สามารถลด false alarm ได้อย่างมีนัยสำคัญ และ threshold ที่ปรับปรุงแล้วทำให้การตรวจจับเหตุการณ์สำคัญทำได้แม่นยำขึ้น การจัดการ event มีประสิทธิภาพมากขึ้นตามหลัก ITIL v4 และช่วยให้ทีมงานมีเวลาไปจัดการกับงานสำคัญอื่นๆ มากขึ้น"
-    },
-    "galleryImages": [
-      "/images/projects/pagerduty-migration-1.jpg",
-      "/images/projects/pagerduty-migration-2.png"
-    ],
-    "links": {
-      "caseStudy": "#"
-    }
-  },
-  {
     "slug": "bank-itsm-monitor-migration",
     "title": {
       "en": "Bank ITSM Tools Monitor Migration Data Center",
