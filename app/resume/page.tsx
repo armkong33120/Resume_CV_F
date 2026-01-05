@@ -5,6 +5,7 @@ import { useLanguage } from '@/components/LanguageContext';
 import { getTranslation } from '@/lib/translations';
 import experienceData from '@/content/experience.json';
 import PrintButton from '@/components/PrintButton';
+import DownloadPdfButton from '@/components/DownloadPdfButton';
 
 interface LocalizedString {
     th: string;
