@@ -48,7 +48,10 @@
       "en": "Achieved streamlined IT operations, improved system reliability, and enhanced business agility through effective end-to-end management and strategic alignment.",
       "th": "การดำเนินงานด้านไอทีมีความคล่องตัวขึ้น ความเสถียรของระบบเพิ่มขึ้น และธุรกิจมีความยืดหยุ่นมากขึ้นจากการบริหารจัดการที่มีประสิทธิภาพ"
     },
-    "galleryImages": [],
+    "galleryImages": [
+      "/images/projects/it-manager-gallery-1.png",
+      "/images/projects/it-manager-gallery-2.png"
+    ],
     "links": {}
   },
   {
@@ -97,7 +100,10 @@
       "en": "Streamlined migration process reducing downtime and errors. Automated vulnerability assessments improved response times and rule accuracy.",
       "th": "กระบวนการย้ายระบบรวดเร็วขึ้น ลดเวลาหยุดทำงานและความผิดพลาด ระบบประเมินช่องโหว่อัตโนมัติช่วยให้การตอบสนองเร็วขึ้นและความแม่นยำของกฎดีขึ้น"
     },
-    "galleryImages": [],
+    "galleryImages": [
+      "/images/projects/automation-cyber-security-gallery-1.png",
+      "/images/projects/automation-cyber-security-gallery-2.png"
+    ],
     "links": {
       "caseStudy": "#"
     }
@@ -279,7 +285,8 @@
       "th": "ระบบใหม่สามารถลด false alarm ได้อย่างมีนัยสำคัญ และ threshold ที่ปรับปรุงแล้วทำให้การตรวจจับเหตุการณ์สำคัญทำได้แม่นยำขึ้น การจัดการ event มีประสิทธิภาพมากขึ้นตามหลัก ITIL v4 และช่วยให้ทีมงานมีเวลาไปจัดการกับงานสำคัญอื่นๆ มากขึ้น"
     },
     "galleryImages": [
-      "/images/projects/pagerduty-migration-1.jpg"
+      "/images/projects/pagerduty-migration-1.jpg",
+      "/images/projects/pagerduty-migration-2.png"
     ],
     "links": {
       "caseStudy": "#"
