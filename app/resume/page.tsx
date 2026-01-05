@@ -47,7 +47,10 @@ export default function ResumePage() {
                         {language === 'th' ? 'ประวัติย่อ' : 'Resume'}
                     </h1>
                     <div className="h-1 w-20 bg-foreground rounded-full mb-6"></div>
-                    <PrintButton />
+                    <div className="flex items-center gap-3">
+                        <PrintButton />
+                        <DownloadPdfButton />
+                    </div>
                 </header>
 
                 <div className="space-y-8">
