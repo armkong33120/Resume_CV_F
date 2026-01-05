@@ -42,7 +42,7 @@ export default function ZoomableImage({ src, alt, className = '', priority = fal
                     onClick={() => setIsOpen(false)}
                 >
                     <button
-                        className="absolute top-4 right-4 text-white/70 hover:text-white transition-colors p-2 z-[110]"
+                        className="fixed top-4 right-4 text-white/70 hover:text-white transition-colors p-2 z-[110]"
                         onClick={(e) => {
                             e.stopPropagation();
                             setIsOpen(false);
@@ -51,15 +51,17 @@ export default function ZoomableImage({ src, alt, className = '', priority = fal
                         <X className="w-8 h-8 sm:w-10 sm:h-10" />
                     </button>
 
-                    <div className="relative w-full h-full max-w-7xl max-h-[90vh] flex items-center justify-center" onClick={(e) => e.stopPropagation()}>
-                        <Image
+                    <div
+                        className="w-full h-full overflow-auto flex items-center justify-center"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        {/* Use standard img for native resolution behavior in lightbox */}
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
                             src={src}
                             alt={alt}
-                            fill
-                            className="object-contain"
-                            sizes="100vw"
-                            quality={100}
-                            priority
+                            className="max-w-none w-auto h-auto min-w-full sm:min-w-0 object-contain shadow-2xl"
+                            style={{ maxHeight: 'none' }}
                         />
                     </div>
                 </div>
