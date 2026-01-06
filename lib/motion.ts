@@ -2,7 +2,7 @@
 import { Variants } from 'framer-motion';
 
 // Soft, crisp premium easing
-export const EASE = [0.22, 1, 0.36, 1];
+export const EASE = [0.22, 1, 0.36, 1] as const;
 
 export const fadeInUp: Variants = {
     hidden: { y: 20, opacity: 0 },
@@ -67,4 +67,4 @@ export const hoverLift = {
         duration: 0.2,
         ease: "easeOut"
     }
-};
+} as const;
