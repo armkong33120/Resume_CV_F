@@ -1,22 +1,30 @@
 
 "use client";
 
-import PasswordGate from './PasswordGate';
+import { useState } from 'react';
 
 interface SalaryPrivacyProps {
     value: string;
 }
 
 export default function SalaryPrivacy({ value }: SalaryPrivacyProps) {
+    const [isRevealed, setIsRevealed] = useState(false);
+
     return (
-        <PasswordGate
-            placeholder={
-                <span className="opacity-70 font-mono tracking-wider hover:opacity-100 transition-opacity flex items-center gap-2">
-                    xx,xxx <span className="text-xs opacity-50">(Click to view)</span>
-                </span>
-            }
+        <span
+            className="cursor-pointer transition-colors duration-200 hover:text-foreground relative group"
+            onMouseEnter={() => setIsRevealed(true)}
+            onMouseLeave={() => setIsRevealed(false)}
+            onClick={() => setIsRevealed(!isRevealed)}
+            role="button"
+            tabIndex={0}
+            aria-label="Reveal salary"
         >
-            <span className="font-semibold text-green-600 dark:text-green-400">{value}</span>
-        </PasswordGate>
+            {isRevealed ? (
+                <span>{value}</span>
+            ) : (
+                <span className="opacity-70">xx,xxx</span>
+            )}
+        </span>
     );
 }
