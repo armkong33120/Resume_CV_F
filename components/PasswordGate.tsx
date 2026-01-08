@@ -21,12 +21,15 @@ export default function PasswordGate({ children, placeholder }: PasswordGateProp
         e.preventDefault();
         const correctPassword = process.env.NEXT_PUBLIC_ACCESS_PASSWORD;
 
-        // Debugging: Check if environment variable is loaded
+        // Configuration check
         if (!correctPassword) {
             console.error("Password environment variable is not set. Please restart the dev server or check .env.local");
+            setError(true);
+            return;
         }
 
-        if (password.trim() === correctPassword) {
+        // Robust comparison: trim both inputs
+        if (correctPassword && password.trim() === correctPassword.trim()) {
             setIsAuthenticated(true);
             setIsModalOpen(false);
             setError(false);
@@ -117,7 +120,9 @@ export default function PasswordGate({ children, placeholder }: PasswordGateProp
                                             animate={{ opacity: 1, y: 0 }}
                                             className="text-xs text-red-500 mt-1.5 ml-1 font-medium"
                                         >
-                                            {language === 'th' ? 'รหัสผ่านไม่ถูกต้อง' : 'Incorrect password'}
+                                            {!process.env.NEXT_PUBLIC_ACCESS_PASSWORD
+                                                ? (language === 'th' ? 'ระบบขัดข้อง: ไม่พบการตั้งค่ารหัสผ่าน (โปรด Restart Server)' : 'System Error: Password setup missing (Try restarting server)')
+                                                : (language === 'th' ? 'รหัสผ่านไม่ถูกต้อง' : 'Incorrect password')}
                                         </motion.p>
                                     )}
                                 </div>
