@@ -20,7 +20,13 @@ export default function PasswordGate({ children, placeholder }: PasswordGateProp
     const handleUnlock = (e: React.FormEvent) => {
         e.preventDefault();
         const correctPassword = process.env.NEXT_PUBLIC_ACCESS_PASSWORD;
-        if (password === correctPassword) {
+
+        // Debugging: Check if environment variable is loaded
+        if (!correctPassword) {
+            console.error("Password environment variable is not set. Please restart the dev server or check .env.local");
+        }
+
+        if (password.trim() === correctPassword) {
             setIsAuthenticated(true);
             setIsModalOpen(false);
             setError(false);
