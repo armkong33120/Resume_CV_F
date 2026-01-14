@@ -241,6 +241,7 @@ export default function ContactContent({ profile }: ContactContentProps) {
                                 </a>
                             )}
                             <PasswordGate
+                                actionUrl="https://drive.google.com/drive/folders/1DmaOziAzjVuBmNX7lF1PcdTYcUKPQ93I?usp=drive_link"
                                 placeholder={
                                     <div className="px-4 xs:px-6 py-2 xs:py-3 border border-border rounded-full font-medium tracking-tight hover:bg-foreground/5 transition-colors focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 inline-flex items-center gap-2 text-sm xs:text-base cursor-pointer">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

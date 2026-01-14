@@ -8,9 +8,10 @@ import { useLanguage } from './LanguageContext';
 interface PasswordGateProps {
     children: ReactNode;
     placeholder?: ReactNode;
+    actionUrl?: string;
 }
 
-export default function PasswordGate({ children, placeholder }: PasswordGateProps) {
+export default function PasswordGate({ children, placeholder, actionUrl }: PasswordGateProps) {
     const { language } = useLanguage();
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -34,6 +35,11 @@ export default function PasswordGate({ children, placeholder }: PasswordGateProp
             setIsModalOpen(false);
             setError(false);
             setPassword('');
+
+            // Auto-redirect if actionUrl is provided
+            if (actionUrl) {
+                window.open(actionUrl, '_blank');
+            }
         } else {
             setError(true);
         }
