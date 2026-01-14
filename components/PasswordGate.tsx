@@ -31,14 +31,19 @@ export default function PasswordGate({ children, placeholder, actionUrl }: Passw
 
         // Robust comparison: trim both inputs
         if (correctPassword && password.trim() === correctPassword.trim()) {
-            setIsAuthenticated(true);
-            setIsModalOpen(false);
-            setError(false);
-            setPassword('');
-
-            // Auto-redirect if actionUrl is provided
+            // If actionUrl is present, redirect ONLY and keep locked (do not set authenticated)
+            // This ensures password is required EVERY time
             if (actionUrl) {
                 window.open(actionUrl, '_blank');
+                setIsModalOpen(false);
+                setError(false);
+                setPassword('');
+            } else {
+                // For content reveal (like salary), keep unlocked
+                setIsAuthenticated(true);
+                setIsModalOpen(false);
+                setError(false);
+                setPassword('');
             }
         } else {
             setError(true);
