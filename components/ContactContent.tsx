@@ -4,6 +4,7 @@ import { Profile } from '@/lib/types';
 import Section from '@/components/Section';
 import { useLanguage } from '@/components/LanguageContext';
 import { getTranslation } from '@/lib/translations';
+import PasswordGate from '@/components/PasswordGate';
 
 
 interface ContactContentProps {
@@ -239,21 +240,33 @@ export default function ContactContent({ profile }: ContactContentProps) {
                                     GitHub
                                 </a>
                             )}
-                            <a
-                                href="https://drive.google.com/drive/folders/1DmaOziAzjVuBmNX7lF1PcdTYcUKPQ93I?usp=drive_link"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="px-4 xs:px-6 py-2 xs:py-3 border border-border rounded-full font-medium tracking-tight hover:bg-foreground/5 transition-colors focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 inline-flex items-center gap-2 text-sm xs:text-base"
+                            <PasswordGate
+                                placeholder={
+                                    <div className="px-4 xs:px-6 py-2 xs:py-3 border border-border rounded-full font-medium tracking-tight hover:bg-foreground/5 transition-colors focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 inline-flex items-center gap-2 text-sm xs:text-base cursor-pointer">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                        </svg>
+                                        {t.home.documents}
+                                    </div>
+                                }
                             >
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                                    <polyline points="14 2 14 8 20 8"></polyline>
-                                    <line x1="16" y1="13" x2="8" y2="13"></line>
-                                    <line x1="16" y1="17" x2="8" y2="17"></line>
-                                    <polyline points="10 9 9 9 8 9"></polyline>
-                                </svg>
-                                {t.home.documents}
-                            </a>
+                                <a
+                                    href="https://drive.google.com/drive/folders/1DmaOziAzjVuBmNX7lF1PcdTYcUKPQ93I?usp=drive_link"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="px-4 xs:px-6 py-2 xs:py-3 border border-border rounded-full font-medium tracking-tight hover:bg-foreground/5 transition-colors focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 inline-flex items-center gap-2 text-sm xs:text-base"
+                                >
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                        <polyline points="14 2 14 8 20 8"></polyline>
+                                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                                        <polyline points="10 9 9 9 8 9"></polyline>
+                                    </svg>
+                                    {t.home.documents}
+                                </a>
+                            </PasswordGate>
                         </div>
                     </div>
                 )}
