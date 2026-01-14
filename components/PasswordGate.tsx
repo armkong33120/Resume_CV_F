@@ -18,34 +18,39 @@ export default function PasswordGate({ children, placeholder, actionUrl }: Passw
     const [password, setPassword] = useState('');
     const [error, setError] = useState(false);
 
-    const handleUnlock = (e: React.FormEvent) => {
+    const handleUnlock = async (e: React.FormEvent) => {
         e.preventDefault();
-        const correctPassword = process.env.NEXT_PUBLIC_ACCESS_PASSWORD;
 
-        // Configuration check
-        if (!correctPassword) {
-            console.error("Password environment variable is not set. Please restart the dev server or check .env.local");
-            setError(true);
-            return;
-        }
+        // SHA-256 Hash of 'Armkong_1'
+        const TARGET_HASH = '423645577c19881473bc8b359e1b517c449e365111f2cfb779232bfa1a34d01e';
 
-        // Robust comparison: trim both inputs
-        if (correctPassword && password.trim() === correctPassword.trim()) {
-            // If actionUrl is present, redirect ONLY and keep locked (do not set authenticated)
-            // This ensures password is required EVERY time
-            if (actionUrl) {
-                window.open(actionUrl, '_blank');
-                setIsModalOpen(false);
-                setError(false);
-                setPassword('');
+        try {
+            // Encode password as UTF-8
+            const msgBuffer = new TextEncoder().encode(password.trim());
+            // Hash the password
+            const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+            // Convert hash to hex string
+            const hashArray = Array.from(new Uint8Array(hashBuffer));
+            const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+
+            if (hashHex === TARGET_HASH) {
+                // If actionUrl is present, redirect ONLY and keep locked
+                if (actionUrl) {
+                    window.open(actionUrl, '_blank');
+                    setIsModalOpen(false);
+                    setError(false);
+                    setPassword('');
+                } else {
+                    setIsAuthenticated(true);
+                    setIsModalOpen(false);
+                    setError(false);
+                    setPassword('');
+                }
             } else {
-                // For content reveal (like salary), keep unlocked
-                setIsAuthenticated(true);
-                setIsModalOpen(false);
-                setError(false);
-                setPassword('');
+                setError(true);
             }
-        } else {
+        } catch (err) {
+            console.error("Hashing failed", err);
             setError(true);
         }
     };
@@ -131,9 +136,7 @@ export default function PasswordGate({ children, placeholder, actionUrl }: Passw
                                             animate={{ opacity: 1, y: 0 }}
                                             className="text-xs text-red-500 mt-1.5 ml-1 font-medium"
                                         >
-                                            {!process.env.NEXT_PUBLIC_ACCESS_PASSWORD
-                                                ? (language === 'th' ? 'ระบบขัดข้อง: ไม่พบการตั้งค่ารหัสผ่าน (โปรด Restart Server)' : 'System Error: Password setup missing (Try restarting server)')
-                                                : (language === 'th' ? 'รหัสผ่านไม่ถูกต้อง' : 'Incorrect password')}
+                                            {language === 'th' ? 'รหัสผ่านไม่ถูกต้อง' : 'Incorrect password'}
                                         </motion.p>
                                     )}
                                 </div>
