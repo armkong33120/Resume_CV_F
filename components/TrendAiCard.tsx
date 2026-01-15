@@ -33,10 +33,10 @@ export default function TrendAiCard() {
     ];
 
     return (
-        <div className="w-full max-w-lg mx-auto mt-12 mb-8">
+        <div className="w-full max-w-lg mx-auto mt-12 mb-8 print:mt-4 print:mb-4">
             <motion.div
                 whileHover={{ y: -5 }}
-                className="relative bg-gradient-to-br from-background to-foreground/5 border border-border rounded-2xl p-6 sm:p-8 shadow-xl overflow-hidden"
+                className="relative bg-gradient-to-br from-background to-foreground/5 border border-border rounded-2xl p-6 sm:p-8 shadow-xl overflow-hidden print:shadow-none print:border-2 print:border-black"
             >
                 {/* Glow effect */}
                 <div className="absolute top-0 right-0 -mr-16 -mt-16 w-32 h-32 bg-blue-500/20 blur-3xl rounded-full"></div>
