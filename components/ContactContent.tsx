@@ -16,7 +16,6 @@ export default function ContactContent({ profile }: ContactContentProps) {
     const t = getTranslation(language);
 
     return (
-    return (
         <div className="pt-20 xs:pt-24 sm:pt-32 min-h-screen safe-top">
             <div className="max-w-container mx-auto px-4 xs:px-6 sm:px-8 safe-left safe-right">
                 <div className="mb-8 xs:mb-12 sm:mb-16 text-center">
