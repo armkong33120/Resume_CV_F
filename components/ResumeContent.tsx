@@ -132,7 +132,7 @@ export default function ResumeContent() {
                             )}
                             <div className="flex items-center gap-2">
                                 <div className="w-6 flex justify-center shrink-0">
-                                    <Globe className="w-4 h-4" />
+                                    <Globe className="w-4 h-4 text-blue-500" />
                                 </div>
                                 <a href="https://theerachot-cv-resume2026.vercel.app/" className="hover:underline break-all">theerachot-cv-resume2026.vercel.app</a>
                             </div>
@@ -144,18 +144,18 @@ export default function ResumeContent() {
                 <div className="flex gap-6 items-center border-t border-b border-gray-200 py-3 mb-6 text-sm">
                     {profileData.social.linkedin && (
                         <div className="flex items-center gap-2">
-                            <Linkedin className="w-4 h-4" />
+                            <Linkedin className="w-4 h-4 text-[#0077B5]" />
                             <a href={profileData.social.linkedin} target="_blank" className="hover:underline">LinkedIn</a>
                         </div>
                     )}
                     {profileData.social.github && (
                         <div className="flex items-center gap-2">
-                            <Github className="w-4 h-4" />
+                            <Github className="w-4 h-4 text-[#6e5494]" />
                             <a href={profileData.social.github} target="_blank" className="hover:underline">GitHub</a>
                         </div>
                     )}
                     <div className="flex items-center gap-2">
-                        <FileText className="w-4 h-4" />
+                        <FileText className="w-4 h-4 text-orange-500" />
                         <a href="https://drive.google.com/drive/folders/1DmaOziAzjVuBmNX7lF1PcdTYcUKPQ93I?usp=drive_link" target="_blank" className="hover:underline">
                             {language === 'th' ? 'เอกสารสำหรับ HR' : 'Documents for HR'}
                         </a>

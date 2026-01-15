@@ -62,14 +62,14 @@ export default function ContactContent({ profile }: ContactContentProps) {
                         {profile.social.phone && (
                             <div className="flex flex-col sm:flex-row sm:items-center gap-3 xs:gap-4 pb-5 xs:pb-6 border-b border-border">
                                 <div className="flex-shrink-0">
-                                    <div className="w-12 h-12 rounded-full bg-foreground/5 flex items-center justify-center">
+                                    <div className="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center">
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
                                             fill="none"
                                             viewBox="0 0 24 24"
                                             strokeWidth={1.5}
                                             stroke="currentColor"
-                                            className="w-6 h-6 text-foreground/70"
+                                            className="w-6 h-6 text-blue-600"
                                         >
                                             <path
                                                 strokeLinecap="round"
@@ -95,14 +95,14 @@ export default function ContactContent({ profile }: ContactContentProps) {
                         {profile.social.email && (
                             <div className="flex flex-col sm:flex-row sm:items-center gap-3 xs:gap-4 pb-5 xs:pb-6 border-b border-border">
                                 <div className="flex-shrink-0">
-                                    <div className="w-12 h-12 rounded-full bg-foreground/5 flex items-center justify-center">
+                                    <div className="w-12 h-12 rounded-full bg-red-500/10 flex items-center justify-center">
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
                                             fill="none"
                                             viewBox="0 0 24 24"
                                             strokeWidth={1.5}
                                             stroke="currentColor"
-                                            className="w-6 h-6 text-foreground/70"
+                                            className="w-6 h-6 text-red-600"
                                         >
                                             <path
                                                 strokeLinecap="round"
@@ -128,14 +128,14 @@ export default function ContactContent({ profile }: ContactContentProps) {
                         {profile.birthday && (
                             <div className="flex flex-col sm:flex-row sm:items-center gap-3 xs:gap-4 pb-5 xs:pb-6 border-b border-border">
                                 <div className="flex-shrink-0">
-                                    <div className="w-12 h-12 rounded-full bg-foreground/5 flex items-center justify-center">
+                                    <div className="w-12 h-12 rounded-full bg-pink-500/10 flex items-center justify-center">
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
                                             fill="none"
                                             viewBox="0 0 24 24"
                                             strokeWidth={1.5}
                                             stroke="currentColor"
-                                            className="w-6 h-6 text-foreground/70"
+                                            className="w-6 h-6 text-pink-600"
                                         >
                                             <path
                                                 strokeLinecap="round"
@@ -167,14 +167,14 @@ export default function ContactContent({ profile }: ContactContentProps) {
                         {profile.address && (
                             <div className="flex flex-col sm:flex-row sm:items-start gap-3 xs:gap-4">
                                 <div className="flex-shrink-0">
-                                    <div className="w-12 h-12 rounded-full bg-foreground/5 flex items-center justify-center">
+                                    <div className="w-12 h-12 rounded-full bg-emerald-500/10 flex items-center justify-center">
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
                                             fill="none"
                                             viewBox="0 0 24 24"
                                             strokeWidth={1.5}
                                             stroke="currentColor"
-                                            className="w-6 h-6 text-foreground/70"
+                                            className="w-6 h-6 text-emerald-600"
                                         >
                                             <path
                                                 strokeLinecap="round"
@@ -213,7 +213,7 @@ export default function ContactContent({ profile }: ContactContentProps) {
                                     className="px-4 xs:px-6 py-2 xs:py-3 border border-border rounded-full font-medium tracking-tight hover:bg-foreground/5 transition-colors focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 inline-flex items-center gap-2 text-sm xs:text-base"
                                 >
                                     <svg
-                                        className="w-5 h-5"
+                                        className="w-5 h-5 text-[#0077B5]"
                                         fill="currentColor"
                                         viewBox="0 0 24 24"
                                         aria-hidden="true"
@@ -235,7 +235,7 @@ export default function ContactContent({ profile }: ContactContentProps) {
                                     className="px-4 xs:px-6 py-2 xs:py-3 border border-border rounded-full font-medium tracking-tight hover:bg-foreground/5 transition-colors focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 inline-flex items-center gap-2 text-sm xs:text-base"
                                 >
                                     <svg
-                                        className="w-5 h-5"
+                                        className="w-5 h-5 text-[#6e5494]"
                                         fill="currentColor"
                                         viewBox="0 0 24 24"
                                         aria-hidden="true"
@@ -253,7 +253,7 @@ export default function ContactContent({ profile }: ContactContentProps) {
                                 actionUrl="https://drive.google.com/drive/folders/1DmaOziAzjVuBmNX7lF1PcdTYcUKPQ93I?usp=drive_link"
                                 placeholder={
                                     <div className="px-4 xs:px-6 py-2 xs:py-3 border border-border rounded-full font-medium tracking-tight hover:bg-foreground/5 transition-colors focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 inline-flex items-center gap-2 text-sm xs:text-base cursor-pointer">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-orange-500">
                                             <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
                                             <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
                                         </svg>
@@ -267,7 +267,7 @@ export default function ContactContent({ profile }: ContactContentProps) {
                                     rel="noopener noreferrer"
                                     className="px-4 xs:px-6 py-2 xs:py-3 border border-border rounded-full font-medium tracking-tight hover:bg-foreground/5 transition-colors focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 inline-flex items-center gap-2 text-sm xs:text-base"
                                 >
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-orange-500">
                                         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                                         <polyline points="14 2 14 8 20 8"></polyline>
                                         <line x1="16" y1="13" x2="8" y2="13"></line>
