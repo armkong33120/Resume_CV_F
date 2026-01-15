@@ -73,7 +73,8 @@
 @media print {
   @page {
     size: A4;
-    margin: 15mm;
+    margin: 15mm 15mm 25mm 15mm;
+    /* Increased bottom margin for footer */
   }
 
   body {
@@ -94,6 +95,11 @@
     padding-bottom: 0 !important;
   }
 
+  /* Show the print footer */
+  .print\:block {
+    display: block !important;
+  }
+
   a[href^="http"]:after {
     content: none !important;
   }
@@ -102,8 +108,12 @@
   * {
     color: black !important;
     text-shadow: none !important;
-    background: transparent !important;
     box-shadow: none !important;
+  }
+
+  /* Allow background colors for specific elements if needed, like the profile header */
+  .print\:bg-gray-100 {
+    background-color: #f3f4f6 !important;
   }
 
   /* Preserve borders but make them thin and black */
@@ -115,5 +125,3 @@
     border-color: #ddd !important;
   }
 }
-
-
