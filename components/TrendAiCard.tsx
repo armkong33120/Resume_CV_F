@@ -2,11 +2,34 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { Sparkles, Brain, FileCheck, ShieldCheck } from 'lucide-react';
 import { useLanguage } from './LanguageContext';
 
 export default function TrendAiCard() {
     const { language } = useLanguage();
+
+    const checklist = [
+        language === 'th' ? "ใช้ AI วิเคราะห์ด้านเทคนิคและโค้ดดิ้ง" : "Use AI to analyze coding and technical.",
+        language === 'th' ? "ใช้ AI ตรวจสอบเอกสารอนุมัติ" : "Use AI to analyze approval documents.",
+        language === 'th' ? "ใช้ AI วิเคราะห์แผนงานและความเสี่ยง" : "Use AI to analyze plans and risks."
+    ];
+
+    return (
+        <div className="w-full max-w-lg mx-auto mt-12 mb-8 print:mt-4 print:mb-4">
+            <motion.div
+                whileHover={{ y: -5 }}
+                className="relative bg-gradient-to-br from-background to-foreground/5 border border-border rounded-2xl p-6 sm:p-8 shadow-xl overflow-hidden print:shadow-none print:border-2 print:border-black"
+            >
+                {/* Glow effect */}
+                <div className="absolute top-0 right-0 -mr-16 -mt-16 w-32 h-32 bg-blue-500/20 blur-3xl rounded-full"></div>
+
+                <div className="flex items-center justify-between mb-6">
+                    <h3 className="text-2xl sm:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-600">
+                        Trend-based AI 2025
+                    </h3>
+                    <span className="px-2 py-1 bg-red-500/10 text-red-500 text-xs font-bold rounded uppercase tracking-wider border border-red-500/20">
+                        NEW
+                    </span>
+                </div>
 
                 <div className="flex flex-col gap-4 mb-8">
                     <div className="flex justify-center items-center gap-4">
@@ -14,16 +37,6 @@ export default function TrendAiCard() {
                             <Image
                                 src="/images/ai-logos-1.png"
                                 alt="ChatGPT, Copilot, Gemini"
-                                fill
-                                className="object-contain"
-                            />
-                        </div>
-                    </div>
-                    <div className="flex justify-center items-center gap-4">
-                         <div className="relative w-full h-12">
-                            <Image
-                                src="/images/ai-logos-2.png"
-                                alt="Claude, AI Tools"
                                 fill
                                 className="object-contain"
                             />
@@ -49,7 +62,7 @@ export default function TrendAiCard() {
                         </motion.div>
                     ))}
                 </div>
-            </motion.div >
-        </div >
+            </motion.div>
+        </div>
     );
 }
