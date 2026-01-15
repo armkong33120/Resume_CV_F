@@ -282,6 +282,5 @@ export default function ContactContent({ profile }: ContactContentProps) {
                 )}
             </div>
         </div>
-        </div >
     );
 }
