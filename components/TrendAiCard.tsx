@@ -31,16 +31,33 @@ export default function TrendAiCard() {
                     </span>
                 </div>
 
-                <div className="flex flex-col gap-4 mb-8">
-                    <div className="flex justify-center items-center gap-4">
-                        <div className="relative w-full h-12">
-                            <Image
-                                src="/images/ai-logos-1.png"
-                                alt="ChatGPT, Copilot, Gemini"
-                                fill
-                                className="object-contain"
-                            />
-                        </div>
+                <div className="flex justify-center items-center gap-8 mb-8">
+                    {/* ChatGPT */}
+                    <div className="relative w-12 h-12 flex-shrink-0">
+                        <Image
+                            src="/images/logo-chatgpt.png"
+                            alt="ChatGPT"
+                            fill
+                            className="object-contain"
+                        />
+                    </div>
+                    {/* Copilot */}
+                    <div className="relative w-12 h-12 flex-shrink-0">
+                        <Image
+                            src="/images/logo-copilot.png"
+                            alt="Copilot"
+                            fill
+                            className="object-contain"
+                        />
+                    </div>
+                    {/* Gemini */}
+                    <div className="relative w-12 h-12 flex-shrink-0">
+                        <Image
+                            src="/images/logo-gemini.png"
+                            alt="Gemini"
+                            fill
+                            className="object-contain"
+                        />
                     </div>
                 </div>
 
