@@ -46,10 +46,7 @@ export default async function RootLayout({
           <main id="main-content">{children}</main>
           <Footer />
 
-          {/* Print Only Footer */}
-          <div className="hidden print:block fixed bottom-0 left-0 right-0 py-2 px-4 text-center text-[10px] text-gray-500 bg-white border-t border-gray-200">
-            <p>View the full interactive resume at: <span className="font-bold">https://theerachot-cv-resume2026.vercel.app/</span></p>
-          </div>
+
         </LanguageProvider>
       </body>
     </html>
