@@ -8,6 +8,9 @@ import DownloadPdfButton from '@/components/DownloadPdfButton';
 import SalaryPrivacy from '@/components/SalaryPrivacy';
 import { motion } from 'framer-motion';
 import { fadeInUp, staggerContainer, scaleIn } from '@/lib/motion';
+import profileData from '@/content/profile.json';
+import Image from 'next/image';
+import { Github, Linkedin, FileText, Mail, Phone, MapPin, Calendar, Globe } from 'lucide-react';
 
 // Define the shape of the data based on the new JSON structure
 interface LocalizedString {
@@ -67,6 +70,116 @@ export default function ExperienceContent() {
                     <DownloadPdfButton />
                 </div>
             </motion.header>
+
+            {/* Print Only Header */}
+            <div className="hidden print:flex flex-col mb-8 font-sans text-black">
+                <div className="flex justify-between items-start gap-8 mb-6">
+                    {/* Profile Image */}
+                    <div className="flex-shrink-0">
+                        <div className="relative w-32 h-32 rounded-lg overflow-hidden border border-gray-200">
+                            <Image
+                                src="/images/profile.jpg"
+                                alt={language === 'th' ? profileData.name.th : profileData.name.en}
+                                fill
+                                className="object-cover"
+                            />
+                        </div>
+                    </div>
+
+                    {/* Contact Info */}
+                    <div className="flex-1 grid grid-cols-2 gap-x-8 gap-y-2 text-sm">
+                        <div className="col-span-2 mb-2">
+                            <h1 className="text-2xl font-bold">{language === 'th' ? profileData.name.th : profileData.name.en}</h1>
+                            <p className="text-gray-600">{language === 'th' ? profileData.title.th : profileData.title.en}</p>
+                        </div>
+
+                        <div className="space-y-1">
+                            <div className="flex items-center gap-2">
+                                <Calendar className="w-4 h-4" />
+                                <span>{profileData.birthday} ({(() => {
+                                    const birthDate = new Date(profileData.birthday!);
+                                    const today = new Date();
+                                    let age = today.getFullYear() - birthDate.getFullYear();
+                                    const m = today.getMonth() - birthDate.getMonth();
+                                    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+                                        age--;
+                                    }
+                                    return `${age} ${language === 'th' ? 'ปี' : 'years'}`;
+                                })()})</span>
+                            </div>
+                            <div className="flex items-start gap-2">
+                                <MapPin className="w-4 h-4 mt-0.5" />
+                                <span className="leading-tight">{language === 'th' ? profileData.address.th : profileData.address.en}</span>
+                            </div>
+                        </div>
+
+                        <div className="space-y-1">
+                            <div className="flex items-center gap-2">
+                                <Phone className="w-4 h-4" />
+                                <span>{profileData.social.phone}</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <Mail className="w-4 h-4" />
+                                <span>{profileData.social.email}</span>
+                            </div>
+                            {profileData.social.line && (
+                                <div className="flex items-center gap-2">
+                                    <span className="font-bold text-xs bg-[#06C755] text-white px-1 rounded">LINE</span>
+                                    <span>{profileData.social.line}</span>
+                                </div>
+                            )}
+                            <div className="flex items-center gap-2">
+                                <Globe className="w-4 h-4" />
+                                <a href="https://theerachot-cv-resume2026.vercel.app/" className="hover:underline">theerachot-cv-resume2026.vercel.app</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Social Links Row */}
+                <div className="flex gap-6 items-center border-t border-b border-gray-200 py-3 mb-6 text-sm">
+                    {profileData.social.linkedin && (
+                        <div className="flex items-center gap-2">
+                            <Linkedin className="w-4 h-4" />
+                            <a href={profileData.social.linkedin} target="_blank" className="hover:underline">LinkedIn</a>
+                        </div>
+                    )}
+                    {profileData.social.github && (
+                        <div className="flex items-center gap-2">
+                            <Github className="w-4 h-4" />
+                            <a href={profileData.social.github} target="_blank" className="hover:underline">GitHub</a>
+                        </div>
+                    )}
+                    <div className="flex items-center gap-2">
+                        <FileText className="w-4 h-4" />
+                        <a href="https://drive.google.com/drive/folders/1DmaOziAzjVuBmNX7lF1PcdTYcUKPQ93I?usp=drive_link" target="_blank" className="hover:underline">
+                            {language === 'th' ? 'เอกสารสำหรับ HR' : 'Documents for HR'}
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            {/* Education Section (Print Only) */}
+            <div className="hidden print:block mb-8 font-sans text-black">
+                <h2 className="text-xl font-bold border-b border-gray-300 pb-2 mb-4">
+                    {language === 'th' ? 'การศึกษา' : 'Education'}
+                </h2>
+                <div className="space-y-4">
+                    {profileData.education?.map((edu, index) => (
+                        <div key={index} className="flex justify-between items-baseline">
+                            <div>
+                                <h3 className="font-bold text-lg">{getContent(edu.institution)}</h3>
+                                <div className="flex gap-2 text-sm text-gray-700">
+                                    <span>{getContent(edu.degree)}</span>
+                                    <span>•</span>
+                                    <span>{getContent(edu.field)}</span>
+                                </div>
+                            </div>
+                            <span className="text-sm font-medium">{edu.period}</span>
+                        </div>
+                    ))}
+                </div>
+            </div>
 
             <motion.div
                 className="space-y-12 relative"
