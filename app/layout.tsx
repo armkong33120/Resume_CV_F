@@ -3,6 +3,7 @@ import './globals.css';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 import { LanguageProvider } from '@/components/LanguageContext';
+import { SalaryAuthProvider } from '@/components/SalaryAuthContext';
 import { getProfile } from '@/lib/content';
 
 export const metadata: Metadata = {
@@ -36,17 +37,17 @@ export default async function RootLayout({
     <html lang="th" className="scroll-smooth">
       <body className="antialiased bg-background text-foreground">
         <LanguageProvider>
-          <a
-            href="#main-content"
-            className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-foreground focus:text-background focus:rounded focus:font-medium"
-          >
-            Skip to main content
-          </a>
-          <Nav />
-          <main id="main-content">{children}</main>
-          <Footer />
-
-
+          <SalaryAuthProvider>
+            <a
+              href="#main-content"
+              className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-foreground focus:text-background focus:rounded focus:font-medium"
+            >
+              Skip to main content
+            </a>
+            <Nav />
+            <main id="main-content">{children}</main>
+            <Footer />
+          </SalaryAuthProvider>
         </LanguageProvider>
       </body>
     </html>

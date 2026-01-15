@@ -1,55 +1,60 @@
-import { useState, ReactNode, useEffect } from 'react';
+'use client';
+
+import { createContext, useContext, useState, ReactNode } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Lock, X } from 'lucide-react';
 import { useLanguage } from './LanguageContext';
-import { useSalaryAuth } from './SalaryAuthContext';
 
-interface PasswordGateProps {
-    children: ReactNode;
-    placeholder?: ReactNode;
-    actionUrl?: string;
+interface SalaryAuthContextType {
+    isSalaryUnlocked: boolean;
+    openUnlockModal: () => void;
+    unlock: () => void;
 }
 
-export default function PasswordGate({ children, placeholder, actionUrl }: PasswordGateProps) {
-    const { language } = useLanguage();
-    const { isSalaryUnlocked, openUnlockModal, unlock } = useSalaryAuth();
-    // Keep local state for modal control if we want to use the local modal,
-    // matches the existing UI behavior.
+const SalaryAuthContext = createContext<SalaryAuthContextType | undefined>(undefined);
+
+export function useSalaryAuth() {
+    const context = useContext(SalaryAuthContext);
+    if (context === undefined) {
+        throw new Error('useSalaryAuth must be used within a SalaryAuthProvider');
+    }
+    return context;
+}
+
+export function SalaryAuthProvider({ children }: { children: ReactNode }) {
+    const [isSalaryUnlocked, setIsSalaryUnlocked] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [password, setPassword] = useState('');
     const [error, setError] = useState(false);
+    const { language } = useLanguage();
 
-    // If globally unlocked, authenticated is true
-    const isAuthenticated = isSalaryUnlocked;
+    const openUnlockModal = () => {
+        if (!isSalaryUnlocked) {
+            setIsModalOpen(true);
+        }
+    };
+
+    const unlock = () => {
+        setIsSalaryUnlocked(true);
+        setIsModalOpen(false);
+        setError(false);
+        setPassword('');
+    };
 
     const handleUnlock = async (e: React.FormEvent) => {
         e.preventDefault();
 
-        // SHA-256 Hash of 'Armkong_1'
+        // SHA-256 Hash of 'Armkong_1' (Same as PasswordGate)
         const TARGET_HASH = '423645577c19881473bc8b359e1b517c449e365111f2cfb779232bfa1a34d01e';
 
         try {
-            // Encode password as UTF-8
             const msgBuffer = new TextEncoder().encode(password.trim());
-            // Hash the password
             const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
-            // Convert hash to hex string
             const hashArray = Array.from(new Uint8Array(hashBuffer));
             const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
 
             if (hashHex === TARGET_HASH) {
-                // If actionUrl is present, redirect
-                if (actionUrl) {
-                    window.open(actionUrl, '_blank');
-                }
-
-                // UNLOCK GLOBALLY in all cases
                 unlock();
-
-                // Clear local state
-                setIsModalOpen(false);
-                setError(false);
-                setPassword('');
             } else {
                 setError(true);
             }
@@ -59,29 +64,9 @@ export default function PasswordGate({ children, placeholder, actionUrl }: Passw
         }
     };
 
-    if (isAuthenticated) {
-        return <>{children}</>;
-    }
-
     return (
-        <>
-            <div
-                onClick={() => setIsModalOpen(true)}
-                className="inline-block"
-                role="button"
-                tabIndex={0}
-                aria-label="Click to unlock content"
-            >
-                {placeholder || (
-                    <span className="flex items-center gap-1.5 opacity-70 cursor-pointer">
-                        <Lock className="w-3.5 h-3.5" />
-                        <span className="text-sm font-medium tracking-wide">
-                            {language === 'th' ? 'ข้อมูลถูกล็อค' : 'Locked'}
-                        </span>
-                    </span>
-                )}
-            </div>
-
+        <SalaryAuthContext.Provider value={{ isSalaryUnlocked, openUnlockModal, unlock }}>
+            {children}
             <AnimatePresence>
                 {isModalOpen && (
                     <div className="fixed inset-0 z-50 flex items-center justify-center px-4">
@@ -111,12 +96,12 @@ export default function PasswordGate({ children, placeholder, actionUrl }: Passw
                                     <Lock className="w-6 h-6" />
                                 </div>
                                 <h3 className="text-lg font-semibold text-foreground">
-                                    {language === 'th' ? 'ใส่รหัสเพื่อเข้าถึง' : 'Enter Password to Access'}
+                                    {language === 'th' ? 'ใส่รหัสเพื่อดูเงินเดือน' : 'Enter Password to View Salary'}
                                 </h3>
                                 <p className="text-sm text-foreground/60 text-center mt-1">
                                     {language === 'th'
-                                        ? 'เนื้อหานี้ถูกจำกัดการเข้าถึงเฉพาะผู้ที่ได้รับอนุญาต'
-                                        : 'This content is restricted to authorized users.'}
+                                        ? 'กรุณากรอกรหัสผ่านเพื่อแสดงข้อมูลเงินเดือนทั้งหมด'
+                                        : 'Please enter password to reveal all salary information.'}
                                 </p>
                             </div>
 
@@ -156,6 +141,6 @@ export default function PasswordGate({ children, placeholder, actionUrl }: Passw
                     </div>
                 )}
             </AnimatePresence>
-        </>
+        </SalaryAuthContext.Provider>
     );
 }
