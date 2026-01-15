@@ -104,10 +104,10 @@
   }
 
   /* Ensure text is black and readable */
-  * {
-    color: black !important;
-    text-shadow: none !important;
-    box-shadow: none !important;
+  /* Ensure text is readable but allow colors */
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
 
   /* Allow background colors for specific elements if needed, like the profile header */

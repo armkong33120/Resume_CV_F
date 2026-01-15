@@ -103,7 +103,7 @@ export default function ResumeContent() {
                             </div>
                             <div className="flex items-start gap-2">
                                 <div className="w-6 flex justify-center shrink-0 mt-0.5">
-                                    <MapPin className="w-4 h-4" />
+                                    <MapPin className="w-4 h-4 text-emerald-600" />
                                 </div>
                                 <span className="leading-tight">{language === 'th' ? profileData.address.th : profileData.address.en}</span>
                             </div>
@@ -112,13 +112,13 @@ export default function ResumeContent() {
                         <div className="space-y-1">
                             <div className="flex items-center gap-2">
                                 <div className="w-6 flex justify-center shrink-0">
-                                    <Phone className="w-4 h-4" />
+                                    <Phone className="w-4 h-4 text-blue-600" />
                                 </div>
                                 <span>{profileData.social.phone}</span>
                             </div>
                             <div className="flex items-center gap-2">
                                 <div className="w-6 flex justify-center shrink-0">
-                                    <Mail className="w-4 h-4" />
+                                    <Mail className="w-4 h-4 text-red-600" />
                                 </div>
                                 <span>{profileData.social.email}</span>
                             </div>
