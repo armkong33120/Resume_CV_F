@@ -19,6 +19,10 @@ const navItems = [
 ];
 
 export default function Nav() {
+  const pathname = usePathname();
+  const [isScrolled, setIsScrolled] = useState(false);
+  const { language } = useLanguage();
+  const t = getTranslation(language);
   const [activeSection, setActiveSection] = useState('');
 
   useEffect(() => {
