@@ -148,7 +148,16 @@ export default function ContactContent({ profile }: ContactContentProps) {
                                 <div className="flex-1">
                                     <h3 className="text-sm font-medium text-foreground/60 mb-1">{t.contact.birthday}</h3>
                                     <p className="text-lg sm:text-xl font-medium text-foreground">
-                                        {profile.birthday} ({profile.age ? `${profile.age} ${language === 'th' ? 'ปี' : 'years'}` : ''})
+                                        {profile.birthday} ({(() => {
+                                            const birthDate = new Date(profile.birthday!);
+                                            const today = new Date();
+                                            let age = today.getFullYear() - birthDate.getFullYear();
+                                            const m = today.getMonth() - birthDate.getMonth();
+                                            if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+                                                age--;
+                                            }
+                                            return `${age} ${language === 'th' ? 'ปี' : 'years'}`;
+                                        })()})
                                     </p>
                                 </div>
                             </div>

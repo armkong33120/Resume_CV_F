@@ -3,6 +3,7 @@
 import { useLanguage } from '@/components/LanguageContext';
 import { getTranslation } from '@/lib/translations';
 import experienceData from '@/content/experience.json';
+import profileData from '@/content/profile.json';
 import PrintButton from '@/components/PrintButton';
 import DownloadPdfButton from '@/components/DownloadPdfButton';
 import { motion } from 'framer-motion';
@@ -59,6 +60,49 @@ export default function ResumeContent() {
                     <DownloadPdfButton />
                 </div>
             </motion.header>
+
+            {/* Education Section */}
+            <motion.div
+                className="mb-12 space-y-8"
+                variants={staggerContainer}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-50px" }}
+            >
+                <div className="flex items-center gap-4 mb-6">
+                    <div className="h-px bg-border flex-1"></div>
+                    <h2 className="text-2xl font-bold text-foreground">
+                        {language === 'th' ? 'การศึกษา' : 'Education'}
+                    </h2>
+                    <div className="h-px bg-border flex-1"></div>
+                </div>
+
+                {profileData.education?.map((edu, index) => (
+                    <motion.div
+                        key={index}
+                        variants={fadeInUp}
+                        className="border-b border-border pb-6 last:border-0 last:pb-0"
+                    >
+                        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-1">
+                            <h3 className="text-xl font-bold text-foreground">
+                                {getContent(edu.institution)}
+                            </h3>
+                            <span className="text-foreground/70 font-medium text-sm">
+                                {edu.period}
+                            </span>
+                        </div>
+                        <div className="flex flex-col sm:flex-row sm:items-baseline gap-2">
+                            <span className="text-foreground/80 font-medium">
+                                {getContent(edu.degree)}
+                            </span>
+                            <span className="hidden sm:inline text-foreground/40">•</span>
+                            <span className="text-foreground/60 text-sm">
+                                {getContent(edu.field)}
+                            </span>
+                        </div>
+                    </motion.div>
+                ))}
+            </motion.div>
 
             <motion.div
                 className="space-y-8"

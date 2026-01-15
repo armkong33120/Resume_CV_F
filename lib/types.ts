@@ -3,6 +3,13 @@ export interface LocalizedText {
   th: string;
 }
 
+export interface Education {
+  institution: LocalizedText;
+  period: string;
+  degree: LocalizedText;
+  field: LocalizedText;
+}
+
 export interface Profile {
   name: LocalizedText;
   title: LocalizedText;
@@ -11,6 +18,7 @@ export interface Profile {
   birthday?: string;
   age?: string;
   summary: LocalizedText;
+  education?: Education[];
   skills: {
     [category: string]: LocalizedText[];
   };
