@@ -13,7 +13,7 @@ export default function TechStackStrip() {
                     transition={{ delay: 0.5, duration: 0.8 }}
                     className="flex justify-center items-center"
                 >
-                    <div className="relative w-full max-w-2xl h-16 sm:h-20 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-500 print:grayscale-0 print:opacity-100">
+                    <div className="relative w-full max-w-2xl h-16 sm:h-20 transition-all duration-500">
                         <Image
                             src="/images/tech-logos.png"
                             alt="Certifications: Cisco, CompTIA, macOS, Windows Server"
