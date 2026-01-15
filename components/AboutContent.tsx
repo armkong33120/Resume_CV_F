@@ -7,6 +7,8 @@ import { Profile } from '@/lib/types';
 import { motion } from 'framer-motion';
 import { fadeInUp, staggerContainer } from '@/lib/motion';
 
+import TrendAiCard from './TrendAiCard';
+
 interface AboutContentProps {
     profile: Profile;
 }
@@ -37,6 +39,11 @@ export default function AboutContent({ profile }: AboutContentProps) {
                         <p className="text-sm text-foreground/60">
                             <span className="font-semibold text-foreground/80">{t.contact.location}:</span> {resolveText(profile.location)}
                         </p>
+                    </motion.div>
+
+                    {/* AI Trend Card */}
+                    <motion.div variants={fadeInUp} className="w-full flex justify-center pt-8">
+                        <TrendAiCard />
                     </motion.div>
                 </motion.div>
 

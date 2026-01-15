@@ -7,6 +7,8 @@ import ContactContent from '@/components/ContactContent';
 import ResumeContent from '@/components/ResumeContent';
 import ExperienceContent from '@/components/ExperienceContent';
 
+import TechStackStrip from '@/components/TechStackStrip';
+
 export default async function Home() {
   const [profile, projects] = await Promise.all([
     getProfile(),
@@ -16,6 +18,7 @@ export default async function Home() {
   return (
     <>
       <Hero profile={profile} />
+      <TechStackStrip />
       <div id="about">
         <AboutContent profile={profile} />
       </div>
