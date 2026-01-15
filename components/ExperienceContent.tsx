@@ -95,7 +95,9 @@ export default function ExperienceContent() {
 
                         <div className="space-y-1">
                             <div className="flex items-center gap-2">
-                                <Calendar className="w-4 h-4" />
+                                <div className="w-6 flex justify-center shrink-0">
+                                    <Calendar className="w-4 h-4" />
+                                </div>
                                 <span>{profileData.birthday} ({(() => {
                                     const birthDate = new Date(profileData.birthday!);
                                     const today = new Date();
@@ -108,29 +110,39 @@ export default function ExperienceContent() {
                                 })()})</span>
                             </div>
                             <div className="flex items-start gap-2">
-                                <MapPin className="w-4 h-4 mt-0.5" />
+                                <div className="w-6 flex justify-center shrink-0 mt-0.5">
+                                    <MapPin className="w-4 h-4" />
+                                </div>
                                 <span className="leading-tight">{language === 'th' ? profileData.address.th : profileData.address.en}</span>
                             </div>
                         </div>
 
                         <div className="space-y-1">
                             <div className="flex items-center gap-2">
-                                <Phone className="w-4 h-4" />
+                                <div className="w-6 flex justify-center shrink-0">
+                                    <Phone className="w-4 h-4" />
+                                </div>
                                 <span>{profileData.social.phone}</span>
                             </div>
                             <div className="flex items-center gap-2">
-                                <Mail className="w-4 h-4" />
+                                <div className="w-6 flex justify-center shrink-0">
+                                    <Mail className="w-4 h-4" />
+                                </div>
                                 <span>{profileData.social.email}</span>
                             </div>
                             {profileData.social.line && (
                                 <div className="flex items-center gap-2">
-                                    <span className="font-bold text-xs bg-[#06C755] text-white px-1 rounded">LINE</span>
+                                    <div className="w-6 flex justify-center shrink-0">
+                                        <span className="font-bold text-[10px] bg-[#06C755] text-white px-1 rounded">LINE</span>
+                                    </div>
                                     <span>{profileData.social.line}</span>
                                 </div>
                             )}
                             <div className="flex items-center gap-2">
-                                <Globe className="w-4 h-4" />
-                                <a href="https://theerachot-cv-resume2026.vercel.app/" className="hover:underline">theerachot-cv-resume2026.vercel.app</a>
+                                <div className="w-6 flex justify-center shrink-0">
+                                    <Globe className="w-4 h-4" />
+                                </div>
+                                <a href="https://theerachot-cv-resume2026.vercel.app/" className="hover:underline break-all">theerachot-cv-resume2026.vercel.app</a>
                             </div>
                         </div>
                     </div>
