@@ -19,10 +19,50 @@ const navItems = [
 ];
 
 export default function Nav() {
-  const pathname = usePathname();
-  const [isScrolled, setIsScrolled] = useState(false);
-  const { language } = useLanguage();
-  const t = getTranslation(language);
+  const [hash, setHash] = useState('');
+
+  useEffect(() => {
+    // Initial hash
+    setHash(window.location.hash);
+
+    const handleHashChange = () => {
+      setHash(window.location.hash);
+    };
+
+    // Listen for hash changes
+    window.addEventListener('hashchange', handleHashChange);
+
+    // Also update on click since Next.js Link interactions might not always trigger hashchange immediately in all browsers
+    const handleLinkClick = () => {
+      setTimeout(() => setHash(window.location.hash), 100);
+    };
+    window.addEventListener('click', handleLinkClick);
+
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+      window.removeEventListener('click', handleLinkClick);
+    };
+  }, []);
+
+  const checkActive = (item: { href: string; key: string }) => {
+    // Handle Work section (matches /work... pages OR #work hash on home)
+    if (item.key === 'work') {
+      return pathname.startsWith('/work') || (pathname === '/' && hash === '#work');
+    }
+
+    // Handle About section (matches #about hash on home)
+    if (item.key === 'about') {
+      return pathname === '/' && hash === '#about';
+    }
+
+    // Handle Home (matches / AND no section hash)
+    if (item.key === 'home') {
+      return pathname === '/' && !['#work', '#about'].includes(hash);
+    }
+
+    // Handle standard pages (exact match or sub-paths)
+    return pathname === item.href || pathname.startsWith(item.href + '/');
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -58,13 +98,21 @@ export default function Nav() {
 
           <div className="hidden sm:flex items-center space-x-1">
             {navItems.map((item) => {
-              const isActive = pathname === item.href;
+              const isActive = checkActive(item);
               return (
                 <Link
                   key={item.href}
                   href={item.href}
                   className={`relative px-4 py-2 rounded-full text-sm font-medium tracking-tight transition-colors duration-300 ${isActive ? 'text-background' : 'text-foreground/70 hover:text-foreground'}`}
                   aria-current={isActive ? 'page' : undefined}
+                  onClick={() => {
+                    // Force hash update on click for immediate feedback
+                    if (item.href.includes('#')) {
+                      setHash(item.href.substring(item.href.indexOf('#')));
+                    } else {
+                      setHash('');
+                    }
+                  }}
                 >
                   {isActive && (
                     <motion.span
@@ -95,6 +143,27 @@ function MobileMenu() {
   const pathname = usePathname();
   const { language } = useLanguage();
   const t = getTranslation(language);
+
+  const [hash, setHash] = useState('');
+
+  useEffect(() => {
+    setHash(window.location.hash);
+    const handleHashChange = () => setHash(window.location.hash);
+    window.addEventListener('hashchange', handleHashChange);
+    const handleLinkClick = () => setTimeout(() => setHash(window.location.hash), 100);
+    window.addEventListener('click', handleLinkClick);
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+      window.removeEventListener('click', handleLinkClick);
+    };
+  }, []);
+
+  const checkActive = (item: { href: string; key: string }) => {
+    if (item.key === 'work') return pathname.startsWith('/work') || (pathname === '/' && hash === '#work');
+    if (item.key === 'about') return pathname === '/' && hash === '#about';
+    if (item.key === 'home') return pathname === '/' && !['#work', '#about'].includes(hash);
+    return pathname === item.href || pathname.startsWith(item.href + '/');
+  };
 
   // Close menu when route changes
   useEffect(() => {
@@ -137,7 +206,7 @@ function MobileMenu() {
           >
             <div className="px-4 xs:px-6 py-4 space-y-3 xs:space-y-4">
               {navItems.map((item, i) => {
-                const isActive = pathname === item.href;
+                const isActive = checkActive(item);
                 return (
                   <motion.div
                     key={item.href}
@@ -147,7 +216,14 @@ function MobileMenu() {
                   >
                     <Link
                       href={item.href}
-                      onClick={() => setIsOpen(false)}
+                      onClick={() => {
+                        setIsOpen(false);
+                        if (item.href.includes('#')) {
+                          setHash(item.href.substring(item.href.indexOf('#')));
+                        } else {
+                          setHash('');
+                        }
+                      }}
                       className={`block px-4 py-2 rounded-full text-base font-medium tracking-tight transition-all duration-300 ${isActive
                         ? 'bg-foreground text-background'
                         : 'text-foreground/70 hover:bg-foreground hover:text-background'
