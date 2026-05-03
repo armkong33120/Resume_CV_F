@@ -90,6 +90,61 @@ const config: Config = {
           '0%': { transform: 'scaleX(0)' },
           '100%': { transform: 'scaleX(1)' },
         },
+        'cyber-suit-resolve': {
+          '0%': {
+            opacity: '0.28',
+            transform: 'translate3d(0, 18px, 0) scale(0.985)',
+            filter: 'blur(12px) grayscale(1) contrast(0.9)',
+          },
+          '18%': {
+            opacity: '0.58',
+            transform: 'translate3d(0, 10px, 0) scale(0.992)',
+            filter: 'blur(7px) grayscale(1) contrast(1)',
+          },
+          '38%': {
+            opacity: '0.9',
+            transform: 'translate3d(0, 2px, 0) scale(1)',
+            filter: 'blur(2px) grayscale(1) contrast(1.08)',
+          },
+          '52%, 78%': {
+            opacity: '1',
+            transform: 'translate3d(0, 0, 0) scale(1)',
+            filter: 'blur(0) grayscale(1) contrast(1.12)',
+          },
+          '84%': {
+            opacity: '0.95',
+            transform: 'translate3d(1px, 0, 0) scale(1.002)',
+            filter: 'blur(0.5px) grayscale(1) contrast(1.22)',
+          },
+          '88%': {
+            opacity: '1',
+            transform: 'translate3d(-1px, 0, 0) scale(1)',
+            filter: 'blur(0) grayscale(1) contrast(1.08)',
+          },
+          '100%': {
+            opacity: '0.28',
+            transform: 'translate3d(0, 18px, 0) scale(0.985)',
+            filter: 'blur(12px) grayscale(1) contrast(0.9)',
+          },
+        },
+        'cyber-suit-ghost': {
+          '0%, 100%': { opacity: '0.08', transform: 'translate3d(0, 30px, 0) scale(1.02)', filter: 'blur(22px)' },
+          '48%, 76%': { opacity: '0.18', transform: 'translate3d(0, 18px, 0) scale(1.01)', filter: 'blur(16px)' },
+        },
+        'cyber-suit-shock': {
+          '0%, 72%, 100%': { opacity: '0', transform: 'translate3d(0, 0, 0) scaleX(1)' },
+          '76%': { opacity: '0.32', transform: 'translate3d(-7px, -1px, 0) scaleX(1.015)' },
+          '78%': { opacity: '0', transform: 'translate3d(5px, 1px, 0) scaleX(0.99)' },
+          '82%': { opacity: '0.26', transform: 'translate3d(6px, 0, 0) scaleX(1.01)' },
+          '84%': { opacity: '0', transform: 'translate3d(0, 0, 0) scaleX(1)' },
+        },
+        'cyber-suit-scan': {
+          '0%': { transform: 'translate3d(0, -24vh, 0)', opacity: '0' },
+          '20%': { opacity: '0.15' },
+          '48%': { opacity: '0.72' },
+          '76%': { opacity: '0.2' },
+          '100%': { transform: 'translate3d(0, 28vh, 0)', opacity: '0' },
+        },
         'cyber-loader-caret': {
           '0%, 45%': { opacity: '1' },
           '46%, 100%': { opacity: '0' },
@@ -103,6 +158,10 @@ const config: Config = {
         'cyber-loader-grid': 'cyber-loader-grid 16s linear infinite',
         'cyber-loader-progress': 'cyber-loader-progress var(--cyber-loader-duration,2s) cubic-bezier(0.22, 1, 0.36, 1) forwards',
         'cyber-loader-caret': 'cyber-loader-caret 1s steps(1, end) infinite',
+        'cyber-suit-resolve': 'cyber-suit-resolve var(--cyber-suit-loop-duration,2.5s) cubic-bezier(0.22, 1, 0.36, 1) infinite',
+        'cyber-suit-ghost': 'cyber-suit-ghost var(--cyber-suit-loop-duration,2.5s) cubic-bezier(0.22, 1, 0.36, 1) infinite',
+        'cyber-suit-shock': 'cyber-suit-shock var(--cyber-suit-loop-duration,2.5s) steps(1, end) infinite',
+        'cyber-suit-scan': 'cyber-suit-scan var(--cyber-suit-loop-duration,2.5s) cubic-bezier(0.22, 1, 0.36, 1) infinite',
       },
     },
   },
