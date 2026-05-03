@@ -13,6 +13,7 @@ interface ContactContentProps {
 export default function ContactContent({ profile }: ContactContentProps) {
     const { language, t: resolveText } = useLanguage();
     const t = getTranslation(language);
+    const primaryPhoneHref = profile.social.phone?.match(/\d[\d-]*/)?.[0]?.replace(/\D/g, '');
 
     return (
         <div className="pt-20 xs:pt-24 sm:pt-32 min-h-screen safe-top">
@@ -81,7 +82,7 @@ export default function ContactContent({ profile }: ContactContentProps) {
                                 <div className="flex-1">
                                     <h3 className="text-sm font-medium text-foreground/60 mb-1">{t.contact.phone}</h3>
                                     <a
-                                        href={`tel:${profile.social.phone.replace(/\s/g, '')}`}
+                                        href={primaryPhoneHref ? `tel:${primaryPhoneHref}` : undefined}
                                         className="text-lg sm:text-xl font-medium text-foreground hover:opacity-70 transition-opacity"
                                     >
                                         {profile.social.phone}

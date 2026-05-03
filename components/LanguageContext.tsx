@@ -13,13 +13,14 @@ type LanguageContextType = {
 };
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+const LANGUAGE_STORAGE_KEY = 'portfolio-language-v2';
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguageState] = useState<Language>('th');
+  const [language, setLanguageState] = useState<Language>('en');
 
   useEffect(() => {
     // Load language from localStorage
-    const savedLanguage = localStorage.getItem('portfolio-language') as Language;
+    const savedLanguage = localStorage.getItem(LANGUAGE_STORAGE_KEY) as Language;
     if (savedLanguage === 'th' || savedLanguage === 'en') {
       setLanguageState(savedLanguage);
     }
@@ -27,7 +28,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);
-    localStorage.setItem('portfolio-language', lang);
+    localStorage.setItem(LANGUAGE_STORAGE_KEY, lang);
   };
 
 
