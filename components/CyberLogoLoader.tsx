@@ -4,11 +4,13 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 const terminalLines = [
-  'Debug : I\'m Theerachot [Arm] Ready',
-  'Debug : IT OPERATIONS Ready',
-  'Debug : CYBERSECURITY Ready',
-  'Debug : ITSM Procees Ready',
-  'Debug : IT Automation Ready',
+  { text: 'Debug : I\'m Theerachot [Arm] Ready', animateReadyDots: true },
+  { text: 'Debug : IT OPERATIONS Ready', animateReadyDots: true },
+  { text: 'Debug : CYBERSECURITY Ready', animateReadyDots: true },
+  { text: 'Debug : ITSM Procees Ready', animateReadyDots: true },
+  { text: 'Debug : IT Automation Ready', animateReadyDots: true },
+  { text: 'Log : Thank you for taking the time to review my profile.', animateReadyDots: false },
+  { text: 'I look forward to the opportunity to contribute to your organization...', animateReadyDots: false },
 ];
 
 interface TerminalLineState {
@@ -32,7 +34,7 @@ export default function CyberLogoLoader({
   alt = 'Theerachot H. cyber identity logo',
   onExitStart,
   onComplete,
-  durationMs = 8500,
+  durationMs = 12500,
   minVisibleMs = 260,
   className = '',
 }: CyberLogoLoaderProps) {
@@ -76,30 +78,35 @@ export default function CyberLogoLoader({
         charIndex += 1;
 
         setTerminalRows((rows) =>
-          rows.map((row, index) => (index === lineIndex ? { ...row, text: line.slice(0, charIndex) } : row))
+          rows.map((row, index) => (index === lineIndex ? { ...row, text: line.text.slice(0, charIndex) } : row))
         );
 
-        if (charIndex < line.length) return;
+        if (charIndex < line.text.length) return;
 
         window.clearInterval(typeInterval);
-        const dotFrames = ['.', '..', '...'];
+        const blinkDelay = line.animateReadyDots ? 760 : 180;
+        const nextLineDelay = line.animateReadyDots ? 1080 : 500;
 
-        dotFrames.forEach((dots, dotIndex) => {
-          timers.push(
-            window.setTimeout(() => {
-              setTerminalRows((rows) =>
-                rows.map((row, index) => (index === lineIndex ? { ...row, dots } : row))
-              );
-            }, 180 * (dotIndex + 1))
-          );
-        });
+        if (line.animateReadyDots) {
+          const dotFrames = ['.', '..', '...'];
+
+          dotFrames.forEach((dots, dotIndex) => {
+            timers.push(
+              window.setTimeout(() => {
+                setTerminalRows((rows) =>
+                  rows.map((row, index) => (index === lineIndex ? { ...row, dots } : row))
+                );
+              }, 180 * (dotIndex + 1))
+            );
+          });
+        }
 
         timers.push(
           window.setTimeout(() => {
             setTerminalRows((rows) =>
               rows.map((row, index) => (index === lineIndex ? { ...row, isBlinking: true } : row))
             );
-          }, 760)
+          }, blinkDelay)
         );
 
         timers.push(
@@ -108,7 +115,7 @@ export default function CyberLogoLoader({
               rows.map((row, index) => (index === lineIndex ? { ...row, isBlinking: false } : row))
             );
             runLine(lineIndex + 1);
-          }, 1080)
+          }, nextLineDelay)
         );
       }, 18);
 
@@ -224,12 +231,12 @@ export default function CyberLogoLoader({
         </div>
 
         <div
-          className="mt-5 min-h-[8.25rem] w-full max-w-[34rem] rounded-md border border-emerald-400/15 bg-emerald-400/[0.035] px-4 py-3 text-left font-mono text-[0.64rem] leading-5 tracking-[0.02em] text-emerald-300 shadow-[0_0_24px_rgba(16,185,129,0.10)] sm:min-h-[7.75rem] sm:text-xs"
-          aria-label={terminalLines.join('\n')}
+          className="mt-5 min-h-[10.75rem] w-full max-w-[34rem] rounded-md border border-emerald-400/15 bg-emerald-400/[0.035] px-4 py-3 text-left font-mono text-[0.62rem] leading-5 tracking-[0.02em] text-emerald-300 shadow-[0_0_24px_rgba(16,185,129,0.10)] sm:min-h-[10rem] sm:text-xs"
+          aria-label={terminalLines.map((line) => line.text).join('\n')}
         >
           {terminalRows.map((row, index) => (
             <div
-              key={`${terminalLines[index]}-${index}`}
+              key={`${terminalLines[index]?.text}-${index}`}
               className={[
                 'min-h-5 whitespace-pre-wrap',
                 row.isBlinking ? 'motion-safe:animate-cyber-terminal-line-blink' : '',

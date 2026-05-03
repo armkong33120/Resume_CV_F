@@ -199,6 +199,15 @@ export default function ResumeContent() {
                 viewport={viewportOnce}
             >
                 <motion.section variants={fadeInUp} className="border border-border rounded-xl p-6 sm:p-8 bg-foreground/[0.02]">
+                    <div className="relative mx-auto mb-6 h-28 w-28 overflow-hidden rounded-full border-4 border-background shadow-glass sm:h-32 sm:w-32">
+                        <Image
+                            src="/images/profile.jpg"
+                            alt={language === 'th' ? profileData.name.th : profileData.name.en}
+                            fill
+                            className="object-cover"
+                            sizes="(max-width: 640px) 112px, 128px"
+                        />
+                    </div>
                     <h2 className="text-2xl font-bold text-foreground mb-4">
                         {language === 'th' ? 'สรุปโปรไฟล์' : 'Profile Summary'}
                     </h2>
