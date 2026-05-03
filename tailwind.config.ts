@@ -65,7 +65,11 @@ const config: Config = {
         },
         'cyber-loader-fade-out': {
           '0%': { opacity: '1', transform: 'translateY(0) scale(1)' },
-          '100%': { opacity: '0', transform: 'translateY(-8px) scale(0.98)' },
+          '100%': { opacity: '0', transform: 'translateY(-8px) scale(0.985)' },
+        },
+        'cyber-page-reveal': {
+          '0%': { opacity: '0', filter: 'blur(6px)' },
+          '100%': { opacity: '1', filter: 'blur(0)' },
         },
         'cyber-loader-glitch': {
           '0%, 100%': { transform: 'translate(0, 0)', filter: 'none' },
@@ -149,15 +153,26 @@ const config: Config = {
           '0%, 45%': { opacity: '1' },
           '46%, 100%': { opacity: '0' },
         },
+        'cyber-terminal-cursor': {
+          '0%, 48%': { opacity: '1' },
+          '49%, 100%': { opacity: '0' },
+        },
+        'cyber-terminal-final-blink': {
+          '0%, 22%, 50%, 72%, 100%': { opacity: '1' },
+          '30%, 62%': { opacity: '0.32' },
+        },
       },
       animation: {
         'cyber-loader-fade-in': 'cyber-loader-fade-in 520ms cubic-bezier(0.22, 1, 0.36, 1) both',
-        'cyber-loader-fade-out': 'cyber-loader-fade-out 360ms cubic-bezier(0.4, 0, 0.2, 1) both',
+        'cyber-loader-fade-out': 'cyber-loader-fade-out 900ms cubic-bezier(0.4, 0, 0.2, 1) both',
+        'cyber-page-reveal': 'cyber-page-reveal 900ms cubic-bezier(0.22, 1, 0.36, 1) both',
         'cyber-loader-glitch': 'cyber-loader-glitch 1800ms steps(1, end) infinite',
         'cyber-loader-scan': 'cyber-loader-scan 1800ms cubic-bezier(0.4, 0, 0.2, 1) infinite',
         'cyber-loader-grid': 'cyber-loader-grid 16s linear infinite',
         'cyber-loader-progress': 'cyber-loader-progress var(--cyber-loader-duration,2s) cubic-bezier(0.22, 1, 0.36, 1) forwards',
         'cyber-loader-caret': 'cyber-loader-caret 1s steps(1, end) infinite',
+        'cyber-terminal-cursor': 'cyber-terminal-cursor 820ms steps(1, end) infinite',
+        'cyber-terminal-final-blink': 'cyber-terminal-final-blink 900ms steps(1, end) 1 both',
         'cyber-suit-resolve': 'cyber-suit-resolve var(--cyber-suit-loop-duration,2.5s) cubic-bezier(0.22, 1, 0.36, 1) infinite',
         'cyber-suit-ghost': 'cyber-suit-ghost var(--cyber-suit-loop-duration,2.5s) cubic-bezier(0.22, 1, 0.36, 1) infinite',
         'cyber-suit-shock': 'cyber-suit-shock var(--cyber-suit-loop-duration,2.5s) steps(1, end) infinite',

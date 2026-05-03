@@ -3,9 +3,13 @@
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
+const terminalMessage =
+  'Thank you for taking the time to review my profile.\nI look forward to the opportunity to contribute to your organization.';
+
 interface CyberLogoLoaderProps {
   imageSrc?: string;
   alt?: string;
+  onExitStart?: () => void;
   onComplete?: () => void;
   durationMs?: number;
   minVisibleMs?: number;
@@ -15,30 +19,66 @@ interface CyberLogoLoaderProps {
 export default function CyberLogoLoader({
   imageSrc = '/images/cyber-suit-logo.png',
   alt = 'Theerachot H. cyber identity logo',
+  onExitStart,
   onComplete,
-  durationMs = 2500,
+  durationMs = 5000,
   minVisibleMs = 260,
   className = '',
 }: CyberLogoLoaderProps) {
   const [imageFailed, setImageFailed] = useState(false);
+  const [typedText, setTypedText] = useState('');
+  const [isTerminalBlinking, setIsTerminalBlinking] = useState(false);
   const [isExiting, setIsExiting] = useState(false);
   const loopDurationMs = 2500;
   const progressDuration = `${durationMs}ms`;
 
   useEffect(() => {
-    const completeTimer = window.setTimeout(() => {
-      setIsExiting(true);
-    }, Math.max(durationMs, minVisibleMs));
+    const timers: number[] = [];
+    let typeInterval: number | undefined;
+    let typedIndex = 0;
+    const startedAt = window.performance.now();
 
-    return () => window.clearTimeout(completeTimer);
-  }, [durationMs, minVisibleMs]);
+    timers.push(
+      window.setTimeout(() => {
+        typeInterval = window.setInterval(() => {
+          typedIndex += 1;
+          setTypedText(terminalMessage.slice(0, typedIndex));
+
+          if (typedIndex >= terminalMessage.length && typeInterval) {
+            window.clearInterval(typeInterval);
+
+            timers.push(
+              window.setTimeout(() => {
+                setIsTerminalBlinking(true);
+
+                const elapsed = window.performance.now() - startedAt;
+                const remainingVisibleTime = Math.max(durationMs, minVisibleMs) - elapsed;
+
+                timers.push(
+                  window.setTimeout(() => {
+                    onExitStart?.();
+                    setIsExiting(true);
+                  }, Math.max(remainingVisibleTime, 960))
+                );
+              }, 180)
+            );
+          }
+        }, 24);
+      }, 850)
+    );
+
+    return () => {
+      timers.forEach((timer) => window.clearTimeout(timer));
+      if (typeInterval) window.clearInterval(typeInterval);
+    };
+  }, [durationMs, minVisibleMs, onExitStart]);
 
   useEffect(() => {
     if (!isExiting) return;
 
     const exitTimer = window.setTimeout(() => {
       onComplete?.();
-    }, 360);
+    }, 920);
 
     return () => window.clearTimeout(exitTimer);
   }, [isExiting, onComplete]);
@@ -54,7 +94,12 @@ export default function CyberLogoLoader({
       role="status"
       aria-live="polite"
       aria-label="Secure identity loading"
-      style={{ '--cyber-loader-duration': progressDuration } as React.CSSProperties}
+      style={
+        {
+          '--cyber-loader-duration': progressDuration,
+          '--cyber-suit-loop-duration': `${loopDurationMs}ms`,
+        } as React.CSSProperties
+      }
     >
       <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_50%_48%,rgba(255,255,255,0.055),transparent_30%),linear-gradient(180deg,#000_0%,#030304_50%,#000_100%)]" />
       <div className="absolute inset-0 -z-10 opacity-[0.07] [background-image:linear-gradient(rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.12)_1px,transparent_1px)] [background-size:34px_34px] motion-safe:animate-cyber-loader-grid" />
@@ -62,10 +107,7 @@ export default function CyberLogoLoader({
       <div className="absolute inset-x-0 top-[60%] -z-10 h-px bg-gradient-to-r from-transparent via-red-500/10 to-transparent" />
 
       <div className="flex w-full max-w-[24rem] flex-col items-center sm:max-w-[28rem] md:max-w-[34rem]">
-        <div
-          className="relative h-[50vh] min-h-[23rem] w-full max-w-[22rem] sm:h-[54vh] sm:max-w-[25rem] md:h-[58vh] md:max-w-[31rem]"
-          style={{ '--cyber-suit-loop-duration': `${loopDurationMs}ms` } as React.CSSProperties}
-        >
+        <div className="relative h-[46vh] min-h-[21rem] w-full max-w-[22rem] sm:h-[51vh] sm:max-w-[25rem] md:h-[54vh] md:max-w-[31rem]">
           {!imageFailed && (
             <div className="absolute inset-x-0 bottom-0 mx-auto h-[68%] w-[92%] opacity-70 [mask-image:linear-gradient(to_top,rgba(0,0,0,0.74),rgba(0,0,0,0.22)_46%,transparent_84%)]">
               <Image
@@ -130,7 +172,7 @@ export default function CyberLogoLoader({
           )}
         </div>
 
-        <div className="-mt-4 text-center sm:-mt-6 md:-mt-8">
+        <div className="mt-2 text-center sm:mt-1 md:-mt-1">
           <p className="text-xl font-semibold tracking-[0.18em] text-white sm:text-2xl">THEERACHOT H.</p>
           <p className="mt-2 text-[0.68rem] font-medium tracking-[0.22em] text-white/55 sm:text-xs">
             IT OPERATIONS <span className="text-red-400/80">•</span> CYBERSECURITY <span className="text-red-400/80">•</span> ITSM
@@ -138,6 +180,19 @@ export default function CyberLogoLoader({
           <p className="mt-6 min-h-5 font-mono text-[0.7rem] tracking-[0.14em] text-white/60 sm:text-xs">
             SECURE IDENTITY LOADING<span className="motion-safe:animate-cyber-loader-caret">_</span>
           </p>
+        </div>
+
+        <div
+          className={[
+            'mt-5 min-h-[4.75rem] w-full max-w-[34rem] rounded-md border border-emerald-400/15 bg-emerald-400/[0.035] px-4 py-3 text-left font-mono text-[0.68rem] leading-5 tracking-[0.02em] text-emerald-300 shadow-[0_0_24px_rgba(16,185,129,0.10)] sm:min-h-[4.25rem] sm:text-xs',
+            isTerminalBlinking ? 'motion-safe:animate-cyber-terminal-final-blink' : '',
+          ].join(' ')}
+          aria-label={terminalMessage}
+        >
+          <span className="whitespace-pre-wrap">{typedText}</span>
+          {!isTerminalBlinking && (
+            <span className="ml-0.5 inline-block h-4 w-2 translate-y-0.5 bg-emerald-300 shadow-[0_0_10px_rgba(110,231,183,0.75)] motion-safe:animate-cyber-terminal-cursor" />
+          )}
         </div>
 
         <div className="mx-auto mt-5 h-1.5 w-full max-w-[18rem] overflow-hidden rounded-full border border-white/15 bg-white/[0.04]">
