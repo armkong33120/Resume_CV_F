@@ -38,6 +38,36 @@ export default function ResumeContent() {
 
     const jobs = experienceData as ExperienceItem[];
 
+    const coreCompetencies = language === 'th'
+        ? [
+            'ITSM/ITIL: Incident, Event, Change, Service Request, SLA',
+            'Infrastructure Operations: Monitoring, VPN, VLAN, Backup/Restore, Endpoint',
+            'Cybersecurity Operations: EDR, Firewall, IAM, Access Review, PDPA/ISO Readiness',
+            'Governance: Vendor SLA, TOR/MA Review, Asset & License Lifecycle, KPI Reporting',
+            'Automation & AI: Reporting automation, workflow scripting, AI-assisted analysis',
+        ]
+        : [
+            'ITSM/ITIL: Incident, Event, Change, Service Request, SLA',
+            'Infrastructure Operations: Monitoring, VPN, VLAN, Backup/Restore, Endpoint',
+            'Cybersecurity Operations: EDR, Firewall, IAM, Access Review, PDPA/ISO Readiness',
+            'Governance: Vendor SLA, TOR/MA Review, Asset & License Lifecycle, KPI Reporting',
+            'Automation & AI: Reporting automation, workflow scripting, AI-assisted analysis',
+        ];
+
+    const selectedImpact = language === 'th'
+        ? [
+            'บริหาร IT operations ในธุรกิจธนาคาร โรงแรม โรงพยาบาล หน่วยงานรัฐ และผู้ให้บริการ cybersecurity',
+            'เชื่อมงาน technical troubleshooting เข้ากับ process governance, audit readiness และ executive reporting',
+            'มีประสบการณ์กับระบบ monitoring, endpoint security, firewall, VPN, VLAN, backup และ service workflow',
+            'สนับสนุน stakeholder หลายระดับ ตั้งแต่ user, operations, vendor, audit team จนถึง management reporting',
+        ]
+        : [
+            'Operated IT services across banking, hospitality, healthcare, government, and cybersecurity service environments.',
+            'Bridged technical troubleshooting with process governance, audit readiness, and executive reporting.',
+            'Worked across monitoring, endpoint security, firewall, VPN, VLAN, backup, and service workflow operations.',
+            'Supported stakeholders across users, operations teams, vendors, audit teams, and management reporting lines.',
+        ];
+
     const getContent = (content: LocalizedString) => {
         return language === 'en' ? content.en : content.th;
     };
@@ -161,9 +191,110 @@ export default function ResumeContent() {
                 </div>
             </div>
 
-            {/* Education Section */}
             <motion.div
                 className="mb-12 space-y-8"
+                variants={staggerContainer}
+                initial="hidden"
+                whileInView="visible"
+                viewport={viewportOnce}
+            >
+                <motion.section variants={fadeInUp} className="border border-border rounded-xl p-6 sm:p-8 bg-foreground/[0.02]">
+                    <h2 className="text-2xl font-bold text-foreground mb-4">
+                        {language === 'th' ? 'สรุปโปรไฟล์' : 'Profile Summary'}
+                    </h2>
+                    <p className="text-foreground/75 leading-relaxed">
+                        {getContent(profileData.summary)}
+                    </p>
+                </motion.section>
+
+                <motion.section variants={fadeInUp}>
+                    <div className="flex items-center gap-4 mb-6">
+                        <div className="h-px bg-border flex-1"></div>
+                        <h2 className="text-2xl font-bold text-foreground">
+                            {language === 'th' ? 'ทักษะหลัก' : 'Core Competencies'}
+                        </h2>
+                        <div className="h-px bg-border flex-1"></div>
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        {coreCompetencies.map((item) => (
+                            <div key={item} className="rounded-lg border border-border bg-background p-4 text-sm text-foreground/75">
+                                {item}
+                            </div>
+                        ))}
+                    </div>
+                </motion.section>
+
+                <motion.section variants={fadeInUp}>
+                    <div className="flex items-center gap-4 mb-6">
+                        <div className="h-px bg-border flex-1"></div>
+                        <h2 className="text-2xl font-bold text-foreground">
+                            {language === 'th' ? 'หลักฐานความสามารถ' : 'Selected Impact'}
+                        </h2>
+                        <div className="h-px bg-border flex-1"></div>
+                    </div>
+                    <ul className="space-y-3 text-sm text-foreground/80">
+                        {selectedImpact.map((item) => (
+                            <li key={item} className="flex gap-3">
+                                <span className="mt-2 h-1.5 w-1.5 rounded-full bg-foreground/50 flex-shrink-0"></span>
+                                <span>{item}</span>
+                            </li>
+                        ))}
+                    </ul>
+                </motion.section>
+            </motion.div>
+
+            <motion.div
+                className="space-y-8"
+                variants={staggerContainer}
+                initial="hidden"
+                whileInView="visible"
+                viewport={viewportOnce}
+            >
+                <div className="flex items-center gap-4 mb-6">
+                    <div className="h-px bg-border flex-1"></div>
+                    <h2 className="text-2xl font-bold text-foreground">
+                        {language === 'th' ? 'ประสบการณ์ทำงาน' : 'Professional Experience'}
+                    </h2>
+                    <div className="h-px bg-border flex-1"></div>
+                </div>
+
+                {jobs.map((job) => (
+                    <motion.div
+                        key={job.id}
+                        variants={fadeInUp}
+                        className="border-b border-border pb-8 last:border-0 last:pb-0"
+                    >
+                        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-2">
+                            <h2 className="text-xl font-bold text-foreground">
+                                {getContent(job.role)}
+                            </h2>
+                            <span className="text-foreground/70 font-medium text-sm">
+                                {getContent(job.period)}
+                            </span>
+                        </div>
+                        <div className="mb-4">
+                            <h3 className="text-lg text-foreground/80 font-medium">
+                                {getContent(job.company)}
+                            </h3>
+                            <p className="text-sm text-foreground/60">{getContent(job.location)}</p>
+                        </div>
+
+                        <ul className="list-disc list-outside ml-5 space-y-1 text-foreground/80 text-sm">
+                            {language === 'en'
+                                ? job.details.en.map((detail, idx) => (
+                                    <li key={idx} className="pl-1">{detail}</li>
+                                ))
+                                : job.details.th.map((detail, idx) => (
+                                    <li key={idx} className="pl-1">{detail}</li>
+                                ))
+                            }
+                        </ul>
+                    </motion.div>
+                ))}
+            </motion.div>
+
+            <motion.div
+                className="mt-12 space-y-8"
                 variants={staggerContainer}
                 initial="hidden"
                 whileInView="visible"
@@ -200,48 +331,6 @@ export default function ResumeContent() {
                                 {getContent(edu.field)}
                             </span>
                         </div>
-                    </motion.div>
-                ))}
-            </motion.div>
-
-            <motion.div
-                className="space-y-8"
-                variants={staggerContainer}
-                initial="hidden"
-                whileInView="visible"
-                viewport={viewportOnce}
-            >
-                {jobs.map((job) => (
-                    <motion.div
-                        key={job.id}
-                        variants={fadeInUp}
-                        className="border-b border-border pb-8 last:border-0 last:pb-0"
-                    >
-                        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-2">
-                            <h2 className="text-xl font-bold text-foreground">
-                                {getContent(job.role)}
-                            </h2>
-                            <span className="text-foreground/70 font-medium text-sm">
-                                {getContent(job.period)}
-                            </span>
-                        </div>
-                        <div className="mb-4">
-                            <h3 className="text-lg text-foreground/80 font-medium">
-                                {getContent(job.company)}
-                            </h3>
-                            <p className="text-sm text-foreground/60">{getContent(job.location)}</p>
-                        </div>
-
-                        <ul className="list-disc list-outside ml-5 space-y-1 text-foreground/80 text-sm">
-                            {language === 'en'
-                                ? job.details.en.map((detail, idx) => (
-                                    <li key={idx} className="pl-1">{detail}</li>
-                                ))
-                                : job.details.th.map((detail, idx) => (
-                                    <li key={idx} className="pl-1">{detail}</li>
-                                ))
-                            }
-                        </ul>
                     </motion.div>
                 ))}
             </motion.div>

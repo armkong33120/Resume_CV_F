@@ -41,6 +41,20 @@ export default function ExperienceContent() {
     // Cast the imported JSON to the correct type
     const jobs = experienceData as ExperienceItem[];
 
+    const evidenceAreas = language === 'th'
+        ? [
+            'ITSM / ITIL governance',
+            'Infrastructure monitoring',
+            'Endpoint & firewall operations',
+            'Vendor SLA and audit readiness',
+        ]
+        : [
+            'ITSM / ITIL governance',
+            'Infrastructure monitoring',
+            'Endpoint & firewall operations',
+            'Vendor SLA and audit readiness',
+        ];
+
     // Helper to get content based on current language
     const getContent = (content: LocalizedString) => {
         return language === 'en' ? content.en : content.th;
@@ -169,6 +183,28 @@ export default function ExperienceContent() {
                 </div>
             </div>
 
+            <motion.section
+                variants={fadeInUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={viewportOnce}
+                className="mb-12 rounded-2xl border border-border bg-foreground/[0.03] p-6 sm:p-8"
+            >
+                <h2 className="text-2xl font-bold tracking-tight text-foreground mb-3">
+                    {language === 'th' ? 'Positioning สำหรับ HR และ Technical Lead' : 'Positioning for HR and Technical Leads'}
+                </h2>
+                <p className="text-foreground/75 leading-relaxed mb-5">
+                    {getContent(profileData.summary)}
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {evidenceAreas.map((area) => (
+                        <div key={area} className="rounded-lg bg-background border border-border px-4 py-3 text-sm font-medium text-foreground/75">
+                            {area}
+                        </div>
+                    ))}
+                </div>
+            </motion.section>
+
             {/* Education Section (Print Only) */}
             <div className="hidden print:block mb-8 font-sans text-black">
                 <h2 className="text-xl font-bold border-b border-gray-300 pb-2 mb-4">
@@ -288,22 +324,6 @@ export default function ExperienceContent() {
                                     ))}
                                 </ul>
                             </div>
-
-                            {job.reasonForLeaving && (
-                                <div className="bg-red-500/5 border border-red-500/20 rounded-lg p-4 mt-6">
-                                    <h4 className="flex items-center gap-2 font-semibold text-red-400 text-sm mb-1">
-                                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
-                                        </svg>
-                                        {language === 'th' ? 'สาเหตุที่ออก' : 'Reason for leaving'}
-                                    </h4>
-                                    <p className="text-foreground/70 text-sm italic">
-
-                                        &quot;{getContent(job.reasonForLeaving)}&quot;
-
-                                    </p>
-                                </div>
-                            )}
 
                         </div>
                     </motion.div>

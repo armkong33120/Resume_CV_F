@@ -25,43 +25,21 @@
         "websiteUrl": null,
         "details": {
             "th": [
-                "Incident Handling - ตรวจสอบ ticket ที่เข้ามา, assign ให้ทีม, follow SLA",
-                "Service Request Fulfillment - เซ็นอนุมัติการสร้าง account ใหม่, สิทธิ์เข้าถึง, อุปกรณ์ใหม่",
-                "Monitoring & Alerts - ติดตาม network, VPN, endpoint, cloud status, แก้ปัญหาเบื้องต้น",
-                "Endpoint & MDM Management - Patch, Antivirus/EDR, Encryption compliance",
-                "Identity & Access Control - ตรวจสอบ/อนุมัติสิทธิ์ใช้งาน SSO, MFA, Git/Jira/Slack",
-                "Asset & License Management - เช็คอุปกรณ์, license software ที่ใกล้หมดอายุ",
-                "Backup & Restore - ตรวจสอบว่า backup สำเร็จ, ทดสอบ restore รายเดือน",
-                "Change Management - approve/track การเปลี่ยนแปลงระบบภายใน",
-                "Security & Compliance Check - Patch compliance %, Access review, PDPA/ISO readiness",
-                "Vendor Management - ติดต่อ support, ติดตามสัญญา, ต่ออายุ license/SaaS",
-                "Automation & Scripting - เขียนสคริปต์ลดงาน เช่น on/off-boarding, report อัตโนมัติ",
-                "Documentation & Knowledge Base - update SOP, runbook, KB ให้ทีมใช้ได้",
-                "Team Coaching & 1:1 - ให้ feedback ทีม IT Support, แบ่งงาน/โค้ช L1-L2",
-                "Monthly Report & KPI Review - SLA, MTTR, patch compliance, ticket trend",
-                "Business Continuity & DR Drill - วางแผนและทดสอบ BCP/DR เล็ก ๆ รายไตรมาส"
+                "ดูแล day-to-day IT operations ครอบคลุม incident, service request, access approval, endpoint compliance, backup verification, vendor coordination และ monthly KPI reporting",
+                "วาง operational controls สำหรับ patch compliance, access review, backup/restore check, change tracking และ PDPA/ISO readiness เพื่อยกระดับ IT governance",
+                "บริหารงานทีม IT Support ระดับ L1-L2 ผ่านการแบ่งงาน, feedback, ticket quality review และ SLA/MTTR reporting สำหรับ management visibility",
+                "ผลักดัน automation สำหรับ on/off-boarding และ reporting เพื่อลดงาน manual และทำให้ทีมมี runbook/SOP ใช้งานร่วมกัน"
             ],
             "en": [
-                "Incident Handling - Monitor incoming tickets, assign to team, follow SLA",
-                "Service Request Fulfillment - Approve new accounts, access rights, new equipment",
-                "Monitoring & Alerts - Monitor network, VPN, endpoint, cloud status, basic troubleshooting",
-                "Endpoint & MDM Management - Patch, Antivirus/EDR, Encryption compliance",
-                "Identity & Access Control - Verify/Approve SSO, MFA, Git/Jira/Slack access",
-                "Asset & License Management - Check equipment and expiring software licenses",
-                "Backup & Restore - Verify backup success, perform monthly restore tests",
-                "Change Management - Approve and track internal system changes",
-                "Security & Compliance Check - Patch compliance %, Access review, PDPA/ISO readiness",
-                "Vendor Management - Contact support, track contracts, renew licenses/SaaS",
-                "Automation & Scripting - Scripts for tasks like on/off-boarding, automated reporting",
-                "Documentation & Knowledge Base - Update SOP, runbook, KB for team usage",
-                "Team Coaching & 1:1 - Provide feedback to IT Support team, task allocation, L1-L2 coaching",
-                "Monthly Report & KPI Review - SLA, MTTR, patch compliance, ticket trends",
-                "Business Continuity & DR Drill - Plan and test quarterly BCP/DR drills"
+                "Managed day-to-day IT operations covering incidents, service requests, access approvals, endpoint compliance, backup verification, vendor coordination, and monthly KPI reporting.",
+                "Established operational controls for patch compliance, access reviews, backup/restore checks, change tracking, and PDPA/ISO readiness to improve IT governance discipline.",
+                "Coached L1-L2 support team members through task allocation, feedback, ticket quality review, and SLA/MTTR reporting for management visibility.",
+                "Drove automation for on/off-boarding and reporting while maintaining shared SOPs, runbooks, and knowledge base materials for team consistency."
             ]
         },
         "reasonForLeaving": {
-            "th": "บริษัทมีคดีความเกี่ยวกับการเงินทำให้รู้สึกขาดความเชื่อมั่นและเกิดความไม่สบายใจ",
-            "en": "The company faced financial legal cases causing a lack of confidence and discomfort."
+            "th": "บทบาทระยะสั้น ย้ายออกหลังเกิดความไม่แน่นอนด้านเสถียรภาพองค์กร",
+            "en": "Short-term role; transitioned after organizational uncertainty and role stability concerns."
         }
     },
     {
@@ -90,34 +68,18 @@
         "websiteUrl": "https://grandecentrepointratchadamri.com",
         "details": {
             "th": [
-                "รับผิดชอบการบริหารและดูแลระบบ IT ของโรงแรมระดับ 5 ดาวแบบ End-to-End ครอบคลุมระบบปฏิบัติการโรงแรม โครงสร้างพื้นฐานเครือข่าย ระบบสำหรับแขก และงานด้านมาตรฐาน/Compliance",
-                "ดูแลและสนับสนุนระบบหลักของโรงแรม ได้แก่ Opera PMS, Micros Simphony POS, VingCard Door Lock System และ IPTV ให้พร้อมใช้งานตลอด 24/7 พร้อมจัดการ Incident และประสานงานแก้ไขปัญหากับ Vendor ตาม SLA",
-                "บริหารจัดการ Network Infrastructure และ HSIA (High-Speed Internet Access) สำหรับแขกและระบบภายใน รวมถึง Gateway, VLAN Segmentation และการทำ Guest Network Audit เพื่อเพิ่มเสถียรภาพและความปลอดภัย",
-                "ดูแลและบำรุงรักษาระบบ Digital Signage และระบบสื่อสารภายในโรงแรม ให้สอดคล้องกับมาตรฐานแบรนด์และการใช้งานของฝ่ายปฏิบัติการ",
-                "ทำหน้าที่เป็น Single Point of Contact ระหว่างฝ่าย IT, ฝ่ายปฏิบัติการ และ Vendor/Partner ด้านเทคโนโลยีของโรงแรม",
-                "มีบทบาทในกระบวนการ IT Asset Management ครอบคลุมการจัดทำทะเบียนทรัพย์สิน IT (Hardware/Software/Licenses), การติดตามอายุการใช้งาน, การวางแผนทดแทน (Lifecycle Management) และการควบคุมต้นทุน",
-                "จัดทำและปรับปรุง TOR (Terms of Reference) และเอกสารประกอบการจัดซื้อด้าน IT เพื่อกำหนดขอบเขตงาน สเปก และเงื่อนไขสัญญาให้เหมาะสมกับการใช้งานจริงของโรงแรม",
-                "มีส่วนร่วมในการ เจรจาและปรับโครงสร้างสัญญา MA (Maintenance Agreement) ร่วมกับ Vendor/Sales เพื่อเพิ่มความคุ้มค่า ลดค่าใช้จ่าย และรักษาคุณภาพการให้บริการตาม SLA",
-                "จัดทำและปรับปรุง IT Audit Documentation, IT Policy และ Internal Process (IE Process) เพื่อยกระดับมาตรฐานการทำงาน ความพร้อมด้าน Compliance และการตรวจสอบ",
-                "สนับสนุน IT Manager โดยการ Streamline กระบวนการทำงาน IT, ลดงานซ้ำซ้อน และเพิ่ม Cost Efficiency ให้กับองค์กร",
-                "มีความเข้าใจและประยุกต์ใช้กฎหมายและมาตรฐานด้าน IT เช่น พ.ร.บ.คอมพิวเตอร์, PDPA และ พ.ร.บ.ความมั่นคงไซเบอร์ ในการทำงานประจำและงานด้าน Audit",
-                "ประยุกต์ใช้แนวคิด AIOps เพื่อลดภาระงานด้านเอกสาร รายงาน และการวิเคราะห์ข้อมูล ช่วยให้การตัดสินใจของทีม IT มีประสิทธิภาพมากขึ้น",
-                "มีทักษะด้านการสื่อสารและการทำงานร่วมกับผู้ใช้งานทุกระดับ สามารถอธิบายประเด็นทางเทคนิคที่ซับซ้อนให้เข้าใจได้ง่าย และนำไปใช้งานจริงได้"
+                "ดูแล end-to-end IT operations ของโรงแรม 5 ดาว ครอบคลุม PMS, POS, door lock, IPTV, guest network, internal network, asset lifecycle, vendor SLA และ audit documentation",
+                "รักษาความพร้อมใช้งานของระบบธุรกิจโรงแรมผ่าน incident coordination, vendor escalation และการทำงานร่วมกับทีม operations แบบ single point of contact",
+                "ปรับปรุง IT governance ด้วย asset register, IT policy, internal process, TOR/procurement document และ MA contract review เพื่อเพิ่ม compliance readiness และควบคุมต้นทุน",
+                "ดูแล network infrastructure และ HSIA รวมถึง gateway, VLAN segmentation และ guest network audit เพื่อเพิ่มเสถียรภาพและลดความเสี่ยงด้านความปลอดภัย",
+                "นำแนวคิด AIOps/automation มาช่วยลดงานเอกสาร รายงาน และ data analysis เพื่อสนับสนุนการตัดสินใจของทีม IT"
             ],
             "en": [
-                "Responsible for End-to-End IT management of a 5-star hotel, covering hotel operating systems, network infrastructure, guest systems, and compliance standards.",
-                "Maintained and supported core hotel systems (Opera PMS, Micros Simphony POS, VingCard Door Lock System, IPTV) ensuring 24/7 availability, managing incidents, and coordinating with vendors per SLA.",
-                "Managed Network Infrastructure and HSIA for guests and internal operations, including Gateway, VLAN Segmentation, and Guest Network Audits to enhance stability and security.",
-                "Maintained Digital Signage and internal communication systems, ensuring alignment with brand standards and operational needs.",
-                "Acted as the Single Point of Contact between IT, Operations, and technology Vendors/Partners.",
-                "Managed IT Asset Management processes, including creating IT asset registers (Hardware/Software/Licenses), tracking lifecycles, planning replacements, and cost control.",
-                "Drafted and refined TOR (Terms of Reference) and IT procurement documents to define scope, specs, and contract conditions suitable for actual hotel usage.",
-                "Participated in negotiating and restructuring MA (Maintenance Agreement) contracts with Vendors/Sales to maximize value, reduce costs, and maintain service quality per SLA.",
-                "Created and updated IT Audit Documentation, IT Policies, and Internal Processes (IE Process) to elevate work standards, readiness, and audit compliance.",
-                "Supported the IT Manager by streamlining IT workflows, reducing redundancy, and increasing organizational Cost Efficiency.",
-                "Applied understanding of IT laws and standards (Computer Crime Act, PDPA, Cybersecurity Act) in daily operations and IT Audit roles.",
-                "Leveraged AIOps concepts to reduce administrative work/reporting and analyze data, enhancing IT team decision-making efficiency.",
-                "Strong communication skills for collaborating with users at all levels, capable of explaining complex technical issues simply for practical application."
+                "Managed end-to-end IT operations for a 5-star hotel environment, supporting PMS, POS, door lock, IPTV, guest network, internal network, asset lifecycle, vendor SLA, and audit documentation.",
+                "Maintained business-system availability through incident coordination, vendor escalation, and single point of contact support between IT and hotel operations teams.",
+                "Improved IT governance through asset registers, IT policies, internal processes, TOR/procurement documents, and MA contract review to strengthen compliance readiness and cost control.",
+                "Managed network infrastructure and HSIA, including gateways, VLAN segmentation, and guest network audits to improve stability and reduce security risk.",
+                "Applied AIOps/automation concepts to reduce administrative reporting and data analysis workload for better IT team decision support."
             ]
         },
         "reasonForLeaving": {
@@ -151,34 +113,18 @@
         "websiteUrl": "https://www.krungsri.com",
         "details": {
             "th": [
-                "รับผิดชอบในการจัดการกระบวนการ Event Management ตามมาตรฐาน ITIL v3",
-                "ประเมินและเลือกเทคโนโลยีใหม่ๆ ที่เกี่ยวข้องกับการจัดการเหตุการณ์ที่เกี่ยวกับบริการของธนาคาร",
-                "จัดการและกำกับดูแลการประชุม Emergency, Weekly, และ Monthly",
-                "การประเมินประสิทธิภาพของกระบวนการ Event Management โดยการตั้งมาตรการและเป้าหมายในการปรับปรุงกระบวนการให้มีประสิทธิภาพและประสิทธิผลยิ่งขึ้น",
-                "ตรวจสอบและจัดการสถานการณ์ที่เกิดข้อยกเว้นหรือเบี่ยงเบนจากมาตรฐาน โดยการกำหนดและติดตามกระบวนการที่เกี่ยวข้องกับบริการของธนาคาร",
-                "ติดต่อสื่อสารและแก้ไขปัญหาที่เกี่ยวข้องกับการไม่ปฏิบัติตามมาตรฐานและขั้นตอนที่กำหนดภายในกระบวนการกับบริการของธนาคาร",
-                "จัดการการสนับสนุนจากทรัพยากรภายในและการจัดสรรทรัพยากรให้เหมาะสมตามความต้องการ",
-                "ประสานงานกับผู้จัดการกระบวนการอื่นๆ เพื่อให้กระบวนการทำงานร่วมกันอย่างราบรื่น",
-                "ดูแลกระบวนการทางด้านการสื่อสาร เช่น การแจ้งข้อมูลการเปลี่ยนแปลงนโยบายใหม่ๆ และการสื่อสารกับทีมงานที่เกี่ยวข้องกับบริการของธนาคาร",
-                "สร้างและแจกจ่ายรายงานกระบวนการ (Process Work Flow) เพื่อให้ผู้บริหารและทีมงานได้รับข้อมูลที่เกี่ยวข้องกับบริการของธนาคาร",
-                "ดำเนินการตามเส้นทางการ Escalation ที่กำหนด เมื่อเกิดเหตุการณ์ที่ไม่สามารถแก้ไขได้ในระดับพื้นฐาน",
-                "ประเมินผลการดำเนินการของกระบวนการ และช่วยในการตรวจสอบการปฏิบัติตามขั้นตอนที่มีการกำหนดไว้กับบริการของธนาคาร",
-                "ให้การสนับสนุนทีมตรวจสอบ (Audit) ทั้งภายนอกและภายใน"
+                "ดูแล Event Management process ตาม ITIL สำหรับบริการธนาคาร ครอบคลุม escalation, exception handling, process compliance และ management reporting",
+                "จัดการ emergency, weekly และ monthly governance meetings โดยติดตาม process performance, SLA alignment, deviation และ improvement action",
+                "ประสานงานกับ process managers และทีมที่เกี่ยวข้องเพื่อรักษา service continuity และทำให้กระบวนการทำงานร่วมกันได้ราบรื่น",
+                "จัดทำ process workflow/reporting เพื่อให้ผู้บริหารและทีมปฏิบัติการเห็นสถานะ ความเสี่ยง และ action ที่ต้องติดตาม",
+                "สนับสนุน internal/external audit โดยตรวจสอบหลักฐาน กระบวนการ และการปฏิบัติตามมาตรฐานที่กำหนด"
             ],
             "en": [
-                "Responsible for managing Event Management processes according to ITIL v3 standards",
-                "Evaluate and select new technologies related to event management for bank services",
-                "Manage and oversee Emergency, Weekly, and Monthly meetings",
-                "Evaluate Event Management process performance by setting measures and goals for efficiency and effectiveness improvement",
-                "Monitor and manage exceptions or deviations by defining and tracking processes related to bank services",
-                "Communicate and resolve issues related to non-compliance with standards and defined processes",
-                "Manage internal resource support and resource allocation as needed",
-                "Coordinate with other process managers for seamless process integration",
-                "Oversee communication processes, such as notifying new policy changes and communicating with relevant teams",
-                "Create and distribute Process Work Flow reports to management and teams",
-                "Execute defined Escalation paths for incidents that cannot be resolved at a basic level",
-                "Evaluate process performance and assist in verifying compliance with defined procedures",
-                "Support both external and internal Audit teams"
+                "Operated Event Management processes under ITIL standards for banking services, covering escalation, exception handling, process compliance, and management reporting.",
+                "Supported emergency, weekly, and monthly governance meetings by tracking process performance, SLA alignment, deviations, and improvement actions.",
+                "Coordinated with process managers and operational teams to maintain service continuity and improve cross-process integration.",
+                "Created process workflow/reporting materials to help management and operations teams track status, risks, and follow-up actions.",
+                "Supported internal and external audit activities by validating process evidence, procedures, and compliance with defined standards."
             ]
         },
         "reasonForLeaving": {
@@ -212,30 +158,18 @@
         "websiteUrl": "https://www.i-secure.co.th",
         "details": {
             "th": [
-                "Support engineer Endpoint (Crowdstrike): Install and uninstall of Endpoint as VM, AD, MAC OS, Linux, Windows etc.",
-                "Take a sample of Attacks, Threats and Vulnerabilities.",
-                "Operations and Incident Response (shift).",
-                "Continue the license to customers and provide initial consultation.",
-                "Create workflow manuals and record work history through Jira software.",
-                "Support engineer (Palo Alto and Fortigate): Customize basic policy (Ans Zone, Security Policy, Nat, interface, routing, VPN).",
-                "Config as GlobalProtect and FortiClient.",
-                "Remote and record monthly usage statistics.",
-                "(PM): Generate a monthly firewall VPN usage report via Zabbix.",
-                "License to customers and provide initial consultation.",
-                "Create workflow manuals and record work history through Jira software."
+                "สนับสนุน endpoint security operations สำหรับ CrowdStrike บน Windows, macOS, Linux, VM และ AD environment รวมถึง installation, removal, incident support และ customer consultation",
+                "สนับสนุน firewall/VPN operations สำหรับ Palo Alto และ Fortigate ครอบคลุม security policy, NAT, interface, routing, GlobalProtect และ FortiClient",
+                "ทำงานใน incident response/operations shift พร้อมเก็บหลักฐาน attack, threat และ vulnerability sample เพื่อช่วยวิเคราะห์และตอบสนองเหตุการณ์",
+                "จัดทำ monthly firewall/VPN usage report ผ่าน Zabbix และบันทึกงานผ่าน Jira เพื่อเพิ่ม visibility และ service continuity",
+                "จัดทำ workflow manuals และให้คำปรึกษาลูกค้าเกี่ยวกับ license/operation เพื่อให้การส่งมอบบริการต่อเนื่อง"
             ],
             "en": [
-                "Support engineer Endpoint (Crowdstrike): Install and uninstall of Endpoint as VM, AD, MAC OS, Linux, Windows etc.",
-                "Take a sample of Attacks, Threats and Vulnerabilities.",
-                "Operations and Incident Response (shift).",
-                "Continue the license to customers and provide initial consultation.",
-                "Create workflow manuals and record work history through Jira software.",
-                "Support engineer (Palo Alto and Fortigate): Customize basic policy (Ans Zone, Security Policy, Nat, interface, routing, VPN).",
-                "Config as GlobalProtect and FortiClient.",
-                "Remote and record monthly usage statistics.",
-                "(PM): Generate a monthly firewall VPN usage report via Zabbix.",
-                "License to customers and provide initial consultation.",
-                "Create workflow manuals and record work history through Jira software."
+                "Supported endpoint security operations for CrowdStrike across Windows, macOS, Linux, VM, and AD environments, including installation, removal, incident support, and customer consultation.",
+                "Provided firewall and VPN support for Palo Alto and Fortigate environments, including security policy, NAT, interface, routing, GlobalProtect, and FortiClient configuration.",
+                "Worked in incident response/operations shifts while collecting attack, threat, and vulnerability samples to support analysis and response activities.",
+                "Produced monthly firewall/VPN usage reports via Zabbix and maintained operational records through Jira to improve service visibility and continuity.",
+                "Created workflow manuals and supported license/operations consultation to keep customer service delivery consistent."
             ]
         },
         "reasonForLeaving": {
@@ -269,52 +203,20 @@
         "websiteUrl": null,
         "details": {
             "th": [
-                "พัฒนาระบบเก็บข้อมูลงานทะเบียนไอที ระบบแจ้งซ่อมคอมพิวเตอร์และงานอาคาร",
-                "ดูแลอุปกรณ์คอมพิวเตอร์และอุปกรณ์ต่อพ่วงทั้งหมดของโรงพยาบาล รวมถึงเครื่องมืออิเล็กทรอนิกส์ทางการแพทย์",
-                "ดูแลระบบ IP PBX และเครื่องสแกนนิ้ว ให้สามารถใช้งานได้ปกติ",
-                "ปรับปรุงเว็บไซต์และระบบฐานข้อมูล เพื่อให้สอดคล้องกับ PDPA และ ISO/IEC 27001",
-                "VMware ESXi 6.1 ปรับแต่งเพิ่มความจุ RAID 5 เพื่อรองรับกับระบบฐานข้อมูลที่เพิ่มมากขึ้น (Proxy หมอพร้อม)",
-                "ปรับแก้ไข Config การสำรองข้อมูลแบบใหม่ (Hybrid on cloud and on premise)",
-                "Fortigate Firewall 200E - ทำ Authentication เก็บประวัติการใช้งาน internet ของ User โดยใช้ LDAP",
-                "เพิ่ม ลบ แก้ไข ID USER NAME PASSWORD ของ พนง. สำหรับใช้อินเตอร์เน็ต",
-                "ส่งสถิติการใช้งาน LOG ของแต่ละ user ถึง Email ผู้บังคับบัญชา",
-                "สร้าง Inter Vlan และเพิ่ม RULES สำหรับแต่ละ Vlan Group User ฝ่ายต่างๆ ให้สามารถเข้าถึงไฟล์ Map a driver ได้อย่างเหมาะสม",
-                "ทำ VPN แบบ L2TP และสำรองแบบ PPTP สองช่องทาง สำหรับ work from home",
-                "บล็อคเว็บไซต์ที่เป็นอันตราย เว็บไซต์ต้องห้ามใช้ ตามระเบียบขององค์กร",
-                "ตรวจสอบ ตักเตือน ระงับการใช้งาน สำหรับผู้ที่ฝ่าฝืนกฎการใช้งานอินเตอร์เน็ตองค์กร",
-                "ทำ SD Wan แบบ 2 WAN (TOT & 3BB) เพิ่มเส้นทางสำรองป้องกันอินเตอร์เน็ตขัดข้อง",
-                "ปรับปรุงการเชื่อมต่อสายสัญญาณภายในของอุปกรณ์ network ใหม่ เพื่อลดความเสี่ยงที่ระบบจะใช้งานอินเตอร์เน็ตไม่ได้",
-                "Server PC: Map network driver ไฟล์ของฝ่ายต่างๆ",
-                "ไฟล์ระบบแจ้งซ่อมคอมพิวเตอร์และอินเตอร์เน็ต (XAMPP + phpMyAdmin + ไฟล์ Database)",
-                "ไฟล์ระบบแจ้งซ่อมอุปกรณ์สำนักงานและอาคาร (XAMPP + phpMyAdmin + ไฟล์ Database)",
-                "Auto backup ในช่วงเวลาที่ไม่มีผู้ใช้งาน พร้อมแจ้งผลผ่าน Email ถึง admin เมื่อเสร็จ",
-                "งานเกี่ยวกับเอกสาร: ทำเอกสารบัญชีเบิก หรือเสนอซื้ออุปกรณ์ใหม่ อะไหล่สำหรับซ่อมบำรุงและอัพเกรดต่างๆ",
-                "ทำเอกสารบัญชีจำหน่ายอุปกรณ์ที่หมดอายุการใช้งาน หรือคัดเลือกอุปกรณ์บางส่วนไว้ทำเป็นอะไหล่",
-                "ปฏิบัติงานอื่นๆ ที่ผู้บังคับบัญชามอบหมาย"
+                "ดูแล IT operations ของโรงพยาบาล ครอบคลุมคอมพิวเตอร์ อุปกรณ์ต่อพ่วง medical electronic instruments, IP PBX, fingerprint scanner และระบบฐานข้อมูลภายใน",
+                "พัฒนาและดูแลระบบ internal service เช่น IT registration, computer repair และ building maintenance system ด้วย XAMPP/phpMyAdmin/database",
+                "ปรับปรุง Fortigate 200E ด้วย LDAP authentication, internet usage logging, user access control และ policy enforcement เพื่อเพิ่ม accountability",
+                "ออกแบบ VLAN/rules, L2TP VPN, PPTP backup และ SD-WAN 2 WAN เพื่อเพิ่ม segmentation, remote access และ internet redundancy",
+                "ดูแล VMware ESXi, RAID 5 expansion, hybrid backup และ auto backup notification เพื่อรองรับฐานข้อมูลและลดความเสี่ยงด้าน continuity",
+                "ปรับปรุงเว็บไซต์/ฐานข้อมูลและจัดทำเอกสาร procurement/disposal ให้สอดคล้องกับ PDPA และ ISO/IEC 27001 readiness"
             ],
             "en": [
-                "Developed IT registration, computer repair, and building maintenance data systems",
-                "Maintained all hospital computers, peripherals, and medical electronic instruments",
-                "Maintained IP PBX and fingerprint scanners",
-                "Updated website and database systems to comply with PDPA and ISO/IEC 27001",
-                "VMware ESXi 6.1: Configured RAID 5 capacity expansion to support growing databases (Mor Prom Proxy)",
-                "Reconfigured new backup system (Hybrid on cloud and on premise)",
-                "Fortigate Firewall 200E: Implemented LDAP Authentication to log user internet usage",
-                "Managed user IDs, usernames, and passwords for internet access",
-                "Sent individual user LOG usage statistics to supervisors via Email",
-                "Created Inter VLAN and added RULES for Vlan Groups for appropriate file/driver access",
-                "Implemented L2TP VPN with PPTP backup for Work From Home",
-                "Blocked dangerous and prohibited websites according to organizational regulations",
-                "Monitored, warned, and suspended internet access for violators",
-                "Implemented SD-WAN with 2 WANs (TOT & 3BB) for internet redundancy",
-                "Improved internal network cabling to reduce connection risks",
-                "Server PC: Mapped network drives for various departments",
-                "Maintained Computer/Internet Repair System (XAMPP + phpMyAdmin + Database)",
-                "Maintained Office/Building Equipment Repair System (XAMPP + phpMyAdmin + Database)",
-                "Configured Auto backup during off-hours with Email notification to admin",
-                "Documentation: Prepared requisition/purchase documents for new equipment and spares",
-                "Documentation: Prepared disposal documents for expired equipment and spare parts selection",
-                "Performed other duties as assigned by supervisors"
+                "Maintained hospital IT operations covering computers, peripherals, medical electronic instruments, IP PBX, fingerprint scanners, and internal database systems.",
+                "Developed and maintained internal service systems for IT registration, computer repair, and building maintenance using XAMPP, phpMyAdmin, and databases.",
+                "Implemented Fortigate 200E LDAP authentication, internet usage logging, user access control, and policy enforcement to improve accountability.",
+                "Designed VLAN/rules, L2TP VPN, PPTP backup, and dual-WAN SD-WAN to improve segmentation, remote access, and internet redundancy.",
+                "Maintained VMware ESXi, RAID 5 expansion, hybrid backup, and automated backup notifications to support database growth and continuity risk reduction.",
+                "Updated website/database systems and prepared procurement/disposal documentation to support PDPA and ISO/IEC 27001 readiness."
             ]
         },
         "reasonForLeaving": {
@@ -348,18 +250,16 @@
         "websiteUrl": "https://energy.go.th",
         "details": {
             "th": [
-                "ดูแลคอมพิวเตอร์และอุปกรณ์ต่อพ่วงให้อยู่ในสภาพพร้อมใช้งาน 200 ชุด",
-                "ดูแลโปรแกรมสำนักงานพื้นฐานให้อยู่ในสภาพพร้อมใช้งาน",
-                "ทำเอกสารบันทึกการทำงานทุกครั้งที่มีการแจ้งปัญหาเข้ามาจากผู้ใช้",
-                "วางแผนและทำการ PM ในทุกๆ 4 เดือน ทำเอกสาร (เล่ม report พร้อมภาพประกอบ) ส่งเสนอต่อประธานคณะกรรมการจ้าง",
-                "สรุปปัญหารายเดือนการเบิกอุปกรณ์สำรองอะไหล่การซ่อม (เล่ม report) ส่งเสนอต่อประธานคณะกรรมการจ้าง"
+                "ดูแลเครื่องคอมพิวเตอร์และอุปกรณ์ต่อพ่วง 200 ชุดให้พร้อมใช้งานสำหรับหน่วยงานภาครัฐ",
+                "จัดทำ work log ทุก user incident เพื่อสร้างหลักฐานการทำงานและติดตามปัญหาซ้ำ",
+                "วางแผนและทำ preventive maintenance ทุก 4 เดือน พร้อมจัดทำ illustrated report ส่งคณะกรรมการจ้าง",
+                "สรุปปัญหารายเดือนและ spare parts requisition report เพื่อสนับสนุนการควบคุมอะไหล่และการตัดสินใจด้านซ่อมบำรุง"
             ],
             "en": [
-                "Maintained 200 operational computers and peripherals",
-                "Maintained basic office software functionality",
-                "Documented work logs for every user incident report",
-                "Planned and performed Preventive Maintenance (PM) every 4 months, submitting illustrated reports to the hiring committee",
-                "Summarized monthly issues and spare parts requisition reports for the hiring committee"
+                "Maintained 200 operational computers and peripherals for a government office environment.",
+                "Documented work logs for every user incident to create traceability and track recurring issues.",
+                "Planned and performed preventive maintenance every 4 months, submitting illustrated reports to the hiring committee.",
+                "Prepared monthly issue summaries and spare parts requisition reports to support maintenance control and repair planning."
             ]
         },
         "reasonForLeaving": {
@@ -393,14 +293,14 @@
         "websiteUrl": "https://www.ko.in.th",
         "details": {
             "th": [
-                "คอมพิวเตอร์และอุปกรณ์ต่อพ่วง - อัพเกรด ปรับปรุง แก้ไข",
-                "โปรแกรมสำนักงาน",
-                "ดูแลเครื่องแม่ข่ายและระบบสำรองข้อมูลบางส่วน"
+                "ให้บริการ technical support สำหรับคอมพิวเตอร์ อุปกรณ์ต่อพ่วง และ office software ในสภาพแวดล้อมลูกค้าองค์กร",
+                "อัปเกรด ปรับปรุง และแก้ไขปัญหาเครื่องผู้ใช้ พร้อมสนับสนุน server และ backup operations บางส่วน",
+                "สร้างพื้นฐานงาน support, troubleshooting และ service documentation ก่อนต่อยอดสู่ infrastructure/security operations"
             ],
             "en": [
-                "Computer and Peripherals - Upgrade, Improve, Fix",
-                "Office Programs",
-                "Maintained servers and partial backup systems"
+                "Provided technical support for computers, peripherals, and office software in a corporate customer environment.",
+                "Upgraded, improved, and repaired user devices while supporting selected server and backup operations.",
+                "Built foundational support, troubleshooting, and service documentation experience before progressing into infrastructure and security operations."
             ]
         },
         "reasonForLeaving": {
