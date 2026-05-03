@@ -3,8 +3,19 @@
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
-const terminalMessage =
-  'Thank you for taking the time to review my profile.\nI look forward to the opportunity to contribute to your organization.';
+const terminalLines = [
+  'Debug : I\'m Theerachot [Arm] Ready',
+  'Debug : IT OPERATIONS Ready',
+  'Debug : CYBERSECURITY Ready',
+  'Debug : ITSM Procees Ready',
+  'Debug : IT Automation Ready',
+];
+
+interface TerminalLineState {
+  text: string;
+  dots: string;
+  isBlinking: boolean;
+}
 
 interface CyberLogoLoaderProps {
   imageSrc?: string;
@@ -21,55 +32,95 @@ export default function CyberLogoLoader({
   alt = 'Theerachot H. cyber identity logo',
   onExitStart,
   onComplete,
-  durationMs = 5000,
+  durationMs = 8500,
   minVisibleMs = 260,
   className = '',
 }: CyberLogoLoaderProps) {
   const [imageFailed, setImageFailed] = useState(false);
-  const [typedText, setTypedText] = useState('');
-  const [isTerminalBlinking, setIsTerminalBlinking] = useState(false);
+  const [terminalRows, setTerminalRows] = useState<TerminalLineState[]>([]);
+  const [activeLineIndex, setActiveLineIndex] = useState(0);
   const [isExiting, setIsExiting] = useState(false);
   const loopDurationMs = 2500;
   const progressDuration = `${durationMs}ms`;
 
   useEffect(() => {
     const timers: number[] = [];
-    let typeInterval: number | undefined;
-    let typedIndex = 0;
+    const intervals: number[] = [];
     const startedAt = window.performance.now();
 
-    timers.push(
-      window.setTimeout(() => {
-        typeInterval = window.setInterval(() => {
-          typedIndex += 1;
-          setTypedText(terminalMessage.slice(0, typedIndex));
+    const finishLoader = () => {
+      const elapsed = window.performance.now() - startedAt;
+      const remainingVisibleTime = Math.max(durationMs, minVisibleMs) - elapsed;
 
-          if (typedIndex >= terminalMessage.length && typeInterval) {
-            window.clearInterval(typeInterval);
+      timers.push(
+        window.setTimeout(() => {
+          onExitStart?.();
+          setIsExiting(true);
+        }, Math.max(remainingVisibleTime, 720))
+      );
+    };
 
-            timers.push(
-              window.setTimeout(() => {
-                setIsTerminalBlinking(true);
+    const runLine = (lineIndex: number) => {
+      const line = terminalLines[lineIndex];
 
-                const elapsed = window.performance.now() - startedAt;
-                const remainingVisibleTime = Math.max(durationMs, minVisibleMs) - elapsed;
+      if (!line) {
+        finishLoader();
+        return;
+      }
 
-                timers.push(
-                  window.setTimeout(() => {
-                    onExitStart?.();
-                    setIsExiting(true);
-                  }, Math.max(remainingVisibleTime, 960))
-                );
-              }, 180)
+      setActiveLineIndex(lineIndex);
+      setTerminalRows((rows) => [...rows, { text: '', dots: '', isBlinking: false }]);
+
+      let charIndex = 0;
+      const typeInterval = window.setInterval(() => {
+        charIndex += 1;
+
+        setTerminalRows((rows) =>
+          rows.map((row, index) => (index === lineIndex ? { ...row, text: line.slice(0, charIndex) } : row))
+        );
+
+        if (charIndex < line.length) return;
+
+        window.clearInterval(typeInterval);
+        const dotFrames = ['.', '..', '...'];
+
+        dotFrames.forEach((dots, dotIndex) => {
+          timers.push(
+            window.setTimeout(() => {
+              setTerminalRows((rows) =>
+                rows.map((row, index) => (index === lineIndex ? { ...row, dots } : row))
+              );
+            }, 180 * (dotIndex + 1))
+          );
+        });
+
+        timers.push(
+          window.setTimeout(() => {
+            setTerminalRows((rows) =>
+              rows.map((row, index) => (index === lineIndex ? { ...row, isBlinking: true } : row))
             );
-          }
-        }, 24);
-      }, 850)
-    );
+          }, 760)
+        );
+
+        timers.push(
+          window.setTimeout(() => {
+            setTerminalRows((rows) =>
+              rows.map((row, index) => (index === lineIndex ? { ...row, isBlinking: false } : row))
+            );
+            runLine(lineIndex + 1);
+          }, 1080)
+        );
+      }, 18);
+
+      intervals.push(typeInterval);
+      timers.push(window.setTimeout(() => window.clearInterval(typeInterval), 2600));
+    };
+
+    timers.push(window.setTimeout(() => runLine(0), 620));
 
     return () => {
       timers.forEach((timer) => window.clearTimeout(timer));
-      if (typeInterval) window.clearInterval(typeInterval);
+      intervals.forEach((interval) => window.clearInterval(interval));
     };
   }, [durationMs, minVisibleMs, onExitStart]);
 
@@ -172,36 +223,29 @@ export default function CyberLogoLoader({
           )}
         </div>
 
-        <div className="mt-2 text-center sm:mt-1 md:-mt-1">
-          <p className="text-xl font-semibold tracking-[0.18em] text-white sm:text-2xl">THEERACHOT H.</p>
-          <p className="mt-2 text-[0.68rem] font-medium tracking-[0.22em] text-white/55 sm:text-xs">
-            IT OPERATIONS <span className="text-red-400/80">•</span> CYBERSECURITY <span className="text-red-400/80">•</span> ITSM
-          </p>
-          <p className="mt-6 min-h-5 font-mono text-[0.7rem] tracking-[0.14em] text-white/60 sm:text-xs">
-            SECURE IDENTITY LOADING<span className="motion-safe:animate-cyber-loader-caret">_</span>
-          </p>
-        </div>
-
         <div
-          className={[
-            'mt-5 min-h-[4.75rem] w-full max-w-[34rem] rounded-md border border-emerald-400/15 bg-emerald-400/[0.035] px-4 py-3 text-left font-mono text-[0.68rem] leading-5 tracking-[0.02em] text-emerald-300 shadow-[0_0_24px_rgba(16,185,129,0.10)] sm:min-h-[4.25rem] sm:text-xs',
-            isTerminalBlinking ? 'motion-safe:animate-cyber-terminal-final-blink' : '',
-          ].join(' ')}
-          aria-label={terminalMessage}
+          className="mt-5 min-h-[8.25rem] w-full max-w-[34rem] rounded-md border border-emerald-400/15 bg-emerald-400/[0.035] px-4 py-3 text-left font-mono text-[0.64rem] leading-5 tracking-[0.02em] text-emerald-300 shadow-[0_0_24px_rgba(16,185,129,0.10)] sm:min-h-[7.75rem] sm:text-xs"
+          aria-label={terminalLines.join('\n')}
         >
-          <span className="whitespace-pre-wrap">{typedText}</span>
-          {!isTerminalBlinking && (
-            <span className="ml-0.5 inline-block h-4 w-2 translate-y-0.5 bg-emerald-300 shadow-[0_0_10px_rgba(110,231,183,0.75)] motion-safe:animate-cyber-terminal-cursor" />
-          )}
+          {terminalRows.map((row, index) => (
+            <div
+              key={`${terminalLines[index]}-${index}`}
+              className={[
+                'min-h-5 whitespace-pre-wrap',
+                row.isBlinking ? 'motion-safe:animate-cyber-terminal-line-blink' : '',
+              ].join(' ')}
+            >
+              <span>{row.text}</span>
+              <span>{row.dots}</span>
+              {index === activeLineIndex && !row.isBlinking && (
+                <span className="ml-0.5 inline-block h-4 w-2 translate-y-0.5 bg-emerald-300 shadow-[0_0_10px_rgba(110,231,183,0.75)] motion-safe:animate-cyber-terminal-cursor" />
+              )}
+            </div>
+          ))}
         </div>
 
         <div className="mx-auto mt-5 h-1.5 w-full max-w-[18rem] overflow-hidden rounded-full border border-white/15 bg-white/[0.04]">
           <div className="h-full origin-left rounded-full bg-gradient-to-r from-white/45 via-white to-red-400/80 motion-safe:animate-cyber-loader-progress motion-reduce:scale-x-100" />
-        </div>
-
-        <div className="mx-auto mt-3 flex w-full max-w-[18rem] items-center justify-between gap-4 font-mono text-[0.56rem] uppercase tracking-[0.12em] text-white/35 sm:text-[0.65rem] sm:tracking-[0.16em]">
-          <span className="whitespace-nowrap">encrypted</span>
-          <span className="whitespace-nowrap">soc-ready</span>
         </div>
       </div>
     </div>
