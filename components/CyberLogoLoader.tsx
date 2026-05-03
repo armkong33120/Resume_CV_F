@@ -4,13 +4,13 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 const terminalLines = [
-  { text: 'Debug : I\'m Theerachot [Arm] Ready', animateReadyDots: true },
-  { text: 'Debug : IT OPERATIONS Ready', animateReadyDots: true },
-  { text: 'Debug : CYBERSECURITY Ready', animateReadyDots: true },
-  { text: 'Debug : ITSM Procees Ready', animateReadyDots: true },
-  { text: 'Debug : IT Automation Ready', animateReadyDots: true },
-  { text: 'Log : Thank you for taking the time to review my profile.', animateReadyDots: false },
-  { text: 'I look forward to the opportunity to contribute to your organization...', animateReadyDots: false },
+  { text: 'Debug : I\'m Theerachot [Arm] Ready', animateReadyDots: true, blink: 'single' },
+  { text: 'Debug : IT OPERATIONS Ready', animateReadyDots: true, blink: 'single' },
+  { text: 'Debug : CYBERSECURITY Ready', animateReadyDots: true, blink: 'single' },
+  { text: 'Debug : ITSM Procees Ready', animateReadyDots: true, blink: 'single' },
+  { text: 'Debug : IT Automation Ready', animateReadyDots: true, blink: 'single' },
+  { text: 'Log : Thank you for taking the time to review my profile.', animateReadyDots: false, blink: 'triple' },
+  { text: 'I look forward to the opportunity to contribute to your organization...', animateReadyDots: false, blink: 'triple' },
 ];
 
 interface TerminalLineState {
@@ -85,7 +85,7 @@ export default function CyberLogoLoader({
 
         window.clearInterval(typeInterval);
         const blinkDelay = line.animateReadyDots ? 760 : 180;
-        const nextLineDelay = line.animateReadyDots ? 1080 : 500;
+        const nextLineDelay = line.animateReadyDots ? 1080 : 1320;
 
         if (line.animateReadyDots) {
           const dotFrames = ['.', '..', '...'];
@@ -239,7 +239,12 @@ export default function CyberLogoLoader({
               key={`${terminalLines[index]?.text}-${index}`}
               className={[
                 'min-h-5 whitespace-pre-wrap',
-                row.isBlinking ? 'motion-safe:animate-cyber-terminal-line-blink' : '',
+                row.isBlinking && terminalLines[index]?.blink === 'triple'
+                  ? 'motion-safe:animate-cyber-terminal-log-blink'
+                  : '',
+                row.isBlinking && terminalLines[index]?.blink !== 'triple'
+                  ? 'motion-safe:animate-cyber-terminal-line-blink'
+                  : '',
               ].join(' ')}
             >
               <span>{row.text}</span>

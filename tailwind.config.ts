@@ -165,6 +165,10 @@ const config: Config = {
           '0%, 100%': { opacity: '1' },
           '48%, 72%': { opacity: '0.24' },
         },
+        'cyber-terminal-log-blink': {
+          '0%, 16%, 34%, 50%, 68%, 84%, 100%': { opacity: '1' },
+          '8%, 42%, 76%': { opacity: '0.24' },
+        },
       },
       animation: {
         'cyber-loader-fade-in': 'cyber-loader-fade-in 520ms cubic-bezier(0.22, 1, 0.36, 1) both',
@@ -178,6 +182,7 @@ const config: Config = {
         'cyber-terminal-cursor': 'cyber-terminal-cursor 820ms steps(1, end) infinite',
         'cyber-terminal-final-blink': 'cyber-terminal-final-blink 900ms steps(1, end) 1 both',
         'cyber-terminal-line-blink': 'cyber-terminal-line-blink 320ms steps(1, end) 1 both',
+        'cyber-terminal-log-blink': 'cyber-terminal-log-blink 1040ms steps(1, end) 1 both',
         'cyber-suit-resolve': 'cyber-suit-resolve var(--cyber-suit-loop-duration,2.5s) cubic-bezier(0.22, 1, 0.36, 1) infinite',
         'cyber-suit-ghost': 'cyber-suit-ghost var(--cyber-suit-loop-duration,2.5s) cubic-bezier(0.22, 1, 0.36, 1) infinite',
         'cyber-suit-shock': 'cyber-suit-shock var(--cyber-suit-loop-duration,2.5s) steps(1, end) infinite',
