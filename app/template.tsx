@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ReactNode } from "react";
-import { EASE } from "@/lib/motion";
+import { DURATION, EASE } from "@/lib/motion";
 
 export default function Template({ children }: { children: ReactNode }) {
     return (
@@ -11,7 +11,7 @@ export default function Template({ children }: { children: ReactNode }) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{
-                duration: 0.4,
+                duration: DURATION.base,
                 ease: EASE
             }}
         >

@@ -3,6 +3,7 @@
 import { Download } from "lucide-react";
 import { useLanguage } from "./LanguageContext";
 import { motion } from "framer-motion";
+import { hoverLift, tapPress } from "@/lib/motion";
 
 export default function DownloadPdfButton() {
     const { language } = useLanguage();
@@ -14,8 +15,8 @@ export default function DownloadPdfButton() {
     return (
         <motion.button
             onClick={handleClick}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            whileHover={hoverLift}
+            whileTap={tapPress}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-background hover:bg-foreground/5 transition-colors text-sm font-medium print:hidden"
             aria-label="Download PDF"
         >

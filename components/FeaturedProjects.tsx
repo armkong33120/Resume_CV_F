@@ -5,7 +5,7 @@ import ProjectCard from './ProjectCard';
 import { useLanguage } from './LanguageContext';
 import { getTranslation } from '@/lib/translations';
 import { motion } from 'framer-motion';
-import { fadeInUp, staggerContainer } from '@/lib/motion';
+import { fadeInUp, staggerContainer, viewportOnce } from '@/lib/motion';
 
 interface FeaturedProjectsProps {
     projects: ProjectListItem[];
@@ -20,7 +20,7 @@ export default function FeaturedProjects({ projects }: FeaturedProjectsProps) {
             <motion.div
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, margin: "-50px" }}
+                viewport={viewportOnce}
                 variants={staggerContainer}
                 className="mb-8 xs:mb-12 sm:mb-16 text-center"
             >
@@ -40,7 +40,7 @@ export default function FeaturedProjects({ projects }: FeaturedProjectsProps) {
             <motion.div
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, margin: "-50px" }}
+                viewport={viewportOnce}
                 variants={staggerContainer}
                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 xs:gap-6 sm:gap-8"
             >

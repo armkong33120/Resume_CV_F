@@ -6,6 +6,15 @@ import { Clock, CheckCircle, TrendingDown, DollarSign } from 'lucide-react';
 import { useLanguage } from '@/components/LanguageContext';
 import { getTranslation } from '@/lib/translations';
 
+interface PieLabelProps {
+    cx: number;
+    cy: number;
+    midAngle: number;
+    innerRadius: number;
+    outerRadius: number;
+    percent: number;
+}
+
 const LarkImpact = () => {
     const { language } = useLanguage();
     const t = getTranslation(language);
@@ -33,7 +42,7 @@ const LarkImpact = () => {
     ];
 
     const RADIAN = Math.PI / 180;
-    const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }: any) => {
+    const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent }: PieLabelProps) => {
         const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
         const x = cx + radius * Math.cos(-midAngle * RADIAN);
         const y = cy + radius * Math.sin(-midAngle * RADIAN);
@@ -131,7 +140,7 @@ const LarkImpact = () => {
                                                 <Cell key={`cell-${index}`} fill={entry.color} />
                                             ))}
                                         </Pie>
-                                        <Tooltip formatter={(value: any) => `${value}%`} />
+                                        <Tooltip formatter={(value: number | string) => `${value}%`} />
                                         <Legend verticalAlign="bottom" height={36} iconType="circle" />
                                     </PieChart>
                                 </ResponsiveContainer>
@@ -158,7 +167,7 @@ const LarkImpact = () => {
                                                 <Cell key={`cell-${index}`} fill={entry.color} />
                                             ))}
                                         </Pie>
-                                        <Tooltip formatter={(value: any) => `${value}%`} />
+                                        <Tooltip formatter={(value: number | string) => `${value}%`} />
                                         <Legend verticalAlign="bottom" height={36} iconType="circle" />
                                     </PieChart>
                                 </ResponsiveContainer>

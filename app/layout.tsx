@@ -4,7 +4,6 @@ import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 import { LanguageProvider } from '@/components/LanguageContext';
 import { SalaryAuthProvider } from '@/components/SalaryAuthContext';
-import { getProfile } from '@/lib/content';
 
 export const metadata: Metadata = {
   title: 'Theerachot Hengsimmakourup | IT Management & Cybersecurity Portfolio',
@@ -30,9 +29,6 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // Fetch profile for any global data needs
-  const profile = await getProfile();
-
   return (
     <html lang="th" className="scroll-smooth">
       <body className="antialiased bg-background text-foreground">

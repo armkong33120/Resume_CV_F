@@ -1,13 +1,12 @@
 'use client';
 
 import { useLanguage } from '@/components/LanguageContext';
-import { getTranslation } from '@/lib/translations';
 import experienceData from '@/content/experience.json';
 import profileData from '@/content/profile.json';
 import PrintButton from '@/components/PrintButton';
 import DownloadPdfButton from '@/components/DownloadPdfButton';
 import { motion } from 'framer-motion';
-import { fadeInUp, staggerContainer } from '@/lib/motion';
+import { fadeInUp, staggerContainer, viewportOnce } from '@/lib/motion';
 import Image from 'next/image';
 import { Github, Linkedin, FileText, Mail, Phone, MapPin, Calendar, Globe } from 'lucide-react';
 
@@ -36,7 +35,6 @@ interface ExperienceItem {
 
 export default function ResumeContent() {
     const { language } = useLanguage();
-    const t = getTranslation(language);
 
     const jobs = experienceData as ExperienceItem[];
 
@@ -50,7 +48,7 @@ export default function ResumeContent() {
                 variants={fadeInUp}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true }}
+                viewport={viewportOnce}
                 className="mb-12 text-center flex flex-col items-center"
             >
                 <h1 className="text-4xl font-bold tracking-tight text-foreground mb-4">
@@ -169,7 +167,7 @@ export default function ResumeContent() {
                 variants={staggerContainer}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, margin: "-50px" }}
+                viewport={viewportOnce}
             >
                 <div className="flex items-center gap-4 mb-6">
                     <div className="h-px bg-border flex-1"></div>
@@ -211,7 +209,7 @@ export default function ResumeContent() {
                 variants={staggerContainer}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, margin: "-50px" }}
+                viewport={viewportOnce}
             >
                 {jobs.map((job) => (
                     <motion.div

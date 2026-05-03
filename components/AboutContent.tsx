@@ -5,7 +5,7 @@ import { useLanguage } from '@/components/LanguageContext';
 import { getTranslation } from '@/lib/translations';
 import { Profile } from '@/lib/types';
 import { motion } from 'framer-motion';
-import { fadeInUp, staggerContainer } from '@/lib/motion';
+import { fadeInUp, staggerContainer, viewportOnce } from '@/lib/motion';
 
 import TrendAiCard from './TrendAiCard';
 
@@ -25,7 +25,7 @@ export default function AboutContent({ profile }: AboutContentProps) {
                 <motion.div
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true, margin: "-50px" }}
+                    viewport={viewportOnce}
                     variants={staggerContainer}
                     className="space-y-6 text-center"
                 >
@@ -50,10 +50,10 @@ export default function AboutContent({ profile }: AboutContentProps) {
                 {/* Skills */}
                 <div className="mt-16 sm:mt-20">
                     <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5 }}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={viewportOnce}
+                        variants={fadeInUp}
                         className="text-2xl xs:text-3xl font-bold tracking-tight text-foreground mb-8 text-center"
                     >
                         {t.about.skills}
@@ -61,7 +61,7 @@ export default function AboutContent({ profile }: AboutContentProps) {
                     <motion.div
                         initial="hidden"
                         whileInView="visible"
-                        viewport={{ once: true, margin: "-50px" }}
+                        viewport={viewportOnce}
                         variants={staggerContainer}
                         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 xs:gap-8"
                     >

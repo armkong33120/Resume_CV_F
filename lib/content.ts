@@ -1,7 +1,7 @@
 import { readFile } from 'fs/promises';
 import { join } from 'path';
 import { Profile, Project } from './types';
-import { validateProfile, validateProject, validateProjects } from './validators';
+import { validateProfile, validateProjects } from './validators';
 
 let cachedProfile: Profile | null = null;
 let cachedProjects: Project[] | null = null;

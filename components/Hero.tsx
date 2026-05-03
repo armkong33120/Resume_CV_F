@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import { Profile } from '@/lib/types';
 import { useLanguage } from './LanguageContext';
 import { getTranslation } from '@/lib/translations';
-import { fadeInUp, scaleIn, staggerContainer, hoverLift } from '@/lib/motion';
+import { fadeInUp, scaleIn, staggerContainer, hoverLift, tapPress } from '@/lib/motion';
 import BackgroundMotion from './BackgroundMotion';
 
 interface HeroProps {
@@ -65,7 +65,7 @@ export default function Hero({ profile }: HeroProps) {
           className="flex flex-col sm:flex-row items-center justify-center gap-3 xs:gap-4 sm:gap-6 px-4"
           variants={fadeInUp}
         >
-          <motion.div whileHover={hoverLift} whileTap={{ scale: 0.98 }} className="w-full sm:w-auto">
+          <motion.div whileHover={hoverLift} whileTap={tapPress} className="w-full sm:w-auto">
             <Link
               href="/#work"
               className="block w-full sm:w-auto px-6 xs:px-8 py-2.5 xs:py-3 bg-foreground text-background rounded-full font-medium tracking-tight hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 text-sm xs:text-base shadow-lg hover:shadow-xl"
@@ -74,7 +74,7 @@ export default function Hero({ profile }: HeroProps) {
             </Link>
           </motion.div>
 
-          <motion.div whileHover={hoverLift} whileTap={{ scale: 0.98 }} className="w-full sm:w-auto">
+          <motion.div whileHover={hoverLift} whileTap={tapPress} className="w-full sm:w-auto">
             <Link
               href="/contact"
               className="block w-full sm:w-auto px-6 xs:px-8 py-2.5 xs:py-3 border border-border rounded-full font-medium tracking-tight hover:bg-foreground/5 transition-colors focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 text-sm xs:text-base backdrop-blur-sm"
@@ -87,4 +87,3 @@ export default function Hero({ profile }: HeroProps) {
     </section>
   );
 }
-

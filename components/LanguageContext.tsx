@@ -2,11 +2,14 @@
 
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { Language } from '@/lib/translations';
+import { LocalizedText } from '@/lib/types';
+
+type TranslatableContent = string | LocalizedText | null | undefined;
 
 type LanguageContextType = {
   language: Language;
   setLanguage: (lang: Language) => void;
-  t: (content: any) => string;
+  t: (content: TranslatableContent) => string;
 };
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -28,7 +31,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   };
 
 
-  const t = (content: any): string => {
+  const t = (content: TranslatableContent): string => {
     if (!content) return '';
     if (typeof content === 'string') return content;
     // Check if content matches LocalizedText shape

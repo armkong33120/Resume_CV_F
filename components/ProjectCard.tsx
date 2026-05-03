@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ProjectListItem } from '@/lib/types';
+import { hoverLift } from '@/lib/motion';
 
 import { useLanguage } from './LanguageContext';
 
@@ -16,8 +17,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
   return (
     <motion.div
-      whileHover={{ y: -6 }}
-      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+      whileHover={hoverLift}
     >
       <Link
         href={`/work/${project.slug}`}
@@ -65,4 +65,3 @@ export default function ProjectCard({ project }: ProjectCardProps) {
     </motion.div>
   );
 }
-

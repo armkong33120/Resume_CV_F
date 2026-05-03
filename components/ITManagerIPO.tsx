@@ -1,10 +1,8 @@
 import ITReadinessMindmap from '@/components/ITReadinessMindmap';
 import { useLanguage } from '@/components/LanguageContext';
-import { getTranslation } from '@/lib/translations';
 
 export default function ITManagerIPO() {
     const { language } = useLanguage();
-    const t = getTranslation(language);
 
     const content = {
         title: {

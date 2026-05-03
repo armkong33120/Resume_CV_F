@@ -4,6 +4,7 @@ import { createContext, useContext, useState, ReactNode } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Lock, X } from 'lucide-react';
 import { useLanguage } from './LanguageContext';
+import { fadeInUp, modalPanel, overlayFade } from '@/lib/motion';
 
 interface SalaryAuthContextType {
     isSalaryUnlocked: boolean;
@@ -71,17 +72,19 @@ export function SalaryAuthProvider({ children }: { children: ReactNode }) {
                 {isModalOpen && (
                     <div className="fixed inset-0 z-50 flex items-center justify-center px-4">
                         <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
+                            initial="hidden"
+                            animate="visible"
+                            exit="exit"
+                            variants={overlayFade}
                             className="absolute inset-0 bg-background/80 backdrop-blur-sm"
                             onClick={() => setIsModalOpen(false)}
                         />
 
                         <motion.div
-                            initial={{ opacity: 0, scale: 0.95, y: 20 }}
-                            animate={{ opacity: 1, scale: 1, y: 0 }}
-                            exit={{ opacity: 0, scale: 0.95, y: 20 }}
+                            initial="hidden"
+                            animate="visible"
+                            exit="exit"
+                            variants={modalPanel}
                             className="relative w-full max-w-sm bg-card border border-border shadow-xl rounded-xl p-6 overflow-hidden"
                         >
                             <button
@@ -121,8 +124,9 @@ export function SalaryAuthProvider({ children }: { children: ReactNode }) {
                                     />
                                     {error && (
                                         <motion.p
-                                            initial={{ opacity: 0, y: -5 }}
-                                            animate={{ opacity: 1, y: 0 }}
+                                            initial="hidden"
+                                            animate="visible"
+                                            variants={fadeInUp}
                                             className="text-xs text-red-500 mt-1.5 ml-1 font-medium"
                                         >
                                             {language === 'th' ? 'รหัสผ่านไม่ถูกต้อง' : 'Incorrect password'}

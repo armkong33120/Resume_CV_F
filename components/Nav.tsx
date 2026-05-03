@@ -2,12 +2,13 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from './LanguageContext';
 import { getTranslation } from '@/lib/translations';
 import LanguageSwitcher from './LanguageSwitcher';
-import { fadeIn } from '@/lib/motion';
+import { DURATION, EASE, fadeIn, fadeInUp, selectionPillTransition } from '@/lib/motion';
+import { useSelectionPill } from '@/lib/useSelectionPill';
 
 const navItems = [
   { href: '/', key: 'home' },
@@ -85,6 +86,28 @@ export default function Nav() {
     }
     return pathname === item.href || pathname.startsWith(item.href + '/');
   };
+  const activeNavIndex = navItems.findIndex(checkActive);
+  const {
+    containerRef: desktopNavRef,
+    setItemRef: setDesktopNavItemRef,
+    metrics: desktopNavPill,
+  } = useSelectionPill<HTMLDivElement, HTMLAnchorElement>(
+    activeNavIndex,
+    `${language}-${pathname}-${activeSection}`
+  );
+
+  const handleNavSelection = (href: string) => {
+    if (href === '/') {
+      setActiveSection('');
+      window.scrollTo(0, 0);
+      return;
+    }
+
+    const section = href.split('#')[1];
+    if (section) {
+      setActiveSection(section);
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -118,32 +141,25 @@ export default function Nav() {
             Theerachot H.
           </Link>
 
-          <div className="hidden sm:flex items-center space-x-1">
-            {navItems.map((item) => {
+          <div ref={desktopNavRef} className="relative isolate hidden sm:flex items-center space-x-1">
+            <motion.span
+              aria-hidden="true"
+              className="absolute inset-y-0 left-0 z-0 rounded-full bg-foreground"
+              initial={false}
+              animate={{ x: desktopNavPill.x, width: desktopNavPill.width, opacity: desktopNavPill.opacity }}
+              transition={selectionPillTransition}
+            />
+            {navItems.map((item, itemIndex) => {
               const isActive = checkActive(item);
               return (
                 <Link
+                  ref={setDesktopNavItemRef(itemIndex)}
                   key={item.href}
                   href={item.href}
-                  className={`relative px-4 py-2 rounded-full text-sm font-medium tracking-tight transition-colors duration-300 ${isActive ? 'text-background' : 'text-foreground/70 hover:text-foreground'}`}
+                  className={`relative z-10 px-4 py-2 rounded-full text-sm font-medium tracking-tight transition-colors duration-300 ${isActive ? 'text-background' : 'text-foreground/70 hover:text-foreground'}`}
                   aria-current={isActive ? 'page' : undefined}
-                  onClick={() => {
-                    if (item.href.includes('#')) {
-                      const section = item.href.split('#')[1];
-                      setActiveSection(section);
-                    } else if (item.href === '/') {
-                      setActiveSection('');
-                      window.scrollTo(0, 0);
-                    }
-                  }}
+                  onClick={() => handleNavSelection(item.href)}
                 >
-                  {isActive && (
-                    <motion.span
-                      layoutId="nav-pill"
-                      className="absolute inset-0 bg-foreground rounded-full -z-10"
-                      transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                    />
-                  )}
                   {t.nav[item.key as keyof typeof t.nav]}
                 </Link>
               );
@@ -154,16 +170,23 @@ export default function Nav() {
           </div>
 
           {/* Mobile menu button */}
-          <MobileMenu activeSection={activeSection} />
+          <MobileMenu activeSection={activeSection} onSelect={handleNavSelection} />
         </div>
       </div>
     </motion.nav>
   );
 }
 
-function MobileMenu({ activeSection }: { activeSection: string }) {
+function MobileMenu({
+  activeSection,
+  onSelect,
+}: {
+  activeSection: string;
+  onSelect: (href: string) => void;
+}) {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
+  const previousPathname = useRef(pathname);
   const { language } = useLanguage();
   const t = getTranslation(language);
 
@@ -185,7 +208,10 @@ function MobileMenu({ activeSection }: { activeSection: string }) {
 
   // Close menu when route changes
   useEffect(() => {
-    if (isOpen) setIsOpen(false);
+    if (previousPathname.current !== pathname) {
+      setIsOpen(false);
+      previousPathname.current = pathname;
+    }
   }, [pathname]);
 
   return (
@@ -200,14 +226,17 @@ function MobileMenu({ activeSection }: { activeSection: string }) {
         <div className="w-6 h-6 flex flex-col justify-center space-y-1.5">
           <motion.span
             animate={isOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
+            transition={{ duration: DURATION.fast, ease: EASE }}
             className="block h-0.5 w-6 bg-foreground origin-center"
           />
           <motion.span
             animate={isOpen ? { opacity: 0 } : { opacity: 1 }}
+            transition={{ duration: DURATION.fast, ease: EASE }}
             className="block h-0.5 w-6 bg-foreground"
           />
           <motion.span
             animate={isOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }}
+            transition={{ duration: DURATION.fast, ease: EASE }}
             className="block h-0.5 w-6 bg-foreground origin-center"
           />
         </div>
@@ -219,7 +248,7 @@ function MobileMenu({ activeSection }: { activeSection: string }) {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
+            transition={{ duration: DURATION.base, ease: EASE }}
             className="absolute top-full left-0 right-0 bg-glass/95 backdrop-blur-xl border-b border-border shadow-glass safe-bottom overflow-hidden"
           >
             <div className="px-4 xs:px-6 py-4 space-y-3 xs:space-y-4">
@@ -228,14 +257,18 @@ function MobileMenu({ activeSection }: { activeSection: string }) {
                 return (
                   <motion.div
                     key={item.href}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.05 }}
+                    initial="hidden"
+                    animate="visible"
+                    variants={fadeInUp}
+                    transition={{ delay: i * 0.04 }}
                   >
                     <Link
                       href={item.href}
-                      onClick={() => setIsOpen(false)}
-                      className={`block px-4 py-2 rounded-full text-base font-medium tracking-tight transition-all duration-300 ${isActive
+                      onClick={() => {
+                        onSelect(item.href);
+                        setIsOpen(false);
+                      }}
+                      className={`block px-4 py-2 rounded-full text-base font-medium tracking-tight transition-colors ${isActive
                         ? 'bg-foreground text-background'
                         : 'text-foreground/70 hover:bg-foreground hover:text-background'
                         }`}

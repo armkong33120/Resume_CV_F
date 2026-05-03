@@ -1,13 +1,12 @@
 'use client';
 
 import { useLanguage } from '@/components/LanguageContext';
-import { getTranslation } from '@/lib/translations';
 import experienceData from '@/content/experience.json';
 import PrintButton from '@/components/PrintButton';
 import DownloadPdfButton from '@/components/DownloadPdfButton';
 import SalaryPrivacy from '@/components/SalaryPrivacy';
 import { motion } from 'framer-motion';
-import { fadeInUp, staggerContainer, scaleIn } from '@/lib/motion';
+import { DURATION, EASE, fadeInUp, scaleIn, staggerContainer, viewportOnce } from '@/lib/motion';
 import profileData from '@/content/profile.json';
 import Image from 'next/image';
 import { Github, Linkedin, FileText, Mail, Phone, MapPin, Calendar, Globe } from 'lucide-react';
@@ -38,7 +37,6 @@ interface ExperienceItem {
 
 export default function ExperienceContent() {
     const { language } = useLanguage();
-    const t = getTranslation(language);
 
     // Cast the imported JSON to the correct type
     const jobs = experienceData as ExperienceItem[];
@@ -58,7 +56,7 @@ export default function ExperienceContent() {
                 variants={fadeInUp}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true }}
+                viewport={viewportOnce}
                 className="mb-12 text-center flex flex-col items-center"
             >
                 <h1 className="text-4xl font-bold tracking-tight text-foreground mb-4">
@@ -198,14 +196,14 @@ export default function ExperienceContent() {
                 variants={staggerContainer}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, margin: "-50px" }}
+                viewport={viewportOnce}
             >
                 {/* Vertical Line */}
                 <motion.div
                     initial={{ height: 0 }}
                     whileInView={{ height: '100%' }}
-                    transition={{ duration: 1.5, ease: "easeInOut" }}
-                    viewport={{ once: true }}
+                    transition={{ duration: DURATION.slow, ease: EASE }}
+                    viewport={viewportOnce}
                     className="hidden md:block absolute left-8 top-4 bottom-4 w-0.5 bg-border origin-top"
                 ></motion.div>
 

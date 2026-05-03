@@ -3,7 +3,7 @@
 import { ReactNode } from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
-import { fadeInUp } from '@/lib/motion';
+import { DURATION, EASE, fadeInUp, viewportOnce } from '@/lib/motion';
 
 interface SectionProps {
   children: ReactNode;
@@ -19,13 +19,12 @@ export default function Section({ children, className, id, delay = 0 }: SectionP
         className="max-w-container mx-auto px-4 xs:px-6 sm:px-8 safe-left safe-right"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={viewportOnce}
         variants={fadeInUp}
-        transition={{ delay: delay }}
+        transition={{ delay, duration: DURATION.base, ease: EASE }}
       >
         {children}
       </motion.div>
     </section>
   );
 }
-

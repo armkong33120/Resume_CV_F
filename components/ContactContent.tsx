@@ -1,7 +1,6 @@
 'use client';
 
 import { Profile } from '@/lib/types';
-import Section from '@/components/Section';
 import { useLanguage } from '@/components/LanguageContext';
 import { getTranslation } from '@/lib/translations';
 import PasswordGate from '@/components/PasswordGate';

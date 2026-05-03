@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useLanguage } from './LanguageContext';
+import { fadeInUp, hoverLift, staggerContainer } from '@/lib/motion';
 
 export default function TrendAiCard() {
     const { language } = useLanguage();
@@ -16,7 +17,7 @@ export default function TrendAiCard() {
     return (
         <div className="w-full max-w-lg mx-auto mt-12 mb-8 print:mt-4 print:mb-4">
             <motion.div
-                whileHover={{ y: -5 }}
+                whileHover={hoverLift}
                 className="relative bg-gradient-to-br from-background to-foreground/5 border border-border rounded-2xl p-6 sm:p-8 shadow-xl overflow-hidden print:shadow-none print:border-2 print:border-black"
             >
                 {/* Glow effect */}
@@ -61,13 +62,17 @@ export default function TrendAiCard() {
                     </div>
                 </div>
 
-                <div className="space-y-4">
-                    {checklist.map((item, index) => (
+                <motion.div
+                    className="space-y-4"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-80px" }}
+                    variants={staggerContainer}
+                >
+                    {checklist.map((item) => (
                         <motion.div
-                            key={index}
-                            initial={{ opacity: 0, x: -10 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ delay: index * 0.1 }}
+                            key={item}
+                            variants={fadeInUp}
                             className="flex items-start gap-3"
                         >
                             <div className="mt-0.5 w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center flex-shrink-0">
@@ -78,7 +83,7 @@ export default function TrendAiCard() {
                             <span className="text-base font-medium text-foreground/80">{item}</span>
                         </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </motion.div>
         </div>
     );
