@@ -41,6 +41,7 @@ export default function CyberLogoLoader({
   const [imageFailed, setImageFailed] = useState(false);
   const [terminalRows, setTerminalRows] = useState<TerminalLineState[]>([]);
   const [activeLineIndex, setActiveLineIndex] = useState(0);
+  const [loadingDots, setLoadingDots] = useState('.');
   const [isExiting, setIsExiting] = useState(false);
   const loopDurationMs = 2500;
   const progressDuration = `${durationMs}ms`;
@@ -140,6 +141,19 @@ export default function CyberLogoLoader({
 
     return () => window.clearTimeout(exitTimer);
   }, [isExiting, onComplete]);
+
+  useEffect(() => {
+    if (isExiting) return;
+
+    const dotFrames = ['.', '..', '...'];
+    let dotIndex = 0;
+    const dotTimer = window.setInterval(() => {
+      dotIndex = (dotIndex + 1) % dotFrames.length;
+      setLoadingDots(dotFrames[dotIndex]);
+    }, 360);
+
+    return () => window.clearInterval(dotTimer);
+  }, [isExiting]);
 
   return (
     <div
@@ -259,6 +273,10 @@ export default function CyberLogoLoader({
         <div className="mx-auto mt-5 h-1.5 w-full max-w-[18rem] overflow-hidden rounded-full border border-white/15 bg-white/[0.04]">
           <div className="h-full origin-left rounded-full bg-gradient-to-r from-white/45 via-white to-red-400/80 motion-safe:animate-cyber-loader-progress motion-reduce:scale-x-100" />
         </div>
+
+        <p className="mt-5 text-center font-mono text-sm tracking-[0.02em] text-emerald-300 shadow-[0_0_18px_rgba(16,185,129,0.18)] motion-safe:animate-cyber-loading-status-blink sm:text-base">
+          Loading Resume and CV pages{loadingDots}
+        </p>
       </div>
     </div>
   );
