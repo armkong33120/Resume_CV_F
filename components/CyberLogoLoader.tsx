@@ -199,8 +199,8 @@ export default function CyberLogoLoader({
 
       <div className="flex w-full max-w-[24rem] flex-col items-center sm:max-w-[28rem] md:max-w-[34rem]">
         <div className="relative h-[46vh] min-h-[21rem] w-full max-w-[22rem] overflow-hidden sm:h-[51vh] sm:max-w-[25rem] md:h-[54vh] md:max-w-[31rem]">
-          <div className="absolute left-1/2 bottom-0 h-[88%] aspect-square -translate-x-1/2 overflow-hidden rounded-full bg-[radial-gradient(circle_at_50%_58%,rgba(3,3,4,0.99)_0%,rgba(5,5,6,0.98)_60%,rgba(63,63,70,0.68)_73%,rgba(161,161,170,0.30)_84%,rgba(243,243,241,0)_94%)]">
-            <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_33%_58%,rgba(244,244,245,0.18),transparent_22%),radial-gradient(circle_at_68%_56%,rgba(244,244,245,0.12),transparent_24%)]" />
+          <div className="absolute left-1/2 bottom-0 h-[88%] aspect-square -translate-x-1/2 overflow-hidden rounded-full bg-[radial-gradient(circle_at_center,rgba(3,3,4,0.99)_0%,rgba(5,5,6,0.98)_58%,rgba(63,63,70,0.70)_74%,rgba(161,161,170,0.34)_86%,rgba(243,243,241,0)_95%)]">
+            <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_center,transparent_0%,transparent_68%,rgba(244,244,245,0.10)_78%,rgba(244,244,245,0.16)_86%,transparent_96%)]" />
             {!imageFailed && (
               <div className="absolute inset-0 opacity-55" style={suitMaskStyle}>
                 <Image
