@@ -20,7 +20,7 @@ export default function ResumePage() {
         <main className="min-h-screen pt-24 pb-16 safe-bottom">
             {isLoading && (
                 <CyberLogoLoader
-                    imageSrc="/images/cyber-suit-logo.png"
+                    imageSrc="/images/cyber-suit-logo-soft.png"
                     onExitStart={handleExitStart}
                     onComplete={handleComplete}
                 />

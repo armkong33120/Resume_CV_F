@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import type { CSSProperties } from 'react';
 import { useEffect, useState } from 'react';
 
 const terminalLines = [
@@ -9,9 +10,16 @@ const terminalLines = [
   { text: 'Debug : CYBERSECURITY Ready', animateReadyDots: true, blink: 'single' },
   { text: 'Debug : ITSM Procees Ready', animateReadyDots: true, blink: 'single' },
   { text: 'Debug : IT Automation Ready', animateReadyDots: true, blink: 'single' },
-  { text: 'Log : Thank you for taking the time to review my profile.', animateReadyDots: false, blink: 'triple' },
-  { text: 'I look forward to the opportunity to contribute to your organization...', animateReadyDots: false, blink: 'triple' },
+  { text: 'Log : Thank you for taking the time to review my profile.', animateReadyDots: false, blink: 'logGroup' },
+  { text: 'I look forward to the opportunity to contribute to your organization...', animateReadyDots: false, blink: 'logGroup' },
 ];
+
+const suitMaskStyle: CSSProperties = {
+  WebkitMaskImage:
+    'radial-gradient(circle at 50% 58%, black 0%, black 62%, rgba(0,0,0,0.72) 76%, transparent 91%)',
+  maskImage:
+    'radial-gradient(circle at 50% 58%, black 0%, black 62%, rgba(0,0,0,0.72) 76%, transparent 91%)',
+};
 
 interface TerminalLineState {
   text: string;
@@ -30,7 +38,7 @@ interface CyberLogoLoaderProps {
 }
 
 export default function CyberLogoLoader({
-  imageSrc = '/images/cyber-suit-logo.png',
+  imageSrc = '/images/cyber-suit-logo-soft.png',
   alt = 'Theerachot H. cyber identity logo',
   onExitStart,
   onComplete,
@@ -42,6 +50,7 @@ export default function CyberLogoLoader({
   const [terminalRows, setTerminalRows] = useState<TerminalLineState[]>([]);
   const [activeLineIndex, setActiveLineIndex] = useState(0);
   const [loadingDots, setLoadingDots] = useState('.');
+  const [isLogBlinking, setIsLogBlinking] = useState(false);
   const [isExiting, setIsExiting] = useState(false);
   const loopDurationMs = 2500;
   const progressDuration = `${durationMs}ms`;
@@ -85,8 +94,9 @@ export default function CyberLogoLoader({
         if (charIndex < line.text.length) return;
 
         window.clearInterval(typeInterval);
+        const isFinalLogLine = line.blink === 'logGroup' && lineIndex === terminalLines.length - 1;
         const blinkDelay = line.animateReadyDots ? 760 : 180;
-        const nextLineDelay = line.animateReadyDots ? 1080 : 1320;
+        const nextLineDelay = line.animateReadyDots ? 1080 : isFinalLogLine ? 1320 : 500;
 
         if (line.animateReadyDots) {
           const dotFrames = ['.', '..', '...'];
@@ -102,19 +112,28 @@ export default function CyberLogoLoader({
           });
         }
 
-        timers.push(
-          window.setTimeout(() => {
-            setTerminalRows((rows) =>
-              rows.map((row, index) => (index === lineIndex ? { ...row, isBlinking: true } : row))
-            );
-          }, blinkDelay)
-        );
+        if (line.blink === 'logGroup') {
+          if (isFinalLogLine) {
+            timers.push(window.setTimeout(() => setIsLogBlinking(true), blinkDelay));
+          }
+        } else {
+          timers.push(
+            window.setTimeout(() => {
+              setTerminalRows((rows) =>
+                rows.map((row, index) => (index === lineIndex ? { ...row, isBlinking: true } : row))
+              );
+            }, blinkDelay)
+          );
+        }
 
         timers.push(
           window.setTimeout(() => {
             setTerminalRows((rows) =>
               rows.map((row, index) => (index === lineIndex ? { ...row, isBlinking: false } : row))
             );
+            if (isFinalLogLine) {
+              setIsLogBlinking(false);
+            }
             runLine(lineIndex + 1);
           }, nextLineDelay)
         );
@@ -179,70 +198,81 @@ export default function CyberLogoLoader({
       <div className="absolute inset-x-0 top-[60%] -z-10 h-px bg-gradient-to-r from-transparent via-red-700/10 to-transparent" />
 
       <div className="flex w-full max-w-[24rem] flex-col items-center sm:max-w-[28rem] md:max-w-[34rem]">
-        <div className="relative h-[46vh] min-h-[21rem] w-full max-w-[22rem] overflow-hidden rounded-lg border border-zinc-900/10 bg-zinc-100/40 shadow-[0_24px_80px_rgba(24,24,27,0.16)] sm:h-[51vh] sm:max-w-[25rem] md:h-[54vh] md:max-w-[31rem]">
-          {!imageFailed && (
-            <div className="absolute inset-x-0 bottom-0 mx-auto h-[68%] w-[92%] opacity-80 [mask-image:linear-gradient(to_top,rgba(0,0,0,0.62),rgba(0,0,0,0.22)_48%,transparent_86%)]">
-              <Image
-                src={imageSrc}
-                alt=""
-                fill
-                priority
-                sizes="(max-width: 640px) 352px, (max-width: 768px) 400px, 496px"
-                className="object-contain object-bottom opacity-30 [mask-image:radial-gradient(ellipse_at_50%_52%,black_0%,black_56%,transparent_84%)] motion-safe:animate-cyber-suit-ghost"
-              />
-            </div>
-          )}
-
-          <div className="absolute inset-0 overflow-hidden">
-            <span className="absolute left-1/2 top-0 z-20 h-20 w-[82%] -translate-x-1/2 bg-gradient-to-b from-transparent via-zinc-900/20 to-transparent mix-blend-multiply blur-[1px] motion-safe:animate-cyber-suit-scan" />
-            <span className="absolute left-1/2 top-[47%] z-20 h-px w-[72%] -translate-x-1/2 bg-red-700/55 shadow-[0_0_18px_rgba(185,28,28,0.30)] motion-safe:animate-cyber-suit-scan" />
-          </div>
-
-          <div className="absolute inset-0 motion-safe:animate-cyber-suit-resolve [will-change:transform,opacity,filter]">
-            {imageFailed ? (
-              <div className="flex h-full w-full items-center justify-center">
-                <div className="flex h-28 w-28 items-center justify-center rounded-3xl border border-zinc-900/15 bg-zinc-100 text-3xl font-semibold tracking-[0.18em] text-zinc-900 shadow-[0_24px_60px_rgba(24,24,27,0.16),0_0_24px_rgba(185,28,28,0.08)] sm:h-32 sm:w-32 sm:text-4xl">
-                  TH
-                </div>
+        <div className="relative h-[46vh] min-h-[21rem] w-full max-w-[22rem] overflow-hidden sm:h-[51vh] sm:max-w-[25rem] md:h-[54vh] md:max-w-[31rem]">
+          <div className="absolute left-1/2 bottom-0 h-[88%] aspect-square -translate-x-1/2 overflow-hidden rounded-full bg-[radial-gradient(circle_at_50%_58%,rgba(3,3,4,0.99)_0%,rgba(5,5,6,0.98)_60%,rgba(63,63,70,0.68)_73%,rgba(161,161,170,0.30)_84%,rgba(243,243,241,0)_94%)]">
+            <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_33%_58%,rgba(244,244,245,0.18),transparent_22%),radial-gradient(circle_at_68%_56%,rgba(244,244,245,0.12),transparent_24%)]" />
+            {!imageFailed && (
+              <div className="absolute inset-0 opacity-55" style={suitMaskStyle}>
+                <Image
+                  src={imageSrc}
+                  alt=""
+                  fill
+                  priority
+                  sizes="(max-width: 640px) 352px, (max-width: 768px) 400px, 496px"
+                  className="object-cover object-center opacity-45 contrast-125 brightness-115 motion-safe:animate-cyber-suit-ghost"
+                />
               </div>
-            ) : (
-              <Image
-                src={imageSrc}
-                alt={alt}
-                fill
-                priority
-                sizes="(max-width: 640px) 352px, (max-width: 768px) 400px, 496px"
-                className="object-contain object-bottom contrast-110 brightness-105 drop-shadow-[0_24px_36px_rgba(24,24,27,0.32)] [mask-image:radial-gradient(ellipse_at_50%_52%,black_0%,black_58%,transparent_84%)]"
-                onError={() => setImageFailed(true)}
-              />
+            )}
+
+            <div className="absolute inset-0 overflow-hidden">
+              <span className="absolute left-1/2 top-0 z-20 h-20 w-[82%] -translate-x-1/2 bg-gradient-to-b from-transparent via-zinc-900/20 to-transparent mix-blend-multiply blur-[1px] motion-safe:animate-cyber-suit-scan" />
+              <span className="absolute left-1/2 top-[47%] z-20 h-px w-[72%] -translate-x-1/2 bg-red-700/55 shadow-[0_0_18px_rgba(185,28,28,0.30)] motion-safe:animate-cyber-suit-scan" />
+            </div>
+
+            <div
+              className="absolute inset-0 motion-safe:animate-cyber-suit-resolve [will-change:transform,opacity,filter]"
+              style={imageFailed ? undefined : suitMaskStyle}
+            >
+              {imageFailed ? (
+                <div className="flex h-full w-full items-center justify-center">
+                  <div className="flex h-28 w-28 items-center justify-center rounded-3xl border border-zinc-900/15 bg-zinc-100 text-3xl font-semibold tracking-[0.18em] text-zinc-900 shadow-[0_24px_60px_rgba(24,24,27,0.16),0_0_24px_rgba(185,28,28,0.08)] sm:h-32 sm:w-32 sm:text-4xl">
+                    TH
+                  </div>
+                </div>
+              ) : (
+                <Image
+                  src={imageSrc}
+                  alt={alt}
+                  fill
+                  priority
+                  sizes="(max-width: 640px) 352px, (max-width: 768px) 400px, 496px"
+                  className="object-cover object-center contrast-150 brightness-125 saturate-75"
+                  onError={() => setImageFailed(true)}
+                />
+              )}
+            </div>
+
+            {!imageFailed && (
+              <>
+                <div
+                  className="absolute inset-0 opacity-0 mix-blend-screen motion-safe:animate-cyber-suit-shock [will-change:transform,opacity]"
+                  style={suitMaskStyle}
+                >
+                  <Image
+                    src={imageSrc}
+                    alt=""
+                    fill
+                    priority
+                    sizes="(max-width: 640px) 352px, (max-width: 768px) 400px, 496px"
+                    className="object-cover object-center contrast-150 brightness-110"
+                  />
+                </div>
+                <div
+                  className="absolute inset-0 opacity-0 mix-blend-screen motion-safe:animate-cyber-suit-shock [animation-delay:70ms] [will-change:transform,opacity]"
+                  style={suitMaskStyle}
+                >
+                  <Image
+                    src={imageSrc}
+                    alt=""
+                    fill
+                    priority
+                    sizes="(max-width: 640px) 352px, (max-width: 768px) 400px, 496px"
+                    className="object-cover object-center contrast-125 brightness-105 [filter:drop-shadow(10px_0_0_rgba(185,28,28,0.28))]"
+                  />
+                </div>
+              </>
             )}
           </div>
-
-          {!imageFailed && (
-            <>
-              <div className="absolute inset-0 opacity-0 mix-blend-screen motion-safe:animate-cyber-suit-shock [will-change:transform,opacity]">
-                <Image
-                  src={imageSrc}
-                  alt=""
-                  fill
-                  priority
-                  sizes="(max-width: 640px) 352px, (max-width: 768px) 400px, 496px"
-                  className="object-contain object-bottom contrast-150 brightness-110 [mask-image:radial-gradient(ellipse_at_50%_52%,black_0%,black_58%,transparent_84%)]"
-                />
-              </div>
-              <div className="absolute inset-0 opacity-0 mix-blend-screen motion-safe:animate-cyber-suit-shock [animation-delay:70ms] [will-change:transform,opacity]">
-                <Image
-                  src={imageSrc}
-                  alt=""
-                  fill
-                  priority
-                  sizes="(max-width: 640px) 352px, (max-width: 768px) 400px, 496px"
-                  className="object-contain object-bottom contrast-125 brightness-105 [filter:drop-shadow(10px_0_0_rgba(185,28,28,0.28))] [mask-image:radial-gradient(ellipse_at_50%_52%,black_0%,black_58%,transparent_84%)]"
-                />
-              </div>
-            </>
-          )}
-
         </div>
 
         <div
@@ -254,10 +284,11 @@ export default function CyberLogoLoader({
               key={`${terminalLines[index]?.text}-${index}`}
               className={[
                 'min-h-5 whitespace-pre-wrap',
-                row.isBlinking && terminalLines[index]?.blink === 'triple'
+                (row.isBlinking && terminalLines[index]?.blink === 'triple') ||
+                (isLogBlinking && terminalLines[index]?.blink === 'logGroup')
                   ? 'motion-safe:animate-cyber-terminal-log-blink'
                   : '',
-                row.isBlinking && terminalLines[index]?.blink !== 'triple'
+                row.isBlinking && terminalLines[index]?.blink !== 'triple' && terminalLines[index]?.blink !== 'logGroup'
                   ? 'motion-safe:animate-cyber-terminal-line-blink'
                   : '',
               ].join(' ')}
