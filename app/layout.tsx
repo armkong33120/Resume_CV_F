@@ -4,6 +4,7 @@ import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 import { LanguageProvider } from '@/components/LanguageContext';
 import { SalaryAuthProvider } from '@/components/SalaryAuthContext';
+import CyberLoaderWrapper from '@/components/CyberLoaderWrapper';
 
 export const metadata: Metadata = {
   title: 'Theerachot Hengsimmakourup | IT Management & Cybersecurity Portfolio',
@@ -41,7 +42,9 @@ export default async function RootLayout({
               Skip to main content
             </a>
             <Nav />
-            <main id="main-content">{children}</main>
+            <main id="main-content">
+              <CyberLoaderWrapper>{children}</CyberLoaderWrapper>
+            </main>
             <Footer />
           </SalaryAuthProvider>
         </LanguageProvider>
