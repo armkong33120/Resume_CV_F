@@ -84,9 +84,18 @@
 
   nav,
   footer,
+  [role="status"][aria-label="Secure identity loading"],
   .no-print,
   .print\:hidden {
     display: none !important;
+  }
+
+  #main-content,
+  #main-content * {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
   }
 
   main {
@@ -97,6 +106,10 @@
   /* Show the print footer */
   .print\:block {
     display: block !important;
+  }
+
+  .print\:flex {
+    display: flex !important;
   }
 
   a[href^="http"]:after {

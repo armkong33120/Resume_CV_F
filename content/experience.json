@@ -10,8 +10,8 @@
             "en": "IT Manager"
         },
         "period": {
-            "th": "กันยายน 2568 - ตุลาคม 2568",
-            "en": "September 2025 - October 2025"
+            "th": "กุมภาพันธ์ 2568 - กุมภาพันธ์ 2569",
+            "en": "February 2025 - February 2026"
         },
         "salary": {
             "th": "50,000 บาท",
@@ -40,51 +40,6 @@
         "reasonForLeaving": {
             "th": "บทบาทระยะสั้น ย้ายออกหลังเกิดความไม่แน่นอนด้านเสถียรภาพองค์กร",
             "en": "Short-term role; transitioned after organizational uncertainty and role stability concerns."
-        }
-    },
-    {
-        "id": 99,
-        "company": {
-            "th": "Grand Center Point Ratchadamri",
-            "en": "Grand Center Point Ratchadamri"
-        },
-        "role": {
-            "th": "IT Supervisor",
-            "en": "IT Supervisor"
-        },
-        "period": {
-            "th": "กุมภาพันธ์ 2568 - สิงหาคม 2568",
-            "en": "February 2025 - August 2025"
-        },
-        "salary": {
-            "th": "43,000 บาท",
-            "en": "43,000 THB"
-        },
-        "location": {
-            "th": "153, 2 ถ. ราชดำริ แขวงลุมพินี เขตปทุมวัน กรุงเทพมหานคร 10330",
-            "en": "153, 2 Ratchadamri Rd, Lumphini, Pathum Wan, Bangkok 10330"
-        },
-        "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Grande+Centre+Point+Ratchadamri",
-        "websiteUrl": "https://grandecentrepointratchadamri.com",
-        "details": {
-            "th": [
-                "ดูแล end-to-end IT operations ของโรงแรม 5 ดาว ครอบคลุม PMS, POS, door lock, IPTV, guest network, internal network, asset lifecycle, vendor SLA และ audit documentation",
-                "รักษาความพร้อมใช้งานของระบบธุรกิจโรงแรมผ่าน incident coordination, vendor escalation และการทำงานร่วมกับทีม operations แบบ single point of contact",
-                "ปรับปรุง IT governance ด้วย asset register, IT policy, internal process, TOR/procurement document และ MA contract review เพื่อเพิ่ม compliance readiness และควบคุมต้นทุน",
-                "ดูแล network infrastructure และ HSIA รวมถึง gateway, VLAN segmentation และ guest network audit เพื่อเพิ่มเสถียรภาพและลดความเสี่ยงด้านความปลอดภัย",
-                "นำแนวคิด AIOps/automation มาช่วยลดงานเอกสาร รายงาน และ data analysis เพื่อสนับสนุนการตัดสินใจของทีม IT"
-            ],
-            "en": [
-                "Managed end-to-end IT operations for a 5-star hotel environment, supporting PMS, POS, door lock, IPTV, guest network, internal network, asset lifecycle, vendor SLA, and audit documentation.",
-                "Maintained business-system availability through incident coordination, vendor escalation, and single point of contact support between IT and hotel operations teams.",
-                "Improved IT governance through asset registers, IT policies, internal processes, TOR/procurement documents, and MA contract review to strengthen compliance readiness and cost control.",
-                "Managed network infrastructure and HSIA, including gateways, VLAN segmentation, and guest network audits to improve stability and reduce security risk.",
-                "Applied AIOps/automation concepts to reduce administrative reporting and data analysis workload for better IT team decision support."
-            ]
-        },
-        "reasonForLeaving": {
-            "th": "เพื่อหาความท้าทายใหม่ในสายงาน IT Manager",
-            "en": "Seeking new challenges in IT Manager role"
         }
     },
     {

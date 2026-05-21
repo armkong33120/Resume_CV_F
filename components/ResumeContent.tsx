@@ -101,6 +101,9 @@ export default function ResumeContent() {
                                 src="/images/profile.jpg"
                                 alt={language === 'th' ? profileData.name.th : profileData.name.en}
                                 fill
+                                priority
+                                sizes="128px"
+                                unoptimized
                                 className="object-cover"
                             />
                         </div>
