@@ -25,16 +25,24 @@
         "websiteUrl": null,
         "details": {
             "th": [
-                "ดูแล day-to-day IT operations ครอบคลุม incident, service request, access approval, endpoint compliance, backup verification, vendor coordination และ monthly KPI reporting",
-                "วาง operational controls สำหรับ patch compliance, access review, backup/restore check, change tracking และ PDPA/ISO readiness เพื่อยกระดับ IT governance",
-                "บริหารงานทีม IT Support ระดับ L1-L2 ผ่านการแบ่งงาน, feedback, ticket quality review และ SLA/MTTR reporting สำหรับ management visibility",
-                "ผลักดัน automation สำหรับ on/off-boarding และ reporting เพื่อลดงาน manual และทำให้ทีมมี runbook/SOP ใช้งานร่วมกัน"
+                "จัดตั้ง IT Manager function แรกของบริษัท ผ่านการทำ structured CTO-to-IT-Manager transition โดยกำหนด RACI, escalation paths, approval authority และ ownership handoff ในส่วน infrastructure, vendor และ team management เพื่อลดการพึ่งพา CTO ในงาน IT day-to-day",
+                "ทำ IT infrastructure risk assessment ครอบคลุม network topology, servers, backup/restore integrity และ DIY software dependencies เพื่อระบุ single point of failure และ technical debt พร้อมจัดทำ prioritized risk register นำเสนอ CTO เพื่อใช้วาง remediation plan และ budget justification",
+                "ยกระดับ cybersecurity governance ด้วย structured access control review, PDPA compliance controls, endpoint compliance check และ incident response procedure ที่ align กับ ISO 27001 readiness เพื่อลด unmanaged access exposure ผ่าน quarterly IAM review cycle",
+                "สร้าง team operating model ตั้งแต่ต้น โดยทำ One-on-One capability assessment, จัดทำ Skills Matrix และ Dependency Map, balance workload allocation ตาม shift และวาง SLA/MTTR tracking กับ on-call rotation เพื่อเพิ่ม service consistency และลด escalation ไปที่ CTO",
+                "จัดทำ IT Team Charter, cross-department SLA agreements, SOP library และ runbook documentation พร้อม formalize change tracking และ approval workflow เพื่อแทนที่ ad-hoc request handling และยกระดับ IT governance discipline",
+                "Consolidate IT product portfolio ของบริษัทผ่าน structured vendor และ license review โดยประเมิน fitness-for-purpose เทียบกับ current workload หาโอกาสลดความซ้ำซ้อนของ tools และนำ migration ไปสู่ Lark ในฐานะ unified collaboration platform เพื่อลด software licensing cost",
+                "Automate employee on/off-boarding และ monthly KPI reporting workflows ด้วย n8n และ AI-assisted analysis เพื่อลด manual reporting effort และเพิ่ม data accuracy สำหรับ executive visibility และ management review cycle",
+                "จัดทำ weekly IT status update และ monthly board-level KPI report ให้ CTO ครอบคลุม SLA performance, risk flags, project progress และ vendor spend เพื่อเชื่อม IT operations เข้ากับ strategic planning และ budget discussion"
             ],
             "en": [
-                "Managed day-to-day IT operations covering incidents, service requests, access approvals, endpoint compliance, backup verification, vendor coordination, and monthly KPI reporting.",
-                "Established operational controls for patch compliance, access reviews, backup/restore checks, change tracking, and PDPA/ISO readiness to improve IT governance discipline.",
-                "Coached L1-L2 support team members through task allocation, feedback, ticket quality review, and SLA/MTTR reporting for management visibility.",
-                "Drove automation for on/off-boarding and reporting while maintaining shared SOPs, runbooks, and knowledge base materials for team consistency."
+                "Established the company's first IT Manager function by executing a structured CTO-to-IT-Manager transition — defining RACI, escalation paths, approval authorities, and ownership handoffs across infrastructure, vendor, and team management domains to reduce CTO's day-to-day IT involvement.",
+                "Conducted an IT infrastructure risk assessment covering network topology, servers, backup/restore integrity, and DIY software dependencies to identify single points of failure and technical debt; produced a prioritized risk register presented to CTO as input for remediation planning and budget justification.",
+                "Strengthened cybersecurity governance by implementing structured access control reviews, PDPA compliance controls, endpoint compliance checks, and an incident response procedure aligned with ISO 27001 readiness — reducing unmanaged access exposure through formal quarterly IAM review cycles.",
+                "Built the team operating model from scratch: conducted One-on-One capability assessments, created a Skills Matrix and Dependency Map, balanced workload allocation across shifts, and established SLA/MTTR tracking and on-call rotation to improve service consistency and reduce escalation to CTO.",
+                "Authored IT Team Charter, cross-department SLA agreements, SOP library, and runbook documentation; formalized change tracking and approval workflows to replace ad-hoc request handling and improve IT governance discipline.",
+                "Consolidated the company's IT product portfolio through a structured vendor and license review — evaluating fitness-for-purpose against current workload and identifying consolidation opportunities; led migration to Lark as a unified collaboration platform, replacing multiple tools and reducing software licensing cost.",
+                "Automated employee on/off-boarding and monthly KPI reporting workflows using n8n and AI-assisted analysis — reducing manual reporting effort and improving data accuracy for executive visibility and management review cycles.",
+                "Delivered weekly IT status updates and monthly board-level KPI reports to CTO covering SLA performance, risk flags, project progress, and vendor spend — bridging IT operations with strategic planning and budget discussions."
             ]
         },
         "reasonForLeaving": {
