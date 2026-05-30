@@ -328,6 +328,17 @@ export default function ExperienceContent() {
                                 </ul>
                             </div>
 
+                            {job.reasonForLeaving && (
+                                <div className="rounded-xl border border-border bg-foreground/[0.03] p-4">
+                                    <h4 className="mb-2 text-xs font-semibold uppercase tracking-wider text-foreground/70">
+                                        {language === 'th' ? 'สาเหตุที่ออก' : 'Reason for leaving'}
+                                    </h4>
+                                    <p className="text-sm leading-relaxed text-foreground/75">
+                                        {getContent(job.reasonForLeaving)}
+                                    </p>
+                                </div>
+                            )}
+
                         </div>
                     </motion.div>
                 ))}
