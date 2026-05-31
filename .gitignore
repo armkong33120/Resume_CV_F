@@ -32,3 +32,15 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# Android
+.gradle/
+*/build/
+local.properties
+*.apk
+
+# Xcode
+DerivedData/
+*.xcuserdata/
+*.ipa
+*.dSYM
+

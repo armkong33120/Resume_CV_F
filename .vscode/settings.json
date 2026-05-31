@@ -1,0 +1,11 @@
+{
+  "java.jdt.ls.java.home": "/Users/arm/.local/jdks/temurin-17",
+  "java.configuration.runtimes": [
+    {
+      "name": "JavaSE-17",
+      "path": "/Users/arm/.local/jdks/temurin-17",
+      "default": true
+    }
+  ],
+  "gradle.java.home": "/Users/arm/.local/jdks/temurin-17"
+}
