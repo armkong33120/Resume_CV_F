@@ -9,7 +9,7 @@ const endpoints = [
   '/api/health',
   '/api/profile',
   '/api/projects',
-  '/api/projects/it-manager-start-to-end',
+  '/api/projects/automation-cyber-security',
 ];
 
 async function testEndpoint(url) {

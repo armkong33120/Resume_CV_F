@@ -23,7 +23,12 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
+.env
 .env*.local
+
+# Python runtime artifacts
+__pycache__/
+*.py[cod]
 
 # vercel
 .vercel
